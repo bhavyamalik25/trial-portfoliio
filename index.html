@@ -3,824 +3,817 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bhavya Malik · Portfolio ✨</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<title>Bhavya Malik</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --blush:#ffd6e7;--blush-mid:#ffadd4;--blush-deep:#e87fbf;
-    --lilac:#e8d5ff;--lilac-mid:#cc99ff;--lilac-deep:#9b59c2;
-    --mint:#c8f5e0;--mint-mid:#7ddeb5;--mint-deep:#3aad80;
-    --butter:#fff3c2;--butter-mid:#ffd966;--gold:#e5b84a;
-    --sky:#d0eeff;--sky-mid:#88ccff;
-    --peach:#ffe0c8;--peach-mid:#ffb380;
-    --cream:#fff9f5;--warm-white:#fffbf8;
-    --ink:#3a2040;--muted:#7a5a7a;--soft:#b89ab8;
-  }
-  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{background:var(--cream);color:var(--ink);font-family:'EB Garamond',serif;overflow-x:hidden;}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --blush-nav:  #FAEEF0;
+  --page-bg:    #FAF8F6;
+  --card-bg:    #FFFFFF;
+  --navy:       #1B2A4A;
+  --text:       #3D3D3D;
+  --muted:      #9A9A9A;
+  --rose:       #C8849A;
+  --rose-light: #F5DCE4;
+  --periwinkle: #7E96C0;
+  --peri-light: #EEF1F8;
+  --border:     rgba(200,132,154,0.18);
+  --border-b:   rgba(126,150,192,0.22);
+  --radius:     14px;
+  --nav-h:      64px;
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--page-bg);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
 
-  /* Rainbow top strip */
-  body::before{content:'';position:fixed;top:0;left:0;right:0;height:4px;
-    background:linear-gradient(90deg,var(--blush-mid),var(--lilac-mid),var(--sky-mid),var(--mint-mid),var(--butter-mid),var(--peach-mid),var(--blush-mid));
-    background-size:300% 100%;animation:rainbow-slide 6s linear infinite;z-index:9999;}
-  @keyframes rainbow-slide{from{background-position:0% 50%}to{background-position:300% 50%}}
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  height: var(--nav-h);
+  background: rgba(250,238,240,0.94);
+  backdrop-filter: blur(16px);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 56px;
+  border-bottom: 1px solid rgba(200,132,154,0.14);
+  z-index: 1000;
+}
+.nav-brand {
+  font-family: 'Fraunces', serif;
+  font-size: 17px; font-weight: 300; font-style: italic;
+  color: var(--rose); cursor: pointer; text-decoration: none;
+  letter-spacing: 0.01em;
+}
+.nav-links { display: flex; gap: 40px; list-style: none; }
+.nav-links a {
+  font-size: 11px; font-weight: 400; letter-spacing: 0.13em;
+  text-transform: uppercase; color: var(--navy);
+  text-decoration: none; cursor: pointer;
+  opacity: 0.6; transition: opacity 0.2s;
+}
+.nav-links a:hover { opacity: 1; }
 
-  /* Sparkle cursor */
-  body{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M12 2 L13 10 L21 12 L13 14 L12 22 L11 14 L3 12 L11 10 Z' fill='%23ffadd4' stroke='%23e87fbf' stroke-width='1'/%3E%3C/svg%3E") 12 12, auto;}
+/* PAGES */
+.page { display: none; min-height: 100vh; }
+.page.active { display: block; }
 
-  /* NAV */
-  nav{position:fixed;top:4px;left:0;right:0;z-index:100;padding:16px 48px;
-    display:flex;align-items:center;justify-content:space-between;
-    background:rgba(255,249,245,0.88);backdrop-filter:blur(16px);
-    border-bottom:1.5px solid var(--blush);}
-  .nav-logo{font-family:'Playfair Display',serif;font-size:1.05rem;font-style:italic;
-    background:linear-gradient(135deg,var(--blush-deep),var(--lilac-deep));
-    -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:0.03em;}
-  .nav-links{display:flex;gap:28px;list-style:none;}
-  .nav-links a{font-family:'Crimson Pro',serif;font-size:0.88rem;letter-spacing:0.1em;text-transform:uppercase;
-    color:var(--muted);text-decoration:none;transition:color 0.3s;position:relative;padding-bottom:2px;}
-  .nav-links a::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1.5px;
-    background:linear-gradient(90deg,var(--blush-mid),var(--lilac-mid));
-    transform:scaleX(0);transition:transform 0.3s;transform-origin:left;}
-  .nav-links a:hover{color:var(--blush-deep);}
-  .nav-links a:hover::after{transform:scaleX(1);}
+/* HERO */
+.hero {
+  height: 100vh; min-height: 620px;
+  position: relative; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+  padding-top: var(--nav-h);
+}
+/* Image background layer */
+.hero-bg {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image: url('assets/hero_image.jpeg');
+  background-size: cover;
+  background-position: center;
+  /* Keep it delicate — opacity so it whispers, not shouts */
+  opacity: 0.38;
+  /* Slight warm shift so it plays with the rose/blush palette */
+  filter: saturate(0.7) brightness(1.08) hue-rotate(8deg);
+}
+/* Veil layer: radial gradient that keeps the centre clear for text */
+.hero-bg::after {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 70% 65% at 50% 52%,
+      rgba(250,248,246,0.82) 0%,
+      rgba(250,242,244,0.55) 45%,
+      rgba(250,238,240,0.18) 100%),
+    linear-gradient(to bottom,
+      rgba(250,238,240,0.45) 0%,
+      transparent 30%,
+      transparent 70%,
+      rgba(250,238,240,0.35) 100%);
+}
+.hero-content {
+  position: relative; z-index: 2;
+  text-align: center; padding: 0 32px;
+  max-width: 820px;
+}
+.hero-eyebrow {
+  font-size: 10px; letter-spacing: 0.5em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 28px; font-weight: 400;
+  opacity: 0; animation: fadeUp 0.9s ease forwards 0.2s;
+}
+.hero-name {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(60px, 10vw, 120px);
+  font-weight: 300; color: var(--navy);
+  line-height: 1; letter-spacing: -0.02em;
+  opacity: 0; animation: fadeUp 0.9s ease forwards 0.5s;
+}
+.hero-sub {
+  font-size: 15px; font-weight: 300; line-height: 1.75;
+  color: #6A6A6A; margin-top: 28px;
+  max-width: 560px; margin-left: auto; margin-right: auto;
+  opacity: 0; animation: fadeUp 0.9s ease forwards 0.85s;
+}
+.hero-scroll {
+  position: absolute; bottom: 40px; left: 50%;
+  transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  cursor: pointer; opacity: 0; animation: fadeUp 0.9s ease forwards 1.3s;
+}
+.hero-scroll span { font-size: 9px; letter-spacing: 0.45em; text-transform: uppercase; color: var(--muted); }
+.scroll-line { width: 1px; height: 48px; background: linear-gradient(to bottom, var(--muted), transparent); animation: spulse 2.2s ease-in-out infinite; }
+@keyframes spulse { 0%,100%{opacity:0.3} 50%{opacity:0.85} }
+@keyframes fadeUp { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
 
-  /* HERO */
-  #hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
-    padding:110px 24px 60px;position:relative;text-align:center;
-    background:radial-gradient(ellipse 80% 60% at 50% 40%,#fff0f8 0%,#fdf5ff 40%,var(--cream) 100%);overflow:hidden;}
-  .blob{position:absolute;border-radius:50%;pointer-events:none;opacity:0.18;filter:blur(40px);animation:blob-float ease-in-out infinite;}
-  .blob-1{width:380px;height:380px;background:var(--blush-mid);top:-60px;left:-80px;animation-duration:14s;}
-  .blob-2{width:280px;height:280px;background:var(--lilac-mid);top:40px;right:-60px;animation-duration:18s;animation-delay:-5s;}
-  .blob-3{width:320px;height:320px;background:var(--mint-mid);bottom:-80px;left:10%;animation-duration:16s;animation-delay:-8s;}
-  .blob-4{width:200px;height:200px;background:var(--butter-mid);bottom:40px;right:15%;animation-duration:12s;animation-delay:-3s;}
-  @keyframes blob-float{0%,100%{transform:translate(0,0) scale(1);}33%{transform:translate(20px,-20px) scale(1.05);}66%{transform:translate(-15px,15px) scale(0.97);}}
+/* ABOUT STRIP */
+.about-strip {
+  max-width: 1060px; margin: 0 auto;
+  padding: 110px 60px;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 80px; align-items: center;
+}
+.photo-wrap { position: relative; display: flex; justify-content: center; }
+.photo-blob {
+  width: 300px; height: 370px;
+  border-radius: 62% 38% 55% 45% / 50% 58% 42% 50%;
+  overflow: hidden;
+  box-shadow: 0 28px 72px rgba(28,42,74,0.11);
+  transition: border-radius 5s ease;
+}
+.photo-blob:hover { border-radius: 44% 56% 40% 60% / 56% 40% 60% 44%; }
+.photo-blob img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+.photo-ring {
+  position: absolute;
+  width: 336px; height: 408px;
+  border: 1px solid rgba(200,132,154,0.25);
+  border-radius: 57% 43% 52% 48% / 43% 62% 38% 57%;
+  top: -18px; left: calc(50% - 168px);
+  pointer-events: none;
+  animation: rbreath 7s ease-in-out infinite alternate;
+}
+@keyframes rbreath { from{transform:scale(1) rotate(-1.5deg)} to{transform:scale(1.03) rotate(1.5deg)} }
+.about-text .label { font-size: 10px; letter-spacing: 0.44em; text-transform: uppercase; color: var(--rose); margin-bottom: 18px; font-weight: 400; display: block; }
+.about-text h2 { font-family: 'Fraunces', serif; font-size: 38px; font-weight: 300; font-style: italic; color: var(--navy); line-height: 1.1; margin-bottom: 24px; }
+.about-text p { font-size: 14px; font-weight: 300; line-height: 1.85; color: #5C5C5C; margin-bottom: 14px; }
+.about-cta {
+  display: inline-flex; align-items: center; gap: 7px; margin-top: 14px;
+  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--navy); border-bottom: 1px solid var(--rose);
+  padding-bottom: 2px; cursor: pointer; transition: color 0.2s;
+}
+.about-cta:hover { color: var(--rose); }
 
-  .hero-badge{display:inline-flex;align-items:center;gap:8px;
-    background:linear-gradient(135deg,var(--blush),var(--lilac));
-    border:1.5px solid var(--blush-mid);border-radius:30px;padding:6px 20px;margin-bottom:28px;
-    font-family:'Crimson Pro',serif;font-size:0.8rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--lilac-deep);
-    animation:fade-up 0.8s ease 0.2s both;}
-  .hero-star{font-size:14px;animation:spin-star 4s linear infinite;display:inline-block;}
-  @keyframes spin-star{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+/* JARS */
+.jars-section { padding: 80px 32px 120px; text-align: center; background: var(--blush-nav); }
+.sec-label { font-size: 10px; letter-spacing: 0.46em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; font-weight: 400; display: block; }
+.sec-title { font-family: 'Fraunces', serif; font-size: 44px; font-weight: 300; font-style: italic; color: var(--navy); margin-bottom: 14px; line-height: 1.05; }
+.sec-desc { font-size: 14px; font-weight: 300; color: var(--muted); line-height: 1.7; max-width: 400px; margin: 0 auto 64px; }
+.jars-grid { display: flex; gap: 44px; justify-content: center; align-items: flex-end; flex-wrap: wrap; }
+.jar-item { display: flex; flex-direction: column; align-items: center; gap: 16px; cursor: pointer; transition: transform 0.28s ease; -webkit-tap-highlight-color: transparent; }
+.jar-item:hover { transform: translateY(-10px); }
+.jar-item:active { transform: translateY(-3px) scale(0.97); }
+.jar-svg-wrap { transition: filter 0.28s; }
+.jar-item:hover .jar-svg-wrap { filter: drop-shadow(0 10px 24px rgba(200,132,154,0.35)); }
+.jar-en { font-size: 9px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 4px; }
+.jar-label { font-family: 'Fraunces', serif; font-size: 17px; font-weight: 300; color: var(--navy); display: block; }
 
-  .hero-name{font-family:'Playfair Display',serif;font-size:clamp(3.8rem,11vw,8rem);font-weight:600;
-    line-height:0.88;letter-spacing:-0.02em;
-    background:linear-gradient(135deg,var(--blush-deep) 0%,var(--lilac-deep) 40%,var(--blush-deep) 100%);
-    -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-    background-size:200% 100%;animation:fade-up 0.8s ease 0.4s both,shimmer 5s ease-in-out infinite;}
-  @keyframes shimmer{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
-  .hero-name .em{font-style:italic;}
-  .hero-sub{margin-top:24px;font-family:'Crimson Pro',serif;font-size:1.1rem;color:var(--muted);font-style:italic;
-    animation:fade-up 0.8s ease 0.6s both;line-height:1.7;}
-  .hero-divider{width:80px;height:2px;margin:30px auto;
-    background:linear-gradient(90deg,var(--blush-mid),var(--lilac-mid),var(--mint-mid));
-    border-radius:2px;animation:fade-up 0.8s ease 0.8s both;}
-  .hero-contact{display:flex;gap:20px;flex-wrap:wrap;justify-content:center;
-    font-family:'Crimson Pro',serif;font-size:0.9rem;color:var(--muted);animation:fade-up 0.8s ease 1s both;}
-  .hero-contact a{color:var(--muted);text-decoration:none;}
-  .hero-contact a:hover{color:var(--blush-deep);}
-  .hero-contact .dot{color:var(--blush-mid);}
-  .hero-langs{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:20px;animation:fade-up 0.8s ease 1.2s both;}
-  .lang-pill{background:linear-gradient(135deg,rgba(255,214,231,0.7),rgba(232,213,255,0.7));
-    border:1.5px solid var(--blush-mid);border-radius:24px;padding:5px 16px;
-    font-family:'Crimson Pro',serif;font-size:0.8rem;color:var(--lilac-deep);backdrop-filter:blur(4px);}
-  .scroll-cue{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);
-    display:flex;flex-direction:column;align-items:center;gap:6px;animation:fade-up 0.8s ease 1.6s both;}
-  .scroll-cue span{font-family:'Crimson Pro',serif;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--soft);}
-  .scroll-cue-line{width:1px;height:36px;background:linear-gradient(to bottom,var(--blush-mid),transparent);animation:line-pulse 2s ease-in-out infinite;}
-  @keyframes line-pulse{0%,100%{opacity:0.4;transform:scaleY(1)}50%{opacity:1;transform:scaleY(1.3);transform-origin:top}}
-  @keyframes fade-up{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+/* CONNECT */
+.connect-section { padding: 100px 40px 80px; text-align: center; background: var(--page-bg); }
+.connect-inner { max-width: 520px; margin: 0 auto; }
+.connect-label { font-size: 10px; letter-spacing: 0.46em; text-transform: uppercase; color: var(--muted); margin-bottom: 18px; font-weight: 400; }
+.connect-title { font-family: 'Fraunces', serif; font-size: 52px; font-weight: 300; font-style: italic; color: var(--navy); margin-bottom: 22px; line-height: 1; }
+.connect-text { font-size: 14px; font-weight: 300; color: #6A6A6A; line-height: 1.75; }
 
-  /* SECTIONS */
-  section{position:relative;z-index:2;}
-  .section-inner{max-width:920px;margin:0 auto;padding:80px 28px;}
-  .sec-label{display:flex;align-items:center;gap:14px;margin-bottom:16px;}
-  .sec-line{flex:1;height:1px;}
-  .sec-line.left{background:linear-gradient(to left,var(--blush-mid),transparent);}
-  .sec-line.right{background:linear-gradient(to right,var(--blush-mid),transparent);}
-  .sec-tag{font-family:'Crimson Pro',serif;font-size:0.75rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--blush-deep);white-space:nowrap;}
-  .sec-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-style:italic;line-height:1.15;color:var(--ink);margin-bottom:48px;}
-  .sec-title .g{background:linear-gradient(135deg,var(--mint-deep),var(--sky-mid));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-  .sec-title .p{background:linear-gradient(135deg,var(--blush-deep),var(--lilac-deep));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+/* FOOTER — centered */
+footer {
+  background: var(--blush-nav);
+  padding: 44px 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  border-top: 1px solid rgba(200,132,154,0.13);
+  text-align: center;
+}
+.footer-copy { font-size: 11px; color: var(--muted); font-weight: 300; letter-spacing: 0.04em; }
+.footer-icons { display: flex; gap: 24px; align-items: center; justify-content: center; }
+.footer-icon { color: var(--navy); opacity: 0.5; text-decoration: none; transition: opacity 0.2s; display: flex; }
+.footer-icon:hover { opacity: 1; }
+.footer-icon svg { width: 18px; height: 18px; }
 
-  /* ABOUT */
-  #about{background:linear-gradient(180deg,var(--warm-white) 0%,#fff5fd 100%);}
-  .about-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:start;}
-  .about-text p{font-family:'EB Garamond',serif;font-size:1.13rem;line-height:1.88;color:var(--muted);margin-bottom:18px;}
-  .about-text p strong{color:var(--ink);font-weight:500;}
-  .card{border-radius:18px;padding:24px;border:1.5px solid;margin-bottom:16px;position:relative;overflow:hidden;transition:transform 0.3s ease;}
-  .card:hover{transform:translateY(-3px);}
-  .card-blush{background:linear-gradient(135deg,#fff0f5,#fce8ff);border-color:var(--blush-mid);}
-  .card-mint{background:linear-gradient(135deg,#edfff7,#d8f5ff);border-color:var(--mint-mid);}
-  .card-butter{background:linear-gradient(135deg,#fffbe6,#fff0d6);border-color:var(--butter-mid);}
-  .card-label{font-family:'Crimson Pro',serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:8px;}
-  .card-blush .card-label{color:var(--blush-deep);}
-  .card-mint .card-label{color:var(--mint-deep);}
-  .card-butter .card-label{color:var(--gold);}
-  .card-body{font-family:'EB Garamond',serif;font-size:1rem;color:var(--ink);line-height:1.6;}
+/* STICKY BACK BAR — always visible on sub-pages */
+.back-bar {
+  position: fixed;
+  top: var(--nav-h);
+  left: 0; right: 0;
+  z-index: 900;
+  padding: 10px 56px;
+  background: rgba(250,248,246,0.93);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(200,132,154,0.10);
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+.back-bar.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+/* Spacer so page content doesn't hide under both nav + back bar */
+.back-bar-spacer { height: calc(var(--nav-h) + 44px); }
 
-  /* EXPERIENCE */
-  #experience{background:linear-gradient(180deg,#fdf5ff 0%,var(--cream) 100%);}
-  .exp-item{display:grid;grid-template-columns:180px 1fr;gap:32px;margin-bottom:52px;opacity:0;transform:translateY(22px);transition:opacity 0.55s ease,transform 0.55s ease;}
-  .exp-item.vis{opacity:1;transform:translateY(0);}
-  .exp-meta{padding-top:2px;}
-  .exp-year{font-family:'Crimson Pro',serif;font-size:0.82rem;color:var(--soft);letter-spacing:0.08em;display:block;margin-bottom:6px;}
-  .exp-org{font-family:'Crimson Pro',serif;font-size:0.82rem;color:var(--mint-deep);line-height:1.5;}
-  .exp-badge{display:inline-block;border-radius:6px;padding:2px 12px;margin-bottom:9px;font-family:'Crimson Pro',serif;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;}
-  .badge-college{background:linear-gradient(135deg,var(--lilac),var(--blush));color:var(--lilac-deep);border:1px solid var(--lilac-mid);}
-  .badge-school{background:linear-gradient(135deg,var(--mint),var(--sky));color:var(--mint-deep);border:1px solid var(--mint-mid);}
-  .exp-role{font-family:'Playfair Display',serif;font-size:1.18rem;font-style:italic;color:var(--ink);margin-bottom:14px;}
-  .exp-bullets{list-style:none;}
-  .exp-bullets li{font-family:'EB Garamond',serif;font-size:1.03rem;color:var(--muted);line-height:1.72;padding:4px 0 4px 20px;position:relative;}
-  .exp-bullets li::before{content:'✦';position:absolute;left:0;color:var(--blush-mid);font-size:0.65rem;top:9px;}
-  .exp-divider{width:100%;height:1px;margin-bottom:52px;background:linear-gradient(to right,transparent,var(--blush-mid),var(--lilac-mid),transparent);}
+.back-btn {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-size: 11px; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--muted); background: none; border: none;
+  font-family: 'Inter', sans-serif; cursor: pointer; transition: color 0.2s;
+  padding: 0;
+}
+.back-btn:hover { color: var(--navy); }
+.back-btn svg { width: 14px; height: 14px; }
 
-  /* WRITING */
-  #writing{background:linear-gradient(180deg,var(--cream) 0%,#f5f0ff 100%);}
-  .writing-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
-  .wcard{border-radius:20px;padding:30px 28px;position:relative;overflow:hidden;border:1.5px solid;cursor:default;
-    opacity:0;transform:translateY(24px);transition:opacity 0.5s ease,transform 0.5s ease,box-shadow 0.3s ease;}
-  .wcard.vis{opacity:1;transform:translateY(0);}
-  .wcard:hover{transform:translateY(-5px);box-shadow:0 16px 48px -8px rgba(180,100,180,0.15);}
-  .wcard-blush{background:linear-gradient(145deg,#fff0f7,#fde8ff);border-color:var(--blush-mid);}
-  .wcard-mint{background:linear-gradient(145deg,#edfff8,#e0f8ff);border-color:var(--mint-mid);}
-  .wcard-lilac{background:linear-gradient(145deg,#f5eeff,#ffe8f8);border-color:var(--lilac-mid);}
-  .wcard-butter{background:linear-gradient(145deg,#fffce8,#fff4d6);border-color:var(--butter-mid);}
-  .wcard-peach{background:linear-gradient(145deg,#fff4ec,#ffe8e0);border-color:var(--peach-mid);}
-  .wcard-sky{background:linear-gradient(145deg,#eef8ff,#f0eeff);border-color:var(--sky-mid);}
-  .wcard-tag{display:block;font-family:'Crimson Pro',serif;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:12px;}
-  .wcard-blush .wcard-tag{color:var(--blush-deep);}
-  .wcard-mint .wcard-tag{color:var(--mint-deep);}
-  .wcard-lilac .wcard-tag{color:var(--lilac-deep);}
-  .wcard-butter .wcard-tag{color:var(--gold);}
-  .wcard-peach .wcard-tag{color:#c06030;}
-  .wcard-sky .wcard-tag{color:#3070c0;}
-  .wcard-title{font-family:'Playfair Display',serif;font-size:1.08rem;font-style:italic;color:var(--ink);line-height:1.42;margin-bottom:13px;}
-  .wcard-body{font-family:'EB Garamond',serif;font-size:0.97rem;color:var(--muted);line-height:1.75;}
-  .wcard-deco{position:absolute;bottom:-18px;right:-18px;width:90px;height:90px;border-radius:50%;opacity:0.12;pointer-events:none;}
-  .wcard-blush .wcard-deco{background:var(--blush-deep);}
-  .wcard-mint .wcard-deco{background:var(--mint-deep);}
-  .wcard-lilac .wcard-deco{background:var(--lilac-deep);}
-  .wcard-butter .wcard-deco{background:var(--gold);}
-  .wcard-peach .wcard-deco{background:var(--peach-mid);}
-  .wcard-sky .wcard-deco{background:var(--sky-mid);}
+/* INNER HEADER */
+.inner-header { padding: 40px 56px 56px; text-align: center; }
+.inner-header .label { font-size: 10px; letter-spacing: 0.44em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; font-weight: 400; display: block; }
+.inner-header h1 { font-family: 'Fraunces', serif; font-size: clamp(48px, 8vw, 80px); font-weight: 300; font-style: italic; color: var(--navy); line-height: 0.95; margin-bottom: 14px; }
+.inner-header .tagline { font-size: 14px; font-weight: 300; color: var(--muted); font-style: italic; max-width: 500px; margin: 0 auto; line-height: 1.6; }
 
-  /* DOWNLOAD SECTION */
-  #download-section{background:linear-gradient(180deg,#f5f0ff 0%,var(--cream) 100%);}
-  .download-box{
-    border-radius:28px;padding:48px 40px;text-align:center;
-    background:linear-gradient(145deg,#fff0f7,#f0e8ff,#e8f8ff);
-    border:2px solid var(--blush-mid);position:relative;overflow:hidden;
-    box-shadow:0 8px 40px -8px rgba(200,100,200,0.18);
-  }
-  .download-box::before{content:'';position:absolute;inset:0;
-    background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(255,173,212,0.15),transparent);pointer-events:none;}
-  .download-title{font-family:'Playfair Display',serif;font-size:1.9rem;font-style:italic;color:var(--ink);margin-bottom:12px;}
-  .download-sub{font-family:'EB Garamond',serif;font-size:1.08rem;color:var(--muted);margin-bottom:32px;line-height:1.7;}
-  .download-pieces{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:36px;}
-  .piece-tag{background:linear-gradient(135deg,var(--blush),var(--lilac));border:1.5px solid var(--blush-mid);
-    border-radius:20px;padding:5px 16px;font-family:'Crimson Pro',serif;font-size:0.82rem;color:var(--lilac-deep);}
-  .download-btn{
-    display:inline-flex;align-items:center;gap:10px;
-    background:linear-gradient(135deg,var(--blush-deep),var(--lilac-deep));
-    color:#fff;border:none;border-radius:50px;padding:16px 40px;
-    font-family:'Playfair Display',serif;font-size:1.08rem;font-style:italic;
-    cursor:pointer;text-decoration:none;
-    box-shadow:0 8px 28px -4px rgba(155,89,194,0.4);
-    transition:transform 0.3s ease,box-shadow 0.3s ease;
-  }
-  .download-btn:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 14px 36px -4px rgba(155,89,194,0.5);}
-  .download-btn .btn-icon{font-size:1.3rem;animation:bob 2s ease-in-out infinite;}
-  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
-  .download-note{margin-top:16px;font-family:'Crimson Pro',serif;font-size:0.82rem;color:var(--soft);font-style:italic;}
+/* CARDS */
+.cards-wrap { max-width: 900px; margin: 0 auto; padding: 8px 48px 80px; }
+.v-stack { display: flex; flex-direction: column; gap: 16px; }
+.r-card {
+  background: var(--card-bg); border-radius: var(--radius); border: 1px solid var(--border);
+  cursor: pointer; transition: transform 0.22s ease, box-shadow 0.22s ease; overflow: hidden;
+}
+.r-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(28,42,74,0.08); }
+.r-card.no-hover { cursor: default; }
+.r-card.no-hover:hover { transform: none; box-shadow: none; }
+.r-card-inner { padding: 32px 36px; display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; }
+.r-card-left { flex: 1; }
+.r-card-tag { font-size: 9px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--rose); margin-bottom: 10px; display: block; }
+.r-card-tag.blue { color: var(--periwinkle); }
+.r-card-title { font-family: 'Fraunces', serif; font-size: 24px; font-weight: 300; font-style: italic; color: var(--navy); margin-bottom: 6px; line-height: 1.2; }
+.r-card-period { font-size: 11px; color: var(--muted); margin-bottom: 14px; display: block; letter-spacing: 0.04em; }
+.r-card-desc { font-size: 13px; font-weight: 300; color: #6A6A6A; line-height: 1.68; }
+.r-card-arrow { font-size: 18px; color: rgba(200,132,154,0.35); transition: all 0.2s; flex-shrink: 0; align-self: center; }
+.r-card:hover .r-card-arrow { color: var(--rose); transform: translateX(5px); }
+.pill-row { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 18px; }
+.pill { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); background: var(--rose-light); padding: 4px 12px; border-radius: 20px; font-weight: 400; }
+.pill.blue { background: var(--peri-light); color: var(--periwinkle); }
 
-  /* WHIMSICAL DECO SVGs */
-  .whimsy-float{position:absolute;pointer-events:none;animation:whimsy-bob ease-in-out infinite;}
-  @keyframes whimsy-bob{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-12px) rotate(5deg)}}
-  @keyframes whimsy-sway{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(8deg)}}
+/* PROJECT CARDS */
+.proj-card {
+  background: var(--card-bg); border-radius: var(--radius); border: 1px solid var(--border);
+  overflow: hidden; transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+.proj-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(28,42,74,0.08); }
+.proj-card-img { height: 180px; width: 100%; background: var(--peri-light); display: flex; align-items: center; justify-content: center; }
+.proj-card-img.rose-bg { background: #FDF0F3; }
+.proj-card-body { padding: 28px 32px 32px; }
 
-  /* SKILLS */
-  #skills{background:linear-gradient(180deg,#f5f0ff 0%,#fdf8ff 100%);}
-  .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-  .skill-card{border-radius:18px;padding:28px 22px;border:1.5px solid;text-align:center;
-    opacity:0;transform:translateY(16px);transition:opacity 0.5s ease,transform 0.5s ease;}
-  .skill-card.vis{opacity:1;transform:translateY(0);}
-  .skill-card:nth-child(1){background:linear-gradient(145deg,#fff0f7,#fce8ff);border-color:var(--blush-mid);}
-  .skill-card:nth-child(2){background:linear-gradient(145deg,#edfff7,#e4f4ff);border-color:var(--mint-mid);}
-  .skill-card:nth-child(3){background:linear-gradient(145deg,#f5eeff,#fff0fa);border-color:var(--lilac-mid);}
-  .skill-icon{font-size:2rem;margin-bottom:14px;display:block;animation:bob 3s ease-in-out infinite;}
-  .skill-card:nth-child(2) .skill-icon{animation-delay:-1s;}
-  .skill-card:nth-child(3) .skill-icon{animation-delay:-2s;}
-  .skill-card-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-style:italic;color:var(--ink);margin-bottom:14px;}
-  .skill-list{list-style:none;}
-  .skill-list li{font-family:'Crimson Pro',serif;font-size:0.93rem;color:var(--muted);padding:3px 0;line-height:1.5;}
+/* SKILLS */
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px,1fr)); gap: 14px; }
+.skill-card { background: var(--card-bg); border-radius: var(--radius); border: 1px solid var(--border); padding: 26px 22px; }
+.skill-card.blue { border-color: var(--border-b); }
+.skill-card h3 { font-size: 9px; letter-spacing: 0.34em; text-transform: uppercase; color: var(--rose); margin-bottom: 16px; font-weight: 500; }
+.skill-card.blue h3 { color: var(--periwinkle); }
+.skill-list { list-style: none; }
+.skill-list li { font-size: 13px; font-weight: 300; color: var(--text); padding: 6px 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
+.skill-list li:last-child { border-bottom: none; }
 
-  /* EDUCATION */
-  #education{background:linear-gradient(180deg,#fdf8ff 0%,var(--warm-white) 100%);}
-  .edu-row{display:flex;gap:40px;flex-wrap:wrap;margin-bottom:36px;opacity:0;transform:translateX(-18px);transition:opacity 0.55s ease,transform 0.55s ease;}
-  .edu-row.vis{opacity:1;transform:translateX(0);}
-  .edu-year{min-width:110px;font-family:'Crimson Pro',serif;font-size:0.85rem;color:var(--soft);padding-top:4px;}
-  .edu-degree{font-family:'Playfair Display',serif;font-size:1.2rem;font-style:italic;color:var(--ink);margin-bottom:5px;}
-  .edu-school{font-family:'EB Garamond',serif;font-size:1rem;color:var(--mint-deep);}
-  .lang-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px;}
-  .lang-card{flex:1;min-width:130px;text-align:center;border-radius:18px;padding:22px 16px;border:1.5px solid;transition:transform 0.3s ease;}
-  .lang-card:hover{transform:translateY(-4px);}
-  .lang-card:nth-child(1){background:linear-gradient(145deg,var(--sky),var(--lilac));border-color:var(--sky-mid);}
-  .lang-card:nth-child(2){background:linear-gradient(145deg,var(--peach),var(--blush));border-color:var(--blush-mid);}
-  .lang-card:nth-child(3){background:linear-gradient(145deg,var(--butter),var(--peach));border-color:var(--butter-mid);}
-  .lang-card:nth-child(4){background:linear-gradient(145deg,var(--mint),var(--sky));border-color:var(--mint-mid);}
-  .lang-flag{font-size:1.8rem;margin-bottom:8px;display:block;}
-  .lang-name{font-family:'Playfair Display',serif;font-size:1rem;font-style:italic;color:var(--ink);margin-bottom:3px;}
-  .lang-level{font-family:'Crimson Pro',serif;font-size:0.78rem;letter-spacing:0.1em;color:var(--muted);}
+/* EXP DETAIL */
+.exp-read { max-width: 700px; margin: 36px auto 80px; padding: 0 48px; }
+.exp-read .co-tag { font-size: 9px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--periwinkle); display: block; margin-bottom: 14px; }
+.exp-read h1 { font-family: 'Fraunces', serif; font-size: clamp(38px, 6vw, 60px); font-weight: 300; font-style: italic; color: var(--navy); margin-bottom: 8px; line-height: 1; }
+.exp-read .meta { font-size: 12px; color: var(--muted); margin-bottom: 12px; letter-spacing: 0.04em; }
+.exp-divider { width: 32px; height: 1px; background: rgba(200,132,154,0.4); margin: 28px 0 32px; }
+.exp-read p { font-size: 15px; font-weight: 300; line-height: 1.88; color: #4A4A4A; margin-bottom: 18px; }
+.exp-read em { font-style: italic; color: var(--rose); }
+.exp-read ul { margin: 12px 0 20px 0; padding: 0; list-style: none; }
+.exp-read ul li { font-size: 14px; font-weight: 300; color: #4A4A4A; line-height: 1.75; padding: 4px 0 4px 18px; position: relative; }
+.exp-read ul li::before { content: '·'; position: absolute; left: 4px; color: var(--rose); }
+.exp-read blockquote { margin: 24px 0; padding: 16px 22px; border-left: 2px solid var(--rose-light); }
+.exp-read blockquote p { font-style: italic; color: #6A6A6A; font-size: 14px; margin: 0; }
+.stack-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+.stack-pill { font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--periwinkle); border: 1px solid rgba(126,150,192,0.35); padding: 6px 14px; border-radius: 20px; }
 
-  /* FOOTER */
-  footer{background:linear-gradient(135deg,#3a2040 0%,#2a1035 50%,#1a1030 100%);color:var(--cream);text-align:center;padding:70px 24px;position:relative;overflow:hidden;}
-  footer::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(255,173,212,0.12) 0%,transparent 70%);}
-  .footer-stars{font-size:1.4rem;letter-spacing:14px;opacity:0.4;margin-bottom:20px;}
-  .footer-name{font-family:'Playfair Display',serif;font-size:2.5rem;font-style:italic;
-    background:linear-gradient(135deg,var(--blush),var(--lilac),var(--mint));
-    -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px;}
-  .footer-role{font-family:'Crimson Pro',serif;font-size:0.85rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:28px;}
-  .footer-info{font-family:'EB Garamond',serif;font-size:1rem;color:rgba(255,255,255,0.55);line-height:2;}
-  .footer-info a{color:var(--blush);text-decoration:none;}
-  .footer-bottom{margin-top:36px;font-family:'Crimson Pro',serif;font-size:0.8rem;letter-spacing:0.4em;color:rgba(255,255,255,0.2);}
+/* ABOUT FULL PAGE */
+.about-page-wrap { max-width: 1020px; margin: 0 auto; padding: 16px 56px 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: start; }
+.about-blob-wrap { position: relative; }
+.about-page-blob { width: 100%; aspect-ratio: 3/4; border-radius: 55% 45% 50% 50% / 45% 55% 45% 55%; overflow: hidden; box-shadow: 0 24px 64px rgba(28,42,74,0.1); }
+.about-page-blob img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+.about-page-ring { position: absolute; inset: -14px; border: 1px solid rgba(200,132,154,0.2); border-radius: 50% 50% 45% 55% / 55% 45% 55% 45%; pointer-events: none; }
+.about-page-text .label { font-size: 10px; letter-spacing: 0.44em; text-transform: uppercase; color: var(--rose); margin-bottom: 16px; font-weight: 400; display: block; }
+.about-page-text h2 { font-family: 'Fraunces', serif; font-size: 40px; font-weight: 300; font-style: italic; color: var(--navy); line-height: 1.05; margin-bottom: 28px; }
+.about-page-text p { font-size: 14px; font-weight: 300; line-height: 1.88; color: #5C5C5C; margin-bottom: 16px; }
 
-  /* Whimsical section deco */
-  .section-deco{position:relative;}
-  .deco-mushroom,.deco-flower,.deco-butterfly,.deco-moon,.deco-star-cluster,.deco-teacup,.deco-bee,.deco-leaf{
-    position:absolute;pointer-events:none;z-index:1;}
-
-  @media(max-width:700px){
-    nav{padding:14px 18px;}.nav-links{gap:14px;}
-    .about-grid{grid-template-columns:1fr;}.writing-grid{grid-template-columns:1fr;}
-    .skills-grid{grid-template-columns:1fr 1fr;}.exp-item{grid-template-columns:1fr;gap:6px;}
-    .download-box{padding:32px 20px;}
-  }
+/* RESPONSIVE */
+@media (max-width: 860px) {
+  nav { padding: 0 28px; }
+  .nav-links { gap: 20px; }
+  .nav-links a { font-size: 10px; letter-spacing: 0.09em; }
+  .about-strip { grid-template-columns: 1fr; gap: 44px; padding: 70px 28px; }
+  .photo-blob { width: 260px; height: 318px; }
+  .photo-ring { width: 292px; height: 352px; left: calc(50% - 146px); }
+  .back-bar { padding: 10px 28px; }
+  .inner-header { padding-left: 28px; padding-right: 28px; }
+  .cards-wrap { padding: 8px 24px 64px; }
+  .about-page-wrap { grid-template-columns: 1fr; gap: 40px; padding: 16px 28px 64px; }
+  .about-page-blob { width: 72%; margin: 0 auto; }
+  footer { padding: 32px 28px; }
+  .exp-read { padding: 0 28px; }
+}
+@media (max-width: 560px) {
+  nav { padding: 0 18px; }
+  .nav-links { gap: 14px; }
+  .nav-links a { font-size: 9.5px; letter-spacing: 0.07em; }
+  .hero-name { font-size: 52px; }
+  .sec-title { font-size: 36px; }
+  .skills-grid { grid-template-columns: 1fr 1fr; }
+  .jars-grid { gap: 22px 14px; }
+  .r-card-inner { flex-direction: column; gap: 12px; }
+  .back-bar { padding: 10px 18px; }
+}
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">✨ Bhavya Malik</div>
+  <a class="nav-brand" onclick="showPage('home')">Bhavya Malik</a>
   <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#writing">Writing</a></li>
-    <li><a href="#samples">Samples</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#education">Education</a></li>
+    <li><a onclick="navTo('home')">Home</a></li>
+    <li><a onclick="navTo('experiences')">Experience</a></li>
+    <li><a onclick="navTo('projects')">Projects</a></li>
+    <li><a onclick="navTo('skills')">Skills</a></li>
+    <li><a onclick="navTo('about')">About</a></li>
   </ul>
 </nav>
 
-<!-- HERO -->
-<section id="hero">
-  <div class="blob blob-1"></div>
-  <div class="blob blob-2"></div>
-  <div class="blob blob-3"></div>
-  <div class="blob blob-4"></div>
+<!-- STICKY BACK BAR — lives outside pages, always in DOM -->
+<div class="back-bar" id="sticky-back-bar">
+  <button class="back-btn" id="back-btn-el" onclick="goBack()">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+    Back
+  </button>
+</div>
 
-  <!-- Whimsical hero decorations -->
-  <svg style="position:absolute;top:90px;left:40px;opacity:0.55;animation:whimsy-bob 5s ease-in-out infinite;" width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <!-- mushroom -->
-    <ellipse cx="35" cy="45" rx="14" ry="18" fill="#ffd6e7" stroke="#e87fbf" stroke-width="1.5"/>
-    <path d="M21 42 Q35 10 49 42" fill="#ffadd4" stroke="#e87fbf" stroke-width="1.5"/>
-    <circle cx="28" cy="32" r="3" fill="#fff" opacity="0.7"/>
-    <circle cx="38" cy="27" r="4" fill="#fff" opacity="0.7"/>
-    <circle cx="44" cy="36" r="2.5" fill="#fff" opacity="0.7"/>
-    <line x1="35" y1="58" x2="35" y2="65" stroke="#e87fbf" stroke-width="1.5"/>
-  </svg>
-
-  <svg style="position:absolute;top:120px;right:60px;opacity:0.5;animation:whimsy-bob 7s ease-in-out infinite;animation-delay:-2s;" width="60" height="60" viewBox="0 0 60 60" fill="none">
-    <!-- moon with stars -->
-    <path d="M38 10 Q52 20 48 38 Q36 50 22 44 Q32 40 36 28 Q40 18 38 10Z" fill="#e8d5ff" stroke="#cc99ff" stroke-width="1.5"/>
-    <circle cx="14" cy="15" r="2" fill="#ffd966"/>
-    <path d="M8 8 L9 12 L13 13 L9 14 L8 18 L7 14 L3 13 L7 12 Z" fill="#ffd966" opacity="0.8"/>
-    <circle cx="52" cy="42" r="1.5" fill="#ffd966" opacity="0.7"/>
-  </svg>
-
-  <svg style="position:absolute;bottom:120px;left:80px;opacity:0.45;animation:whimsy-sway 6s ease-in-out infinite;" width="55" height="70" viewBox="0 0 55 70" fill="none">
-    <!-- flower on stem -->
-    <line x1="27" y1="35" x2="27" y2="68" stroke="#7ddeb5" stroke-width="2.5"/>
-    <path d="M27 12 Q19 5 15 13 Q9 8 12 17 Q6 18 9 25 Q6 32 14 31 Q15 40 24 36 Q27 42 30 36 Q38 40 40 31 Q48 32 45 25 Q48 18 42 17 Q45 8 39 13 Q35 5 27 12Z" fill="#ffadd4" stroke="#e87fbf" stroke-width="1.2"/>
-    <circle cx="27" cy="23" r="7" fill="#fff3c2" stroke="#ffd966" stroke-width="1.2"/>
-    <circle cx="27" cy="23" r="3" fill="#ffd966"/>
-    <path d="M14 60 Q27 50 40 62" stroke="#7ddeb5" stroke-width="1.8" fill="none"/>
-  </svg>
-
-  <svg style="position:absolute;bottom:140px;right:90px;opacity:0.5;animation:whimsy-bob 8s ease-in-out infinite;animation-delay:-4s;" width="65" height="50" viewBox="0 0 65 50" fill="none">
-    <!-- butterfly -->
-    <path d="M32 25 Q20 8 8 14 Q2 22 14 28 Q22 32 32 25Z" fill="#cc99ff" stroke="#9b59c2" stroke-width="1.2" opacity="0.8"/>
-    <path d="M33 25 Q45 8 57 14 Q63 22 51 28 Q43 32 33 25Z" fill="#ffadd4" stroke="#e87fbf" stroke-width="1.2" opacity="0.8"/>
-    <path d="M32 25 Q18 30 12 42 Q20 44 28 32 Q30 28 32 25Z" fill="#e8d5ff" stroke="#cc99ff" stroke-width="1" opacity="0.9"/>
-    <path d="M33 25 Q47 30 53 42 Q45 44 37 32 Q35 28 33 25Z" fill="#c8f5e0" stroke="#7ddeb5" stroke-width="1" opacity="0.9"/>
-    <circle cx="32" cy="25" r="3" fill="#3a2040"/>
-    <path d="M32 22 Q28 15 24 12" stroke="#3a2040" stroke-width="1.2" fill="none"/>
-    <path d="M33 22 Q37 15 41 12" stroke="#3a2040" stroke-width="1.2" fill="none"/>
-    <circle cx="24" cy="12" r="1.5" fill="#3a2040"/>
-    <circle cx="41" cy="12" r="1.5" fill="#3a2040"/>
-  </svg>
-
-  <div class="hero-badge">
-    <span class="hero-star">✦</span>
-    Editorial Portfolio
-    <span class="hero-star" style="animation-direction:reverse">✦</span>
-  </div>
-  <h1 class="hero-name">Bha<span class="em">vya</span><br>Malik</h1>
-  <p class="hero-sub">Writer · Editor · BCA Student<br><em>Storytelling where the digital meets the dreamed 🌸</em></p>
-  <div class="hero-divider"></div>
-  <div class="hero-contact">
-    <a href="mailto:bhavyamalik252007@gmail.com">bhavyamalik252007@gmail.com</a>
-    <span class="dot">·</span>
-    <span>(+91) 98688 76890</span>
-    <span class="dot">·</span>
-    <span>Delhi, India 🌿</span>
-  </div>
-  <div class="hero-langs">
-    <span class="lang-pill">🇬🇧 English — Fluent</span>
-    <span class="lang-pill">🇮🇳 Hindi — Fluent</span>
-    <span class="lang-pill">🇪🇸 Spanish — Conversational</span>
-    <span class="lang-pill">🇫🇷 French — Elementary</span>
-  </div>
-  <div class="scroll-cue">
-    <span>scroll</span>
-    <div class="scroll-cue-line"></div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about" style="position:relative;overflow:hidden;">
-  <!-- floating bee decoration -->
-  <svg style="position:absolute;top:40px;right:5%;opacity:0.5;animation:whimsy-bob 6s ease-in-out infinite;z-index:1;" width="50" height="45" viewBox="0 0 50 45" fill="none">
-    <ellipse cx="25" cy="28" rx="12" ry="9" fill="#ffd966" stroke="#e5b84a" stroke-width="1.5"/>
-    <line x1="15" y1="26" x2="35" y2="26" stroke="#3a2040" stroke-width="1.5"/>
-    <line x1="13" y1="30" x2="37" y2="30" stroke="#3a2040" stroke-width="1.5"/>
-    <line x1="15" y1="34" x2="35" y2="34" stroke="#3a2040" stroke-width="1"/>
-    <ellipse cx="25" cy="18" rx="7" ry="5" fill="#3a2040"/>
-    <circle cx="22" cy="16" r="1.5" fill="white"/>
-    <circle cx="28" cy="16" r="1.5" fill="white"/>
-    <path d="M18 20 Q10 10 8 5" stroke="#cc99ff" stroke-width="1.5" fill="none" opacity="0.8"/>
-    <path d="M32 20 Q40 10 42 5" stroke="#cc99ff" stroke-width="1.5" fill="none" opacity="0.8"/>
-    <ellipse cx="9" cy="4" rx="6" ry="3" fill="#d0eeff" stroke="#88ccff" stroke-width="1" opacity="0.7" transform="rotate(-20 9 4)"/>
-    <ellipse cx="41" cy="4" rx="6" ry="3" fill="#d0eeff" stroke="#88ccff" stroke-width="1" opacity="0.7" transform="rotate(20 41 4)"/>
-  </svg>
-
-  <!-- small stars scattered -->
-  <svg style="position:absolute;bottom:60px;left:3%;opacity:0.4;animation:spin-star-slow 10s linear infinite;z-index:1;" width="40" height="40" viewBox="0 0 40 40" fill="none">
-    <path d="M20 2 L22 16 L36 20 L22 24 L20 38 L18 24 L4 20 L18 16 Z" fill="#cc99ff"/>
-    <path d="M20 8 L21 16 L28 20 L21 24 L20 32 L19 24 L12 20 L19 16 Z" fill="#e8d5ff"/>
-  </svg>
-
-  <div class="section-inner">
-    <div class="sec-label">
-      <div class="sec-line left"></div>
-      <span class="sec-tag">🌸 Who I Am</span>
-      <div class="sec-line right"></div>
-    </div>
-    <h2 class="sec-title">A reader first.<br><span class="p">A writer</span> by necessity.</h2>
-    <div class="about-grid">
-      <div class="about-text">
-        <p>Beyond writing code, I have been an <strong>avid reader since the 4th grade</strong> — someone who grew up dog-earing paperbacks and writing in margins long before I knew what an editorial process was.</p>
-        <p>I write compulsively: essays, cultural commentary, personal pieces rooted in place and identity. I am drawn to storytelling that lives at the intersection of the digital and the dreamed — the niche, the whimsical, the deeply felt.</p>
-        <p>Currently pursuing a <strong>Bachelor of Computer Applications</strong> at JCC | JIMS Delhi, I bring an unusual combination of technical literacy and literary sensibility to every piece I touch.</p>
-      </div>
-      <div>
-        <div class="card card-blush">
-          <div class="card-label">Currently Studying 📚</div>
-          <div class="card-body">Bachelor of Computer Applications<br><em style="color:var(--muted);font-size:0.95rem">JCC | JIMS · 2025–2028</em></div>
-        </div>
-        <div class="card card-mint">
-          <div class="card-label">What I Love 🌿</div>
-          <div class="card-body">Literary fiction · Cultural essays · Internet aesthetics · Zine culture · Cottagecore · Slow mornings</div>
-        </div>
-        <div class="card card-butter">
-          <div class="card-label">My Tools ✨</div>
-          <div class="card-body">Google Suite · Microsoft Office · WordPress · CMS platforms · Social media copy</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- EXPERIENCE -->
-<section id="experience" style="position:relative;overflow:hidden;">
-  <!-- teacup deco -->
-  <svg style="position:absolute;top:50px;right:4%;opacity:0.45;animation:whimsy-bob 7s ease-in-out infinite;z-index:1;" width="60" height="55" viewBox="0 0 60 55" fill="none">
-    <path d="M8 20 Q10 42 30 44 Q50 42 52 20 Z" fill="#fff3c2" stroke="#ffd966" stroke-width="1.5"/>
-    <path d="M8 20 L52 20" stroke="#e5b84a" stroke-width="1.5"/>
-    <path d="M12 20 L10 15 L50 15 L48 20" fill="#fffbe6" stroke="#ffd966" stroke-width="1.2"/>
-    <path d="M52 25 Q60 22 60 30 Q60 38 52 35" stroke="#ffd966" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-    <path d="M5 44 Q30 48 55 44" stroke="#e5b84a" stroke-width="1.5" fill="none"/>
-    <path d="M20 15 Q24 5 30 8 Q36 5 40 15" fill="#c8f5e0" stroke="#7ddeb5" stroke-width="1" opacity="0.7"/>
-    <path d="M22 22 Q26 30 30 26 Q34 30 38 22" stroke="#ffd966" stroke-width="1" fill="none" opacity="0.5"/>
-  </svg>
-
-  <!-- tiny leaf cluster -->
-  <svg style="position:absolute;bottom:80px;left:2%;opacity:0.4;z-index:1;" width="55" height="55" viewBox="0 0 55 55" fill="none">
-    <path d="M10 45 Q5 20 25 15 Q20 32 10 45Z" fill="#c8f5e0" stroke="#7ddeb5" stroke-width="1.2"/>
-    <path d="M20 48 Q15 22 38 18 Q30 36 20 48Z" fill="#7ddeb5" stroke="#3aad80" stroke-width="1.2" opacity="0.8"/>
-    <path d="M30 50 Q25 28 45 22 Q40 40 30 50Z" fill="#c8f5e0" stroke="#7ddeb5" stroke-width="1.2" opacity="0.9"/>
-    <line x1="20" y1="48" x2="23" y2="55" stroke="#3aad80" stroke-width="1.5"/>
-  </svg>
-
-  <div class="section-inner">
-    <div class="sec-label">
-      <div class="sec-line left"></div>
-      <span class="sec-tag">💼 Experience</span>
-      <div class="sec-line right"></div>
-    </div>
-    <h2 class="sec-title">What I've <span class="g">done.</span></h2>
-
-    <div class="exp-item">
-      <div class="exp-meta">
-        <span class="exp-year">2025 – Present</span>
-        <div class="exp-org">Jagannath Community College<br>Literary Society · Delhi</div>
-      </div>
-      <div>
-        <div class="exp-badge badge-college">College ✦</div>
-        <div class="exp-role">Campus Literary Editor — The Quill</div>
-        <ul class="exp-bullets">
-          <li>Edited fiction and non-fiction submissions for the college's annual literary journal, coordinating with 12+ student writers.</li>
-          <li>Pitched and wrote three long-form cultural essays driving a 40% increase in digital readership on the society's blog.</li>
-          <li>Led image sourcing, article formatting, and social copy drafting for the journal's Instagram, growing followers by 300+.</li>
-          <li>Moderated monthly open-mic events and compiled event reports published across college platforms.</li>
-        </ul>
-      </div>
-    </div>
-    <div class="exp-divider"></div>
-
-    <div class="exp-item">
-      <div class="exp-meta">
-        <span class="exp-year">2025 – Present</span>
-        <div class="exp-org">JCC Media &amp; Communication Club · Delhi</div>
-      </div>
-      <div>
-        <div class="exp-badge badge-college">College ✦</div>
-        <div class="exp-role">Content Writer &amp; Social Media Contributor — Pixel Press</div>
-        <ul class="exp-bullets">
-          <li>Pitched weekly article ideas covering campus culture, internet trends, and student life — 80% pitch acceptance rate.</li>
-          <li>Drafted and formatted online pieces using Google Docs and CMS tools, following AP-style editorial guidelines.</li>
-          <li>Covered inter-college fest events, producing same-day reports and social media write-ups.</li>
-          <li>Collaborated with the design team on image sourcing and visual content for published articles.</li>
-        </ul>
-      </div>
-    </div>
-    <div class="exp-divider"></div>
-
-    <div class="exp-item">
-      <div class="exp-meta">
-        <span class="exp-year">2023 – 2025</span>
-        <div class="exp-org">Sachdeva Public School · Delhi</div>
-      </div>
-      <div>
-        <div class="exp-badge badge-school">School 🌿</div>
-        <div class="exp-role">Editor-in-Chief — Inkwell Literary Magazine</div>
-        <ul class="exp-bullets">
-          <li>Founded and led the school's first student-run literary magazine, managing a team of 8 writers and designers.</li>
-          <li>Curated, edited, and published 40+ student submissions per issue across poetry, fiction, opinion, and reportage.</li>
-          <li>Designed submission guidelines and established the magazine's editorial voice, tone, and aesthetic identity.</li>
-          <li>Attended and reported on school cultural events; pieces archived in the school's annual record.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- WRITING SAMPLES OVERVIEW -->
-<section id="writing" style="position:relative;overflow:hidden;">
-  <!-- crescent moon deco -->
-  <svg style="position:absolute;top:30px;left:3%;opacity:0.4;animation:whimsy-bob 9s ease-in-out infinite;z-index:1;" width="50" height="55" viewBox="0 0 50 55" fill="none">
-    <path d="M30 5 Q46 15 44 33 Q42 50 26 52 Q38 46 40 32 Q42 18 30 5Z" fill="#e8d5ff" stroke="#cc99ff" stroke-width="1.5"/>
-    <circle cx="12" cy="18" r="2.5" fill="#ffd966" opacity="0.8"/>
-    <circle cx="20" cy="8" r="1.5" fill="#ffd966" opacity="0.6"/>
-    <circle cx="6" cy="32" r="2" fill="#ffd966" opacity="0.5"/>
-  </svg>
-
-  <!-- small mushroom cluster on right -->
-  <svg style="position:absolute;bottom:40px;right:2%;opacity:0.4;z-index:1;" width="70" height="60" viewBox="0 0 70 60" fill="none">
-    <ellipse cx="20" cy="42" rx="9" ry="12" fill="#ffd6e7" stroke="#e87fbf" stroke-width="1.2"/>
-    <path d="M11 39 Q20 14 29 39" fill="#ffadd4" stroke="#e87fbf" stroke-width="1.2"/>
-    <circle cx="16" cy="27" r="2" fill="#fff" opacity="0.7"/>
-    <circle cx="22" cy="22" r="2.5" fill="#fff" opacity="0.7"/>
-    <ellipse cx="50" cy="46" rx="11" ry="9" fill="#c8f5e0" stroke="#7ddeb5" stroke-width="1.2"/>
-    <path d="M39 43 Q50 20 61 43" fill="#7ddeb5" stroke="#3aad80" stroke-width="1.2" opacity="0.9"/>
-    <circle cx="45" cy="32" r="2" fill="#fff" opacity="0.7"/>
-    <circle cx="52" cy="27" r="2.5" fill="#fff" opacity="0.7"/>
-  </svg>
-
-  <div class="section-inner">
-    <div class="sec-label">
-      <div class="sec-line left"></div>
-      <span class="sec-tag">🖊️ Writing Samples</span>
-      <div class="sec-line right"></div>
-    </div>
-    <h2 class="sec-title">The work that <span class="p">matters.</span></h2>
-    <p style="font-family:'EB Garamond',serif;color:var(--muted);font-size:1.05rem;margin-bottom:44px;font-style:italic;">Four pieces crafted for Dreamworldgirl Zine, plus selected literary essays. ✨</p>
-    <div class="writing-grid">
-      <div class="wcard wcard-blush">
-        <div class="wcard-deco"></div>
-        <span class="wcard-tag">✦ DWG · Cultural Essay</span>
-        <div class="wcard-title">On Cottagecore and the Art of Wanting a Slower Life</div>
-        <p class="wcard-body">Why does the internet keep returning to dewy gardens and bread rising in linen-covered bowls? This essay explores cottagecore not as trend but as collective exhale — the digital generation's most tender act of longing for a pace of life they've never actually lived.</p>
-      </div>
-      <div class="wcard wcard-mint">
-        <div class="wcard-deco"></div>
-        <span class="wcard-tag">✦ DWG · Personal Essay</span>
-        <div class="wcard-title">Every Book I've Ever Loved Has Ruined Me (A Love Letter)</div>
-        <p class="wcard-body">A zine-style love letter to the specific devastation of a perfect book. With a ranking of personal offenders, unsolicited opinions on reading culture, and a deeply sincere apology to Dostoevsky.</p>
-      </div>
-      <div class="wcard wcard-lilac">
-        <div class="wcard-deco"></div>
-        <span class="wcard-tag">✦ DWG · Cultural Commentary</span>
-        <div class="wcard-title">We Were Girls on the Internet: A Field Guide to Growing Up Online</div>
-        <p class="wcard-body">On growing up on Web 2.0 — the aesthetic language we invented for ourselves on Tumblr and DeviantArt, what it meant to be a girl with a URL before we had a self, and why we're still not over it.</p>
-      </div>
-      <div class="wcard wcard-butter">
-        <div class="wcard-deco"></div>
-        <span class="wcard-tag">✦ DWG · Personal Essay</span>
-        <div class="wcard-title">The Girl Who Pressed Flowers and Other Things I Romanticise About Myself</div>
-        <p class="wcard-body">An honest, gently funny essay on the gap between the person you imagine you are (journalling by candlelight, pressing wildflowers) and the person you actually are — and why the fantasy might be worth keeping anyway.</p>
-      </div>
-      <div class="wcard wcard-peach">
-        <div class="wcard-deco"></div>
-        <span class="wcard-tag">✦ Luxury Literature · Essay</span>
-        <div class="wcard-title">The Quiet Luxury of Solitude</div>
-        <p class="wcard-body">On the particular richness of an unobserved hour — the confusion between loneliness and solitude, and why the most radical thing you can do in a world that monetises attention is simply be alone and be entirely fine with it.</p>
-      </div>
-      <div class="wcard wcard-sky">
-        <div class="wcard-deco"></div>
-        <span class="wcard-tag">✦ Luxury Literature · Essay</span>
-        <div class="wcard-title">On Growing Up Bilingual</div>
-        <p class="wcard-body">Thinking in two languages simultaneously — Hindi for anger and affection, English for thinking about thinking. On the harmonics monolinguals miss, and the self that exists in the other room, speaking differently, meaning the same things.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- DOWNLOAD / WRITING SAMPLES EMBED -->
-<section id="samples" style="position:relative;overflow:hidden;">
-  <!-- sparkle stars deco -->
-  <svg style="position:absolute;top:20px;right:6%;opacity:0.5;animation:whimsy-bob 5s ease-in-out infinite;z-index:1;" width="80" height="80" viewBox="0 0 80 80" fill="none">
-    <path d="M40 4 L43 32 L72 40 L43 48 L40 76 L37 48 L8 40 L37 32 Z" fill="#ffd966" stroke="#e5b84a" stroke-width="1.2" opacity="0.6"/>
-    <path d="M20 10 L21.5 20 L32 22 L21.5 24 L20 34 L18.5 24 L8 22 L18.5 20 Z" fill="#cc99ff" stroke="#9b59c2" stroke-width="1" opacity="0.7"/>
-    <circle cx="62" cy="15" r="3" fill="#ffadd4" opacity="0.8"/>
-    <path d="M65 55 L66 60 L71 62 L66 64 L65 69 L64 64 L59 62 L64 60 Z" fill="#7ddeb5" stroke="#3aad80" stroke-width="0.8" opacity="0.7"/>
-  </svg>
-
-  <!-- pressed flower illustration -->
-  <svg style="position:absolute;bottom:30px;left:4%;opacity:0.42;z-index:1;" width="80" height="90" viewBox="0 0 80 90" fill="none">
-    <line x1="40" y1="20" x2="40" y2="88" stroke="#3aad80" stroke-width="2.5"/>
-    <path d="M40 20 Q30 8 18 12 Q26 22 40 20Z" fill="#c8f5e0" stroke="#7ddeb5" stroke-width="1.2"/>
-    <path d="M40 30 Q52 18 62 24 Q52 34 40 30Z" fill="#7ddeb5" stroke="#3aad80" stroke-width="1.2"/>
-    <path d="M40 20 Q26 5 20 14" stroke="#3aad80" stroke-width="1" fill="none" opacity="0.4"/>
-    <!-- flower bloom -->
-    <circle cx="40" cy="12" r="10" fill="#ffd6e7" stroke="#e87fbf" stroke-width="1.2"/>
-    <circle cx="40" cy="12" r="5" fill="#fff3c2" stroke="#ffd966" stroke-width="1"/>
-    <circle cx="40" cy="12" r="2.5" fill="#ffd966"/>
-    <ellipse cx="32" cy="8" rx="4" ry="2.5" fill="#ffadd4" opacity="0.8" transform="rotate(-45 32 8)"/>
-    <ellipse cx="48" cy="8" rx="4" ry="2.5" fill="#ffadd4" opacity="0.8" transform="rotate(45 48 8)"/>
-    <ellipse cx="32" cy="16" rx="4" ry="2.5" fill="#ffadd4" opacity="0.8" transform="rotate(45 32 16)"/>
-    <ellipse cx="48" cy="16" rx="4" ry="2.5" fill="#ffadd4" opacity="0.8" transform="rotate(-45 48 16)"/>
-  </svg>
-
-  <div class="section-inner">
-    <div class="sec-label">
-      <div class="sec-line left"></div>
-      <span class="sec-tag">📄 Full Writing Samples</span>
-      <div class="sec-line right"></div>
-    </div>
-    <h2 class="sec-title">Read &amp; <span class="p">download.</span></h2>
-
-    <div class="download-box">
-      <!-- tiny butterflies inside box -->
-      <svg style="position:absolute;top:16px;left:20px;opacity:0.35;" width="32" height="25" viewBox="0 0 32 25" fill="none">
-        <path d="M16 12 Q10 4 4 7 Q1 11 7 14 Q11 16 16 12Z" fill="#cc99ff"/>
-        <path d="M16 12 Q22 4 28 7 Q31 11 25 14 Q21 16 16 12Z" fill="#ffadd4"/>
-        <path d="M16 12 Q9 15 6 21 Q10 22 14 16Z" fill="#e8d5ff"/>
-        <path d="M16 12 Q23 15 26 21 Q22 22 18 16Z" fill="#c8f5e0"/>
-        <circle cx="16" cy="12" r="1.5" fill="#3a2040"/>
+<!-- ═══ HOME ═══ -->
+<div class="page active" id="page-home">
+  <section class="hero">
+    <div class="hero-bg">
+      <!-- background image set via CSS, ::after veil keeps text legible -->
+        
+        <path d="M30 660 Q110 540 150 420 Q190 310 155 200" stroke="#CCA8B8" stroke-width="1.2" fill="none" opacity="0.2"/>
+        <path d="M95 480 Q40 430 18 350" stroke="#CCA8B8" stroke-width="1" fill="none" opacity="0.25"/>
+        <ellipse cx="46" cy="365" rx="17" ry="8" fill="#D4B4C4" opacity="0.28" transform="rotate(-32 46 365)"/>
+        <ellipse cx="82" cy="330" rx="15" ry="7" fill="#D4B4C4" opacity="0.22" transform="rotate(-52 82 330)"/>
+        <ellipse cx="138" cy="278" rx="19" ry="8" fill="#D4B4C4" opacity="0.25" transform="rotate(-18 138 278)"/>
+        <g transform="translate(155,155) scale(1.05)" opacity="0.52">
+          <ellipse cx="0" cy="0" rx="27" ry="19" fill="#F0C0CA" transform="rotate(-18)"/>
+          <ellipse cx="0" cy="0" rx="22" ry="16" fill="#EBB0BC" transform="rotate(24)"/>
+          <ellipse cx="0" cy="0" rx="18" ry="13" fill="#E49CAA" transform="rotate(-44)"/>
+          <ellipse cx="0" cy="0" rx="13" ry="10" fill="#DC8898" transform="rotate(9)"/>
+          <ellipse cx="0" cy="0" rx="8" ry="6" fill="#D07286" transform="rotate(-58)"/>
+          <circle cx="0" cy="0" r="4" fill="#C46078"/>
+        </g>
+        <g transform="translate(88,292)" opacity="0.38">
+          <ellipse cx="0" cy="0" rx="8" ry="12" fill="#F0C0CA"/>
+          <ellipse cx="0" cy="0" rx="6" ry="9" fill="#EBB0BC"/>
+        </g>
+        <g transform="translate(48,210) scale(0.65)" opacity="0.34">
+          <ellipse cx="0" cy="0" rx="21" ry="15" fill="#F0C0CA" transform="rotate(13)"/>
+          <ellipse cx="0" cy="0" rx="15" ry="11" fill="#EBB0BC" transform="rotate(-28)"/>
+          <ellipse cx="0" cy="0" rx="10" ry="7" fill="#E49CAA" transform="rotate(48)"/>
+          <circle cx="0" cy="0" r="4" fill="#D07286"/>
+        </g>
+        <path d="M-30 780 Q100 730 220 710 Q360 690 430 750" stroke="#CCA8B8" stroke-width="1.8" fill="none" opacity="0.22"/>
+        <g transform="translate(78,738) scale(0.8)" opacity="0.4">
+          <ellipse cx="0" cy="0" rx="21" ry="15" fill="#F0C0CA" transform="rotate(-8)"/>
+          <ellipse cx="0" cy="0" rx="15" ry="11" fill="#EBB0BC" transform="rotate(33)"/>
+          <ellipse cx="0" cy="0" rx="10" ry="7" fill="#E49CAA" transform="rotate(-52)"/>
+          <circle cx="0" cy="0" r="3.5" fill="#D07286"/>
+        </g>
+        <path d="M1460 660 Q1330 520 1250 380 Q1170 240 1255 80" stroke="#CCA8B8" stroke-width="2" fill="none" opacity="0.3"/>
+        <path d="M1410 620 Q1330 500 1290 390 Q1250 280 1278 180" stroke="#CCA8B8" stroke-width="1.2" fill="none" opacity="0.2"/>
+        <path d="M1355 460 Q1415 400 1438 320" stroke="#CCA8B8" stroke-width="1" fill="none" opacity="0.24"/>
+        <ellipse cx="1374" cy="350" rx="17" ry="8" fill="#D4B4C4" opacity="0.28" transform="rotate(32 1374 350)"/>
+        <ellipse cx="1336" cy="300" rx="15" ry="7" fill="#D4B4C4" opacity="0.22" transform="rotate(54 1336 300)"/>
+        <ellipse cx="1278" cy="262" rx="19" ry="8" fill="#D4B4C4" opacity="0.25" transform="rotate(20 1278 262)"/>
+        <g transform="translate(1265,150) scale(1.05)" opacity="0.52">
+          <ellipse cx="0" cy="0" rx="27" ry="19" fill="#F0C0CA" transform="rotate(19)"/>
+          <ellipse cx="0" cy="0" rx="22" ry="16" fill="#EBB0BC" transform="rotate(-24)"/>
+          <ellipse cx="0" cy="0" rx="18" ry="13" fill="#E49CAA" transform="rotate(44)"/>
+          <ellipse cx="0" cy="0" rx="13" ry="10" fill="#DC8898" transform="rotate(-9)"/>
+          <ellipse cx="0" cy="0" rx="8" ry="6" fill="#D07286" transform="rotate(58)"/>
+          <circle cx="0" cy="0" r="4" fill="#C46078"/>
+        </g>
+        <g transform="translate(1335,292)" opacity="0.38">
+          <ellipse cx="0" cy="0" rx="8" ry="12" fill="#F0C0CA"/>
+          <ellipse cx="0" cy="0" rx="6" ry="9" fill="#EBB0BC"/>
+        </g>
+        <g transform="translate(1384,195) scale(0.68)" opacity="0.36">
+          <ellipse cx="0" cy="0" rx="21" ry="15" fill="#F0C0CA" transform="rotate(-13)"/>
+          <ellipse cx="0" cy="0" rx="15" ry="11" fill="#EBB0BC" transform="rotate(28)"/>
+          <ellipse cx="0" cy="0" rx="10" ry="7" fill="#E49CAA" transform="rotate(-48)"/>
+          <circle cx="0" cy="0" r="4" fill="#D07286"/>
+        </g>
+        <path d="M1470 790 Q1360 740 1220 720 Q1080 700 1020 760" stroke="#CCA8B8" stroke-width="1.8" fill="none" opacity="0.22"/>
+        <g transform="translate(1355,748) scale(0.8)" opacity="0.4">
+          <ellipse cx="0" cy="0" rx="21" ry="15" fill="#F0C0CA" transform="rotate(9)"/>
+          <ellipse cx="0" cy="0" rx="15" ry="11" fill="#EBB0BC" transform="rotate(-33)"/>
+          <ellipse cx="0" cy="0" rx="10" ry="7" fill="#E49CAA" transform="rotate(52)"/>
+          <circle cx="0" cy="0" r="3.5" fill="#D07286"/>
+        </g>
       </svg>
-      <svg style="position:absolute;top:20px;right:24px;opacity:0.3;" width="28" height="22" viewBox="0 0 28 22" fill="none">
-        <path d="M14 11 Q8 3 3 6 Q0 10 6 13 Q10 15 14 11Z" fill="#ffd966"/>
-        <path d="M14 11 Q20 3 25 6 Q28 10 22 13 Q18 15 14 11Z" fill="#7ddeb5"/>
-        <circle cx="14" cy="11" r="1.5" fill="#3a2040"/>
-      </svg>
+    </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Portfolio</p>
+      <h1 class="hero-name">Bhavya Malik</h1>
+      <p class="hero-sub">Building at the intersection of product, technology, and strategy — interested in how ideas become systems, and systems become experiences people actually use.</p>
+    </div>
+    <div class="hero-scroll" onclick="document.getElementById('about-anchor').scrollIntoView({behavior:'smooth'})">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
 
-      <div class="download-title">✦ Luxury Literature · Writing Samples</div>
-      <div class="download-sub">Five complete essays submitted to Luxury Literature Magazine.<br>Fully available to read, share, and download — no login required.</div>
-      <div class="download-pieces">
-        <span class="piece-tag">🕯️ The Quiet Luxury of Solitude</span>
-        <span class="piece-tag">💳 What Are We Really Buying?</span>
-        <span class="piece-tag">📖 In Defence of the Difficult Book</span>
-        <span class="piece-tag">🌿 The Aesthetics of Decay</span>
-        <span class="piece-tag">🗣️ On Growing Up Bilingual</span>
+  <div id="about-anchor"></div>
+  <section class="about-strip">
+    <div class="photo-wrap">
+      <div class="photo-blob">
+        <img src="assets/bhavyamalik_image.jpeg" alt="Bhavya Malik" />
       </div>
-      <a class="download-btn" id="downloadBtn" href="#" download="bhavya_malik_writing_samples.pdf">
-        <span class="btn-icon">📄</span>
-        Download Writing Samples PDF
+      <div class="photo-ring"></div>
+    </div>
+    <div class="about-text">
+      <span class="label">About Me</span>
+      <h2>A product-minded technologist.</h2>
+      <p>I'm a Bachelor of Computer Applications student interested in product, technology, and the systems behind how digital experiences are built, scaled, and improved.</p>
+      <p>My interests started with design, but gradually expanded into product thinking, strategy, and understanding why certain ideas work while others don't.</p>
+      <p>Right now, I'm exploring that intersection through international collaborations, product work, and learning by building.</p>
+      <span class="about-cta" onclick="navTo('about')">Read more →</span>
+    </div>
+  </section>
+
+  <section class="jars-section">
+    <span class="sec-label">Pick a jar, start exploring</span>
+    <h2 class="sec-title">Choose Your Formula</h2>
+    <p class="sec-desc">Each jar holds a different dimension of my work, shaped through curiosity, collaboration, and building.</p>
+    <div class="jars-grid">
+
+      <div class="jar-item" onclick="navTo('experiences')">
+        <div class="jar-svg-wrap">
+          <svg width="78" height="94" viewBox="0 0 78 94" fill="none">
+            <rect x="17" y="7" width="44" height="9" rx="4.5" fill="#C8849A" stroke="#B0708A" stroke-width="1.3"/>
+            <rect x="25" y="1" width="28" height="8" rx="4" fill="#C8849A" stroke="#B0708A" stroke-width="1.1"/>
+            <rect x="7" y="16" width="64" height="70" rx="10" fill="#F5DCE4" stroke="#C8849A" stroke-width="1.3"/>
+            <rect x="15" y="27" width="48" height="34" rx="3" fill="rgba(255,255,255,0.55)" stroke="#C8849A" stroke-width="0.7"/>
+            <line x1="22" y1="37" x2="56" y2="37" stroke="#C8849A" stroke-width="0.6" stroke-dasharray="3 2"/>
+            <line x1="22" y1="45" x2="49" y2="45" stroke="#C8849A" stroke-width="0.6" stroke-dasharray="3 2"/>
+            <line x1="22" y1="53" x2="52" y2="53" stroke="#C8849A" stroke-width="0.6" stroke-dasharray="3 2"/>
+          </svg>
+        </div>
+        <div style="text-align:center"><span class="jar-en">Serum</span><span class="jar-label">Experiences</span></div>
+      </div>
+
+      <div class="jar-item" onclick="navTo('projects')">
+        <div class="jar-svg-wrap">
+          <svg width="78" height="94" viewBox="0 0 78 94" fill="none">
+            <rect x="17" y="7" width="44" height="9" rx="4.5" fill="#7E96C0" stroke="#6880A8" stroke-width="1.3"/>
+            <rect x="25" y="1" width="28" height="8" rx="4" fill="#7E96C0" stroke="#6880A8" stroke-width="1.1"/>
+            <rect x="7" y="16" width="64" height="70" rx="10" fill="#EEF1F8" stroke="#7E96C0" stroke-width="1.3"/>
+            <rect x="15" y="27" width="48" height="34" rx="3" fill="rgba(255,255,255,0.55)" stroke="#7E96C0" stroke-width="0.7"/>
+            <rect x="22" y="34" width="13" height="12" rx="2" fill="#7E96C0" opacity="0.4"/>
+            <rect x="42" y="34" width="13" height="12" rx="2" fill="#7E96C0" opacity="0.4"/>
+            <rect x="22" y="51" width="33" height="5" rx="1" fill="#7E96C0" opacity="0.25"/>
+          </svg>
+        </div>
+        <div style="text-align:center"><span class="jar-en">Moisturiser</span><span class="jar-label">Projects</span></div>
+      </div>
+
+      <!-- tall centre jar -->
+      <div class="jar-item" onclick="navTo('skills')">
+        <div class="jar-svg-wrap">
+          <svg width="98" height="116" viewBox="0 0 98 116" fill="none">
+            <rect x="23" y="9" width="52" height="10" rx="5" fill="#7E96C0" stroke="#6880A8" stroke-width="1.3"/>
+            <rect x="32" y="2" width="34" height="9" rx="4.5" fill="#7E96C0" stroke="#6880A8" stroke-width="1.1"/>
+            <rect x="9" y="19" width="80" height="88" rx="12" fill="#EEF1F8" stroke="#7E96C0" stroke-width="1.3"/>
+            <rect x="18" y="32" width="62" height="46" rx="4" fill="rgba(255,255,255,0.55)" stroke="#7E96C0" stroke-width="0.7"/>
+            <circle cx="49" cy="55" r="12" fill="none" stroke="#7E96C0" stroke-width="1"/>
+            <circle cx="49" cy="55" r="4" fill="#7E96C0" opacity="0.45"/>
+            <line x1="49" y1="43" x2="49" y2="48" stroke="#7E96C0" stroke-width="1" stroke-linecap="round"/>
+            <line x1="49" y1="62" x2="49" y2="67" stroke="#7E96C0" stroke-width="1" stroke-linecap="round"/>
+            <line x1="37" y1="55" x2="42" y2="55" stroke="#7E96C0" stroke-width="1" stroke-linecap="round"/>
+            <line x1="56" y1="55" x2="61" y2="55" stroke="#7E96C0" stroke-width="1" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div style="text-align:center"><span class="jar-en">Toner</span><span class="jar-label">Skills</span></div>
+      </div>
+
+      <div class="jar-item" onclick="navTo('about')">
+        <div class="jar-svg-wrap">
+          <svg width="78" height="94" viewBox="0 0 78 94" fill="none">
+            <rect x="17" y="7" width="44" height="9" rx="4.5" fill="#C8849A" stroke="#B0708A" stroke-width="1.3"/>
+            <rect x="25" y="1" width="28" height="8" rx="4" fill="#C8849A" stroke="#B0708A" stroke-width="1.1"/>
+            <rect x="7" y="16" width="64" height="70" rx="10" fill="#F5DCE4" stroke="#C8849A" stroke-width="1.3"/>
+            <rect x="15" y="27" width="48" height="34" rx="3" fill="rgba(255,255,255,0.55)" stroke="#C8849A" stroke-width="0.7"/>
+            <circle cx="39" cy="37" r="8" fill="#C8849A" opacity="0.3"/>
+            <path d="M25 55 Q39 46 53 55" stroke="#C8849A" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div style="text-align:center"><span class="jar-en">SPF</span><span class="jar-label">About</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="connect-section">
+    <div class="connect-inner">
+      <span class="connect-label">Get in touch</span>
+      <h2 class="connect-title">Let's connect.</h2>
+      <p class="connect-text">Open to conversations around product, technology, strategy, collaborations, and opportunities where curiosity is useful.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-icons">
+      <a class="footer-icon" href="mailto:bhavyamalik252007@gmail.com" title="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
       </a>
-      <div class="download-note">✦ Free to access &amp; share · PDF · 11 pages · Luxury Literature Magazine</div>
+      <a class="footer-icon" href="https://www.linkedin.com/in/bhavya-malik-055bba376/" target="_blank" title="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="4"/><line x1="8" y1="11" x2="8" y2="17"/><line x1="8" y1="7.5" x2="8" y2="7.52"/><line x1="12" y1="17" x2="12" y2="13.5"/><path d="M12 11a2.5 2.5 0 0 1 2.5 2.5V17"/></svg>
+      </a>
+      <a class="footer-icon" href="https://github.com/bhavyamalik25" target="_blank" title="GitHub">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+      </a>
+    </div>
+    <span class="footer-copy">Built and Designed by Bhavya Malik · 2026</span>
+  </footer>
+</div>
+
+<!-- ═══ EXPERIENCES ═══ -->
+<div class="page" id="page-experiences">
+  <div class="back-bar-spacer"></div>
+  <div class="inner-header">
+    <span class="label">Serum · Experiences</span>
+    <h1>Experiences</h1>
+    <p class="tagline">Work that pushed me beyond classrooms and into collaboration, ambiguity, and figuring things out in real time.</p>
+  </div>
+  <div class="cards-wrap">
+    <div class="v-stack">
+      <div class="r-card" onclick="showExpDetail('dfg')">
+        <div class="r-card-inner">
+          <div class="r-card-left">
+            <span class="r-card-tag">Student Product Designer</span>
+            <h3 class="r-card-title">Develop for Good</h3>
+            <span class="r-card-period">Remote · May 2026 – Aug 2026</span>
+            <p class="r-card-desc">Designing for emotionally complex and financially sensitive experiences through collaborative product work. Contributing to an initiative making end-of-life planning more accessible and dignified.</p>
+          </div>
+          <span class="r-card-arrow">→</span>
+        </div>
+      </div>
+      <div class="r-card no-hover">
+        <div class="r-card-inner">
+          <div class="r-card-left">
+            <span class="r-card-tag blue">Product Strategist Apprentice</span>
+            <h3 class="r-card-title">Coming Soon</h3>
+            <span class="r-card-period">Details to be added</span>
+            <p class="r-card-desc">This experience will be added once the details are ready to share.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</section>
-
-<!-- SKILLS -->
-<section id="skills" style="position:relative;overflow:hidden;">
-  <svg style="position:absolute;top:40px;right:3%;opacity:0.4;animation:whimsy-bob 8s ease-in-out infinite;z-index:1;" width="55" height="55" viewBox="0 0 55 55" fill="none">
-    <!-- snail -->
-    <circle cx="32" cy="28" r="14" fill="none" stroke="#cc99ff" stroke-width="2"/>
-    <path d="M32 28 Q36 24 38 28 Q36 32 32 28Z" fill="#e8d5ff"/>
-    <ellipse cx="20" cy="36" rx="16" ry="10" fill="#ffd6e7" stroke="#e87fbf" stroke-width="1.5"/>
-    <path d="M16 30 Q10 22 14 18" stroke="#3a2040" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-    <path d="M22 28 Q18 20 22 16" stroke="#3a2040" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-    <circle cx="14" cy="17" r="2" fill="#3a2040"/>
-    <circle cx="22" cy="15" r="2" fill="#3a2040"/>
-  </svg>
-
-  <div class="section-inner">
-    <div class="sec-label">
-      <div class="sec-line left"></div>
-      <span class="sec-tag">🌟 Skills</span>
-      <div class="sec-line right"></div>
+  <section class="connect-section" style="padding-top:40px">
+    <div class="connect-inner"><span class="connect-label">Get in touch</span><h2 class="connect-title">Let's connect.</h2><p class="connect-text">Open to conversations around product, technology, strategy, collaborations, and opportunities where curiosity is useful.</p></div>
+  </section>
+  <footer>
+    <div class="footer-icons">
+      <a class="footer-icon" href="mailto:bhavyamalik252007@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></a>
+      <a class="footer-icon" href="https://www.linkedin.com/in/bhavya-malik-055bba376/" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="4"/><line x1="8" y1="11" x2="8" y2="17"/><line x1="8" y1="7.5" x2="8" y2="7.52"/><line x1="12" y1="17" x2="12" y2="13.5"/><path d="M12 11a2.5 2.5 0 0 1 2.5 2.5V17"/></svg></a>
+      <a class="footer-icon" href="https://github.com/bhavyamalik25" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
     </div>
-    <h2 class="sec-title">What I <span class="g">bring.</span></h2>
+    <span class="footer-copy">Built and Designed by Bhavya Malik · 2026</span>
+  </footer>
+</div>
+
+<!-- ═══ EXP DETAIL ═══ -->
+<div class="page" id="page-exp-detail">
+  <div class="back-bar-spacer"></div>
+  <div class="exp-read" id="exp-detail-content"></div>
+  <footer>
+    <div class="footer-icons">
+      <a class="footer-icon" href="mailto:bhavyamalik252007@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></a>
+      <a class="footer-icon" href="https://www.linkedin.com/in/bhavya-malik-055bba376/" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="4"/><line x1="8" y1="11" x2="8" y2="17"/><line x1="8" y1="7.5" x2="8" y2="7.52"/><line x1="12" y1="17" x2="12" y2="13.5"/><path d="M12 11a2.5 2.5 0 0 1 2.5 2.5V17"/></svg></a>
+      <a class="footer-icon" href="https://github.com/bhavyamalik25" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+    </div>
+    <span class="footer-copy">Built and Designed by Bhavya Malik · 2026</span>
+  </footer>
+</div>
+
+<!-- ═══ PROJECTS ═══ -->
+<div class="page" id="page-projects">
+  <div class="back-bar-spacer"></div>
+  <div class="inner-header">
+    <span class="label">Moisturiser · Projects</span>
+    <h1>Projects</h1>
+    <p class="tagline">Ideas brought to life.</p>
+  </div>
+  <div class="cards-wrap">
+    <div class="v-stack">
+      <div class="proj-card">
+        <div class="proj-card-img">
+          <svg width="60" height="60" viewBox="0 0 60 60" fill="none"><circle cx="30" cy="30" r="20" stroke="#7E96C0" stroke-width="1" stroke-dasharray="4 3"/><circle cx="30" cy="30" r="10" stroke="#7E96C0" stroke-width="0.8"/><path d="M30 10 L30 50 M10 30 L50 30" stroke="#7E96C0" stroke-width="0.6" opacity="0.4"/></svg>
+        </div>
+        <div class="proj-card-body">
+          <span class="r-card-tag blue">Data · Visualisation</span>
+          <h3 class="r-card-title">Weatherly</h3>
+          <p style="font-size:12px;font-style:italic;color:#ABABAB;margin-bottom:10px;font-weight:300;">Real-Time Weather Intelligence Dashboard</p>
+          <p class="r-card-desc">Most weather apps show numbers — Weatherly gives context. Built from scratch with live conditions, a 5-day forecast, and an interactive temperature trend chart wrapped in a custom frosted-glass UI. Handles error states gracefully, converts raw API data into readable metrics, and intelligently filters forecast intervals into clean daily readings.</p>
+          <div class="pill-row"><span class="pill blue">Python</span><span class="pill blue">Streamlit</span><span class="pill blue">Plotly</span><span class="pill blue">Pandas</span><span class="pill blue">OpenWeatherMap API</span></div>
+        </div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-card-img rose-bg">
+          <svg width="60" height="60" viewBox="0 0 60 60" fill="none"><rect x="8" y="8" width="44" height="44" rx="4" stroke="#C8849A" stroke-width="1" stroke-dasharray="4 3"/><path d="M16 44 L24 28 L32 36 L40 20 L48 32" stroke="#C8849A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="40" cy="20" r="2.5" fill="#C8849A" opacity="0.6"/></svg>
+        </div>
+        <div class="proj-card-body">
+          <span class="r-card-tag">ML · Security</span>
+          <h3 class="r-card-title">SecurePay Fraud Monitor</h3>
+          <p style="font-size:12px;font-style:italic;color:#ABABAB;margin-bottom:10px;font-weight:300;">ML-Powered Financial Security Dashboard</p>
+          <p class="r-card-desc">A production-grade fraud detection system pairing a rule-based risk engine with an Isolation Forest model to flag suspicious transactions in real time. Four working modules: executive overview, live alerts feed, searchable transaction explorer, and on-demand CSV report export — all custom-built in Plotly with a cohesive dark security aesthetic.</p>
+          <div class="pill-row"><span class="pill">Python</span><span class="pill">Streamlit</span><span class="pill">Pandas</span><span class="pill">NumPy</span><span class="pill">Plotly</span><span class="pill">Scikit-learn</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="connect-section" style="padding-top:40px"><div class="connect-inner"><span class="connect-label">Get in touch</span><h2 class="connect-title">Let's connect.</h2><p class="connect-text">Open to conversations around product, technology, strategy, collaborations, and opportunities where curiosity is useful.</p></div></section>
+  <footer>
+    <div class="footer-icons">
+      <a class="footer-icon" href="mailto:bhavyamalik252007@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></a>
+      <a class="footer-icon" href="https://www.linkedin.com/in/bhavya-malik-055bba376/" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="4"/><line x1="8" y1="11" x2="8" y2="17"/><line x1="8" y1="7.5" x2="8" y2="7.52"/><line x1="12" y1="17" x2="12" y2="13.5"/><path d="M12 11a2.5 2.5 0 0 1 2.5 2.5V17"/></svg></a>
+      <a class="footer-icon" href="https://github.com/bhavyamalik25" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+    </div>
+    <span class="footer-copy">Built and Designed by Bhavya Malik · 2026</span>
+  </footer>
+</div>
+
+<!-- ═══ SKILLS ═══ -->
+<div class="page" id="page-skills">
+  <div class="back-bar-spacer"></div>
+  <div class="inner-header"><span class="label">Toner · Skills</span><h1>Skills</h1><p class="tagline">Tools I have mastered.</p></div>
+  <div class="cards-wrap">
     <div class="skills-grid">
-      <div class="skill-card">
-        <span class="skill-icon">✒️</span>
-        <div class="skill-card-title">Editorial &amp; Writing</div>
-        <ul class="skill-list">
-          <li>Copyediting &amp; proofreading</li>
-          <li>Long-form cultural essays</li>
-          <li>Fiction &amp; non-fiction editing</li>
-          <li>Pitching article ideas</li>
-          <li>Social media copywriting</li>
-          <li>Event reporting</li>
-        </ul>
-      </div>
-      <div class="skill-card">
-        <span class="skill-icon">🌿</span>
-        <div class="skill-card-title">Digital &amp; Technical</div>
-        <ul class="skill-list">
-          <li>Google Suite (Docs, Sheets, Drive)</li>
-          <li>Microsoft Office</li>
-          <li>WordPress &amp; CMS platforms</li>
-          <li>Article formatting for web</li>
-          <li>Image sourcing</li>
-          <li>Online publishing workflow</li>
-        </ul>
-      </div>
-      <div class="skill-card">
-        <span class="skill-icon">🌸</span>
-        <div class="skill-card-title">Soft Skills</div>
-        <ul class="skill-list">
-          <li>Collaborative team editing</li>
-          <li>Verbal &amp; written communication</li>
-          <li>Fast-paced environments</li>
-          <li>Creative pitching</li>
-          <li>Eye for aesthetics &amp; voice</li>
-          <li>Multilingual sensibility</li>
-        </ul>
-      </div>
+      <div class="skill-card"><h3>Languages</h3><ul class="skill-list"><li>Python</li><li>C++</li><li>HTML</li><li>CSS</li><li>JavaScript</li></ul></div>
+      <div class="skill-card blue"><h3>Frameworks</h3><ul class="skill-list"><li>Streamlit</li><li>Plotly</li><li>Pandas</li><li>NumPy</li><li>Scikit-learn</li><li>Requests</li></ul></div>
+      <div class="skill-card"><h3>Design</h3><ul class="skill-list"><li>Figma</li><li>Wireframing</li><li>Hi-Fi Prototyping</li><li>User Research</li><li>Dev Handoff</li></ul></div>
+      <div class="skill-card blue"><h3>Dev Tools</h3><ul class="skill-list"><li>Git</li><li>GitHub</li><li>VS Code</li><li>OpenWeatherMap API</li><li>Streamlit Cloud</li></ul></div>
+      <div class="skill-card"><h3>Concepts</h3><ul class="skill-list"><li>Machine Learning</li><li>REST APIs</li><li>Responsive Design</li></ul></div>
+      <div class="skill-card blue"><h3>Business</h3><ul class="skill-list"><li>Business Analysis</li><li>Tech Consulting</li><li>Stakeholder Comms</li><li>Requirements Scoping</li></ul></div>
     </div>
   </div>
-</section>
+  <section class="connect-section" style="padding-top:40px"><div class="connect-inner"><span class="connect-label">Get in touch</span><h2 class="connect-title">Let's connect.</h2><p class="connect-text">Open to conversations around product, technology, strategy, collaborations, and opportunities where curiosity is useful.</p></div></section>
+  <footer>
+    <div class="footer-icons">
+      <a class="footer-icon" href="mailto:bhavyamalik252007@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></a>
+      <a class="footer-icon" href="https://www.linkedin.com/in/bhavya-malik-055bba376/" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="4"/><line x1="8" y1="11" x2="8" y2="17"/><line x1="8" y1="7.5" x2="8" y2="7.52"/><line x1="12" y1="17" x2="12" y2="13.5"/><path d="M12 11a2.5 2.5 0 0 1 2.5 2.5V17"/></svg></a>
+      <a class="footer-icon" href="https://github.com/bhavyamalik25" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+    </div>
+    <span class="footer-copy">Built and Designed by Bhavya Malik · 2026</span>
+  </footer>
+</div>
 
-<!-- EDUCATION -->
-<section id="education" style="position:relative;overflow:hidden;">
-  <svg style="position:absolute;top:50px;left:4%;opacity:0.4;animation:whimsy-bob 7.5s ease-in-out infinite;z-index:1;" width="60" height="65" viewBox="0 0 60 65" fill="none">
-    <!-- open book -->
-    <path d="M30 15 Q18 12 8 16 L8 52 Q18 48 30 52Z" fill="#fff3c2" stroke="#e5b84a" stroke-width="1.5"/>
-    <path d="M30 15 Q42 12 52 16 L52 52 Q42 48 30 52Z" fill="#fde8ff" stroke="#cc99ff" stroke-width="1.5"/>
-    <line x1="30" y1="15" x2="30" y2="52" stroke="#e5b84a" stroke-width="1.2"/>
-    <line x1="14" y1="25" x2="25" y2="24" stroke="#e5b84a" stroke-width="1" opacity="0.6"/>
-    <line x1="14" y1="30" x2="25" y2="29" stroke="#e5b84a" stroke-width="1" opacity="0.6"/>
-    <line x1="14" y1="35" x2="25" y2="34" stroke="#e5b84a" stroke-width="1" opacity="0.6"/>
-    <line x1="35" y1="25" x2="46" y2="24" stroke="#cc99ff" stroke-width="1" opacity="0.6"/>
-    <line x1="35" y1="30" x2="46" y2="29" stroke="#cc99ff" stroke-width="1" opacity="0.6"/>
-    <line x1="35" y1="35" x2="46" y2="34" stroke="#cc99ff" stroke-width="1" opacity="0.6"/>
-    <path d="M20 52 Q30 56 40 52" stroke="#e5b84a" stroke-width="1.5" fill="none"/>
-  </svg>
-
-  <div class="section-inner">
-    <div class="sec-label">
-      <div class="sec-line left"></div>
-      <span class="sec-tag">📖 Education</span>
-      <div class="sec-line right"></div>
+<!-- ═══ ABOUT ═══ -->
+<div class="page" id="page-about">
+  <div class="back-bar-spacer"></div>
+  <div class="inner-header"><span class="label">SPF · About</span><h1>The full picture.</h1></div>
+  <div class="about-page-wrap">
+    <div class="about-blob-wrap">
+      <div class="about-page-blob"><img src="assets/bhavyamalik_image.jpeg" alt="Bhavya Malik"/></div>
+      <div class="about-page-ring"></div>
     </div>
-    <h2 class="sec-title"><span class="p">Where</span> I learned.</h2>
-    <div class="edu-row">
-      <div class="edu-year">2025 – 2028</div>
-      <div>
-        <div class="edu-degree">Bachelor of Computer Applications (BCA)</div>
-        <div class="edu-school">Jagannath Community College (JCC | JIMS) · Delhi, India</div>
-      </div>
-    </div>
-    <div class="exp-divider"></div>
-    <div class="edu-row">
-      <div class="edu-year">2024 – 2025</div>
-      <div>
-        <div class="edu-degree">Class XII — Commerce with Informatics Practices</div>
-        <div class="edu-school">Sachdeva Public School · Delhi, India</div>
-      </div>
-    </div>
-    <div class="sec-label" style="margin-top:60px;margin-bottom:8px;">
-      <div class="sec-line left"></div>
-      <span class="sec-tag">🌍 Languages</span>
-      <div class="sec-line right"></div>
-    </div>
-    <div class="lang-row">
-      <div class="lang-card"><span class="lang-flag">🇬🇧</span><div class="lang-name">English</div><div class="lang-level">Fluent</div></div>
-      <div class="lang-card"><span class="lang-flag">🇮🇳</span><div class="lang-name">Hindi</div><div class="lang-level">Fluent</div></div>
-      <div class="lang-card"><span class="lang-flag">🇪🇸</span><div class="lang-name">Spanish</div><div class="lang-level">Conversational</div></div>
-      <div class="lang-card"><span class="lang-flag">🇫🇷</span><div class="lang-name">French</div><div class="lang-level">Elementary</div></div>
+    <div class="about-page-text">
+      <span class="label">Hello, I'm Bhavya.</span>
+      <h2>Product, strategy, and everything in between.</h2>
+      <p>I'm interested in the space where technology, product, and strategy overlap — especially the decisions behind how products evolve, how systems scale, and how complexity gets simplified.</p>
+      <p>While studying BCA, I've explored opportunities across product design, strategy, and collaborative work with international teams. Those experiences pushed me beyond technical execution and into thinking more deeply about communication, structure, ambiguity, and problem-solving.</p>
+      <p>I'm drawn to work that requires curiosity as much as execution — asking better questions before rushing toward answers.</p>
+      <p>My long-term interests lean toward product strategy, consulting, systems thinking, and understanding how thoughtful technology creates value for both people and businesses.</p>
     </div>
   </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-stars">✦ ✦ ✦ ✦ ✦</div>
-  <div class="footer-name">Bhavya Malik</div>
-  <div class="footer-role">Editorial Intern · Writer · Delhi, India</div>
-  <div class="footer-info">
-    <a href="mailto:bhavyamalik252007@gmail.com">bhavyamalik252007@gmail.com</a><br>
-    (+91) 98688 76890
-  </div>
-  <div class="footer-bottom">made with love &amp; lots of tea 🍵</div>
-</footer>
+  <section class="connect-section" style="padding-top:20px"><div class="connect-inner"><span class="connect-label">Get in touch</span><h2 class="connect-title">Let's connect.</h2><p class="connect-text">Open to conversations around product, technology, strategy, collaborations, and opportunities where curiosity is useful.</p></div></section>
+  <footer>
+    <div class="footer-icons">
+      <a class="footer-icon" href="mailto:bhavyamalik252007@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></a>
+      <a class="footer-icon" href="https://www.linkedin.com/in/bhavya-malik-055bba376/" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="4"/><line x1="8" y1="11" x2="8" y2="17"/><line x1="8" y1="7.5" x2="8" y2="7.52"/><line x1="12" y1="17" x2="12" y2="13.5"/><path d="M12 11a2.5 2.5 0 0 1 2.5 2.5V17"/></svg></a>
+      <a class="footer-icon" href="https://github.com/bhavyamalik25" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+    </div>
+    <span class="footer-copy">Built and Designed by Bhavya Malik · 2026</span>
+  </footer>
+</div>
 
 <script>
-const PDF_B64 = "JVBERi0xLjQKJZOMi54gUmVwb3J0TGFiIEdlbmVyYXRlZCBQREYgZG9jdW1lbnQgKG9wZW5zb3VyY2UpCjEgMCBvYmoKPDwKL0YxIDIgMCBSIC9GMiAzIDAgUiAvRjMgNCAwIFIgL0Y0IDUgMCBSIC9GNSA3IDAgUiAvRjYgOCAwIFIKPj4KZW5kb2JqCjIgMCBvYmoKPDwKL0Jhc2VGb250IC9IZWx2ZXRpY2EgL0VuY29kaW5nIC9XaW5BbnNpRW5jb2RpbmcgL05hbWUgL0YxIC9TdWJ0eXBlIC9UeXBlMSAvVHlwZSAvRm9udAo+PgplbmRvYmoKMyAwIG9iago8PAovQmFzZUZvbnQgL1phcGZEaW5nYmF0cyAvTmFtZSAvRjIgL1N1YnR5cGUgL1R5cGUxIC9UeXBlIC9Gb250Cj4+CmVuZG9iago0IDAgb2JqCjw8Ci9CYXNlRm9udCAvVGltZXMtQm9sZEl0YWxpYyAvRW5jb2RpbmcgL1dpbkFuc2lFbmNvZGluZyAvTmFtZSAvRjMgL1N1YnR5cGUgL1R5cGUxIC9UeXBlIC9Gb250Cj4+CmVuZG9iago1IDAgb2JqCjw8Ci9CYXNlRm9udCAvVGltZXMtSXRhbGljIC9FbmNvZGluZyAvV2luQW5zaUVuY29kaW5nIC9OYW1lIC9GNCAvU3VidHlwZSAvVHlwZTEgL1R5cGUgL0ZvbnQKPj4KZW5kb2JqCjYgMCBvYmoKPDwKL0NvbnRlbnRzIDIyIDAgUiAvTWVkaWFCb3ggWyAwIDAgNTk1LjI3NTYgODQxLjg4OTggXSAvUGFyZW50IDIxIDAgUiAvUmVzb3VyY2VzIDw8Ci9Gb250IDEgMCBSIC9Qcm9jU2V0IFsgL1BERiAvVGV4dCAvSW1hZ2VCIC9JbWFnZUMgL0ltYWdlSSBdCj4+IC9Sb3RhdGUgMCAvVHJhbnMgPDwKCj4+IAogIC9UeXBlIC9QYWdlCj4+CmVuZG9iago3IDAgb2JqCjw8Ci9CYXNlRm9udCAvSGVsdmV0aWNhLU9ibGlxdWUgL0VuY29kaW5nIC9XaW5BbnNpRW5jb2RpbmcgL05hbWUgL0Y1IC9TdWJ0eXBlIC9UeXBlMSAvVHlwZSAvRm9udAo+PgplbmRvYmoKOCAwIG9iago8PAovQmFzZUZvbnQgL1RpbWVzLVJvbWFuIC9FbmNvZGluZyAvV2luQW5zaUVuY29kaW5nIC9OYW1lIC9GNiAvU3VidHlwZSAvVHlwZTEgL1R5cGUgL0ZvbnQKPj4KZW5kb2JqCjkgMCBvYmoKPDwKL0NvbnRlbnRzIDIzIDAgUiAvTWVkaWFCb3ggWyAwIDAgNTk1LjI3NTYgODQxLjg4OTggXSAvUGFyZW50IDIxIDAgUiAvUmVzb3VyY2VzIDw8Ci9Gb250IDEgMCBSIC9Qcm9jU2V0IFsgL1BERiAvVGV4dCAvSW1hZ2VCIC9JbWFnZUMgL0ltYWdlSSBdCj4+IC9Sb3RhdGUgMCAvVHJhbnMgPDwKCj4+IAogIC9UeXBlIC9QYWdlCj4+CmVuZG9iagoxMCAwIG9iago8PAovQ29udGVudHMgMjQgMCBSIC9NZWRpYUJveCBbIDAgMCA1OTUuMjc1NiA4NDEuODg5OCBdIC9QYXJlbnQgMjEgMCBSIC9SZXNvdXJjZXMgPDwKL0ZvbnQgMSAwIFIgL1Byb2NTZXQgWyAvUERGIC9UZXh0IC9JbWFnZUIgL0ltYWdlQyAvSW1hZ2VJIF0KPj4gL1JvdGF0ZSAwIC9UcmFucyA8PAoKPj4gCiAgL1R5cGUgL1BhZ2UKPj4KZW5kb2JqCjExIDAgb2JqCjw8Ci9Db250ZW50cyAyNSAwIFIgL01lZGlhQm94IFsgMCAwIDU5NS4yNzU2IDg0MS44ODk4IF0gL1BhcmVudCAyMSAwIFIgL1Jlc291cmNlcyA8PAovRm9udCAxIDAgUiAvUHJvY1NldCBbIC9QREYgL1RleHQgL0ltYWdlQiAvSW1hZ2VDIC9JbWFnZUkgXQo+PiAvUm90YXRlIDAgL1RyYW5zIDw8Cgo+PiAKICAvVHlwZSAvUGFnZQo+PgplbmRvYmoKMTIgMCBvYmoKPDwKL0NvbnRlbnRzIDI2IDAgUiAvTWVkaWFCb3ggWyAwIDAgNTk1LjI3NTYgODQxLjg4OTggXSAvUGFyZW50IDIxIDAgUiAvUmVzb3VyY2VzIDw8Ci9Gb250IDEgMCBSIC9Qcm9jU2V0IFsgL1BERiAvVGV4dCAvSW1hZ2VCIC9JbWFnZUMgL0ltYWdlSSBdCj4+IC9Sb3RhdGUgMCAvVHJhbnMgPDwKCj4+IAogIC9UeXBlIC9QYWdlCj4+CmVuZG9iagoxMyAwIG9iago8PAovQ29udGVudHMgMjcgMCBSIC9NZWRpYUJveCBbIDAgMCA1OTUuMjc1NiA4NDEuODg5OCBdIC9QYXJlbnQgMjEgMCBSIC9SZXNvdXJjZXMgPDwKL0ZvbnQgMSAwIFIgL1Byb2NTZXQgWyAvUERGIC9UZXh0IC9JbWFnZUIgL0ltYWdlQyAvSW1hZ2VJIF0KPj4gL1JvdGF0ZSAwIC9UcmFucyA8PAoKPj4gCiAgL1R5cGUgL1BhZ2UKPj4KZW5kb2JqCjE0IDAgb2JqCjw8Ci9Db250ZW50cyAyOCAwIFIgL01lZGlhQm94IFsgMCAwIDU5NS4yNzU2IDg0MS44ODk4IF0gL1BhcmVudCAyMSAwIFIgL1Jlc291cmNlcyA8PAovRm9udCAxIDAgUiAvUHJvY1NldCBbIC9QREYgL1RleHQgL0ltYWdlQiAvSW1hZ2VDIC9JbWFnZUkgXQo+PiAvUm90YXRlIDAgL1RyYW5zIDw8Cgo+PiAKICAvVHlwZSAvUGFnZQo+PgplbmRvYmoKMTUgMCBvYmoKPDwKL0NvbnRlbnRzIDI5IDAgUiAvTWVkaWFCb3ggWyAwIDAgNTk1LjI3NTYgODQxLjg4OTggXSAvUGFyZW50IDIxIDAgUiAvUmVzb3VyY2VzIDw8Ci9Gb250IDEgMCBSIC9Qcm9jU2V0IFsgL1BERiAvVGV4dCAvSW1hZ2VCIC9JbWFnZUMgL0ltYWdlSSBdCj4+IC9Sb3RhdGUgMCAvVHJhbnMgPDwKCj4+IAogIC9UeXBlIC9QYWdlCj4+CmVuZG9iagoxNiAwIG9iago8PAovQ29udGVudHMgMzAgMCBSIC9NZWRpYUJveCBbIDAgMCA1OTUuMjc1NiA4NDEuODg5OCBdIC9QYXJlbnQgMjEgMCBSIC9SZXNvdXJjZXMgPDwKL0ZvbnQgMSAwIFIgL1Byb2NTZXQgWyAvUERGIC9UZXh0IC9JbWFnZUIgL0ltYWdlQyAvSW1hZ2VJIF0KPj4gL1JvdGF0ZSAwIC9UcmFucyA8PAoKPj4gCiAgL1R5cGUgL1BhZ2UKPj4KZW5kb2JqCjE3IDAgb2JqCjw8Ci9Db250ZW50cyAzMSAwIFIgL01lZGlhQm94IFsgMCAwIDU5NS4yNzU2IDg0MS44ODk4IF0gL1BhcmVudCAyMSAwIFIgL1Jlc291cmNlcyA8PAovRm9udCAxIDAgUiAvUHJvY1NldCBbIC9QREYgL1RleHQgL0ltYWdlQiAvSW1hZ2VDIC9JbWFnZUkgXQo+PiAvUm90YXRlIDAgL1RyYW5zIDw8Cgo+PiAKICAvVHlwZSAvUGFnZQo+PgplbmRvYmoKMTggMCBvYmoKPDwKL0NvbnRlbnRzIDMyIDAgUiAvTWVkaWFCb3ggWyAwIDAgNTk1LjI3NTYgODQxLjg4OTggXSAvUGFyZW50IDIxIDAgUiAvUmVzb3VyY2VzIDw8Ci9Gb250IDEgMCBSIC9Qcm9jU2V0IFsgL1BERiAvVGV4dCAvSW1hZ2VCIC9JbWFnZUMgL0ltYWdlSSBdCj4+IC9Sb3RhdGUgMCAvVHJhbnMgPDwKCj4+IAogIC9UeXBlIC9QYWdlCj4+CmVuZG9iagoxOSAwIG9iago8PAovUGFnZU1vZGUgL1VzZU5vbmUgL1BhZ2VzIDIxIDAgUiAvVHlwZSAvQ2F0YWxvZwo+PgplbmRvYmoKMjAgMCBvYmoKPDwKL0F1dGhvciAoXChhbm9ueW1vdXNcKSkgL0NyZWF0aW9uRGF0ZSAoRDoyMDI2MDMyMzEzMDY1NiswMCcwMCcpIC9DcmVhdG9yIChcKHVuc3BlY2lmaWVkXCkpIC9LZXl3b3JkcyAoKSAvTW9kRGF0ZSAoRDoyMDI2MDMyMzEzMDY1NiswMCcwMCcpIC9Qcm9kdWNlciAoUmVwb3J0TGFiIFBERiBMaWJyYXJ5IC0gXChvcGVuc291cmNlXCkpIAogIC9TdWJqZWN0IChcKHVuc3BlY2lmaWVkXCkpIC9UaXRsZSAoXChhbm9ueW1vdXNcKSkgL1RyYXBwZWQgL0ZhbHNlCj4+CmVuZG9iagoyMSAwIG9iago8PAovQ291bnQgMTEgL0tpZHMgWyA2IDAgUiA5IDAgUiAxMCAwIFIgMTEgMCBSIDEyIDAgUiAxMyAwIFIgMTQgMCBSIDE1IDAgUiAxNiAwIFIgMTcgMCBSIAogIDE4IDAgUiBdIC9UeXBlIC9QYWdlcwo+PgplbmRvYmoKMjIgMCBvYmoKPDwKL0ZpbHRlciBbIC9BU0NJSTg1RGVjb2RlIC9GbGF0ZURlY29kZSBdIC9MZW5ndGggNzc5Cj4+CnN0cmVhbQpHYiEkQ2dNWV8xJjtLWlAnUVpqQEM6aVpIPDxcKCE5QCwocDhtQ3UuLCJsbGI5Rj5yQWhTLTwjQFI8Szs4P0dpQmlPLUFyY1s8KSEvLUNiR1g4Y2cqSjUtL2EvZj8+UWFXLVpuJnM8OmZQMz8rPChqMi06MzUpTTZVUzsodFMwSGA6JTk+NW5YZz44KjBZYEYiaUNtcWo2czddZV9NKzlfYSdtSllMa1ouPi9MNyNgKTpdLTAyaFhpR15fZkE9WjZFdEEsOWg9JipSUm5ybSlPWmRNRSVVTShzUm5IY0tzXV5CbCY9OVdJJ3FQI3BCVS1AL0doIy51NisjSyMrT1UmUWsvQVdwcUhPWGlqZS1JIWxkKyJnRUxWMDteKjVKWUhgaStSMVVYMjA8Xys2XyhUUiluXGc2Olo3Wk5vcWBHIl84OGUuIWFLTlBjSDw1dUtsT106Y2knXk5JTUBgbFgnSiNKSThNO1lVSTkvSDVZQmM2KWMmTjQzKFxGJTg/UT5TcSlCNz9KakdxITdkWF9BbEc5XlxEaCFmKXBQdEYzUScjbSIlLUIrJz5dR2lsbWlqQDIsRlsrJ0gka3IjUzA/Oz0yM0RkNHJoT2pGPWVbYFI/PzRhIkZWYTY5RCRuMDtjZ0lCa21hUWtdMTFpQUttKDVoLU1ISGQtIjpyaXJNIjc8K24oS0hKV3VHRTEhKzM1byErRydncVhFIy1xJygucEVILjI9SWspMShaKzFITGtiQzsiJC9kST5HZHNuMz9jJks0OzZAPTNSX3NCOEItRzZsaT5YQz5LRjtQW0xiI1hpVk1oZzcyUmApKF9vU2EkXjRmPWk3OWRKaFZral1iR2hSdGtycEkuRj1CbzVjay5bNVlPQWghXUctaCEsUm9PXz9TXm0jbk4xcl4vQVBob0FIZkdXSWNlQSgzUFVhI20tRSkrZC9EWm0yX1I8dUBMcnIyY2VxJ2sncVdsWyFCWGMpSEZLdWxWPExXcjpdM11aKjBmMEIqaydvSipYczhhTyFlJm1JcT5+PmVuZHN0cmVhbQplbmRvYmoKMjMgMCBvYmoKPDwKL0ZpbHRlciBbIC9BU0NJSTg1RGVjb2RlIC9GbGF0ZURlY29kZSBdIC9MZW5ndGggMjU4Nwo+PgpzdHJlYW0KR2F1MEM/JCJjQSZVYDM2UiY9JnNkTlNEYkdhJ2s9X15qRidQTlslV28jbTF1JmZValIqZC9dcXMjclRYK0BZUz5QQidZUFFVTU5obS5DI0RvRilvTm5MbnA0UVE9Sy4zVzg9ZSZPZUchPHRxSnM5KFE4dVI6I2w4JlFFPi88JiJQVj9LUTZZY2E0JGgpVixfPEhUSjQ1Kz4wc2lhdHNJSlo3OVJNWy8vYCouLGxZdS5naVNmTjBCM1BhUj0zRW1OTyZuTWwzbURhSyloLlchcV0vJWIkImpiKiFBSitPJmVKOUQ5NTlccTdiYCNBY1xsN1QjOW02M3JOISJfZVBtKGRsMUNkPCo1YjlTMFEiJmg5WTEuKUhVZEZFRGcqbCFMKE5ePGw3YElXS11ycylgSFBuI3RWU3MqT0l1TD9ORUMoSVhuYUIoT10yR0JBPzVybzxDanJFajo8Ky5FNUZFSz8yLzxLTk9iQE5RYVg+V1wjRShnYFU4N0BLSlVCMGQ7JUFgVmN0Tk5sPlNyLEVHRz0vOUArPltAVisqbGg1ajc4UlQtSmgxcko/OkBGViN0SHVVTWFHRHU3c1JxTjNUJEZbRlNUcCJvQCIvbnA+TEtgXiRYMG8oSmMia2osIyomY1RbdV1hWlo1S2lnXiNxMGBybyIrS1Y8PVJLMVNPOFxeOVg+LlBgaE5QZ2VLTVhHVmZscl9GNWIwdCJLVUxbNGFUZmFSTWhtIXItKmJVNDRBclxrVidLUV0/MFxcRFhbTG5RXjYxNzdDKmhNUlc9YFk/XD82Lk1ocWpeKTc/a0ZVI0RCIzRYNlFYUWRULlknTW4jc0tOQyZkaGllZ15TTzIjQDpLY1tMR25eRHFjcTdROm5tYkU9KytUcVdlLnEyX1E0Z0k0VURIXVZmSC9wJWohclUkbF1uYjAvTzs3K1lHJVc4LVhRLTlqPl0oPF8yTVBSN2NeMywkWjxATDplMklgbiozT1dDaTdaUllOVClMQHM3XyZqT1VIPyMvTVxqZlpWPGdkXm5kdXRcO1FuWjItLjE9VFUhRXN0MEA2T21YbURBZWY3X3M5KWZqOkklbVxSUTlfLVs2V080U10pYlxQOyJJTk07UCc1M18kXWAkOWdPI3BkTmBOLnJEN18lZ1hWJVpsIUhEK3FkSFgiTCsmIW9mTDVhWSVJUiI+ZkxAcU1Bb3Ana0ZKODc8OCcwJjlVLT1RLSZmU2paLzRfTDUyPXVkRyJvc1ZVclM1LSM2W21EP2FCZStxYEk5P20sPkNdbGNVRzxIQFBcbktgKU0qbVRmJjwtJUFtNF8lbkF1ckohNGNYO0JTTSZlQmsqUktERl5nVCJUNzJyIWwoWSFbI0chOz4pTVQ2W0E3ZT86LmI6NUk9QEtuRDw5M0c3dTdvMkVpRWVWP1FEXitbKDlVK1xtIVktLmprQVFwLShANUQ6IjJBRyU8SDVgVjFFYmMnY0w6blU3ZjFmNENDRl0lbkpiXHFlOywiWm4/MEExN2poTVVnO10qZVBqUjNLTz5gVXRoXTAqWlJYVU1RXmZ0KjY6RixsYy5hRz4vN0tNWXVlLW86WEZYUDFwODc2LzlTRTZyUVpFc3FaJidxS1ozYFlYQEl1Vj5BLWNYLjRhMHBmNSMqJVRxKjVmVD1sUlgjcWY2YyFsUSJDOkkjVE5WZkdMaV1XQ2YscVVOWiVqJDY7RzBpb2I9Wzs2ZzAnXiliJnJFYkJxclBvOy0iYkFLX1Y1cDoxQzUmb3BRVDtxdUdbTnItOjhRWz5wOyY7Q0k5cj09Klg2JGJWWmIia240QihqbFs5QzU8PWdIYm5WOTtyN2BYNyphWkJxZD4tUFQlK0BncnNDLTslOTEiJ2RjNDVdbmkmPGFPKj9KWl9PNTJuSVtGUGw4L21SdE44QThnRjshYCViKCJcLzZONzYpPk84dUo5JlhQOWxOS1E/L0dXP0xBSzphS2BuZE0oKTwpJjMqOFZXMC1naFlyY107XF5zMiUvUENEYF9rXWoyPW5gcTtVY3Q9PS5DW3RMTCtvNE8jWmEkVy5ZPzQjPjtMbGdPUy5oIXAzLHRLaXM7IVtZKSQ6Z0ZgITNjLHVjIWcjZWc8S1A/ZmFZcUlaMGo3MTdxNydnO1REVDVIRGtXYSIwaFJwQUVecXMtKW1UXjFtVjFpWnA3MCwqRE0xNEpeJTJLNllKZC4zR2M0VTNUVmg/UVxpMjx0J0FSdVUmWTZCNz8+NE5VSGVhQylUYlptRnQmN1VXSU5UKWBwRmkodXEpUi5cTS11NkFGYnVxSWQuaXRLcCxcdVdvSEMsWlg9MFVmTT1zdVheSGRMZS8sWG46cEttK0RGQGJMKVdGTjovbVZVPCg+NEBnTEZFbmYscz1GIS1OMi5PVCRCW0pPLV10WGAqY2pyRExnKywzRVZwNV1LMTxIR25KWig8SVY1NlBxTDlrck1qRiNFYWUkZURxOyosayQ0YFZeVUthYV89a3IjUSZOQShSbUMyMVJkUzwrSVZcOG8kOWdpRSpMJT5KVlMsaEdPNF0nbWtRajotSVhWL0lGTS5IXExnRzRmbHNObDFjaidbRm1zKiU2XihYTlonZDU0Yi11bzlKPzZjJUYuMSlbMGBRa2Fkc0pEaUxsPW0yTTg2RW1RTUpbSHNTN3BQO25jX0NyQ0FOJ3QvREFcT05JJkRpaDslUEFKNE9tZ11NPGhXODJvcG0yUSgwV3A2Ok80V0JLMSgtPG8/TUpCRkVIYElGIicuJEBBN2IyZWE2MzZTYyNxNGxwNVBEIzBQajVROVElIzs4ZjphK2V1VVg8Mmo8QmslWihCLmJWJS4nUilsJl80ZWVRMVcrXVQtcDJaRTZyRGE2aDE9TWNJTmdcNjpeZ1xyLyRTKjdxMUNrMk1ccDZLIXMlNVBqWidhV0ZbRGRvOClyQGkjL3I9OWYuUiFmV0BEbWEydD9UZlRrakBrWGcicjA/UFpndT0wMkYtQldtZClfXnFqb0BYO1pgWHA4a0NcQ3NNUmArJW9TTmB1MGBhc1hZTjthJjxfTWwrSyJiW1hdVjtmOC1EKUYnU3BIO25xLjZfYT5PN2AzKHRNND4vWz87c2VnL1lQXDRTUVxGYyNORTlXXVpLKXNUUSorNj1pSzIvUFN1UEUzbGAzRllLSFMuLl9VcFstIkhCYDpVInJvbmpOTE9APCNWbmwvJVskckliPFVlNzYrNlA5MzthJVYyLEdlPSdgXjw3ZjVxNW43X0UlRiw3M2dfcWpnW14/b1QjPVZjUDBpVD8nNUMxTTEiRjZtTlo4YlhYMj8/c2dnXl5yNmpRNlNkSUdqaUkxRzZtbDpgSy1rVCw6TzU0Zk5XOltHaHR0akpRZzBHayIlJlZsRW5ka0xZP00vNUIsYWFsaXBtJDxOdEpWNlxEbjhmLkwyZ3IrKE5+PmVuZHN0cmVhbQplbmRvYmoKMjQgMCBvYmoKPDwKL0ZpbHRlciBbIC9BU0NJSTg1RGVjb2RlIC9GbGF0ZURlY29kZSBdIC9MZW5ndGggOTYyCj4+CnN0cmVhbQpHYXQ9ZzsvYjJJJ1NZSEMvJ2NuVCwlWDI4VW86dSdKPUBFSU1wPjJIWTM2N3FkJD5IKDlMVUc2czg9UjhlOy9fZSF0IyxDLGtJVyFoL2ZiWjFBXlA6ZydrZE8pSzRKUEUuTjxDP0VhTSgncGVPUGdPYEVkYjo8VG8uQlEhMHBTLGU1YG5lTVZlWnQ/M1BZc2RgUzd1OENOIygvTCRXW1RlPDxYX1coOmFTLk8jbFVNImsyKyZbOF1oIlU+ak9mP203Km4lJDgjcyFqWGkjbFonVV9VKzZuSTUtY25HRSpiIzdhR0ApJC8nPGdwJmZNTVNWW2MuXTFMNjgrMXNdOWxCYkQ7JkcnM0VQQilPWms8cVVLXTs7XElBR15qXlluUl9CJSQlKkpmIj9ycWhwJDBGQFh0U1hdXU5TWUFOcXNqSVlFSj8xbyI4Rig5Q2RPJElYTG5Jak5tQSdAViRdP0tPZzZlYyJGXG0rcGZGS1NmLlBzajdsS0wxczstcTpoQGJVZTJeNVglPyFHPm5gIyE5OFZYTlsxKVtjTlZhLk4uSDBSSDxkNT06PiReUmJjRitucSRaUENbYWs5SjNcUmxcJHJlclQkSG1uTi9dQSwoKmBONU5aYD9OSkkrPj9LQF1uP0tCQ2M9KFckIU80TFJeZ2FNayorN1BSXG9HKmQ7cSNUMFMiPitPUk8tRzc4ISdJRjwpTG1fKWYpPidENVd1YW0xYl1UL1YxXnFfMmEoS2k0IUM0RjErWU5PLlEhWUdQcVI6NShxVShoY2JlZlQ3Mi1rI2t1bzQ6Y0FxT24iIy9USWJNMmNyZSlWcCtuTmAybVtXMHUidDpvLyFcZD89OU1aLmZPVjE0XDcjcnJVZT8tXidwJVJPWF9SPzUiIzlPNW03SCtlM1NQNFQyKWFuP0FNMGNPYFcxKVMzT1ReO25WXGhHPzxQYD0sSTJDWDszWCIyJTsiOzFSN3RuZSluX2kwTz1gUVNvTG5lck9SUmNDLjdxJjZpa1doKURtaTtVYSRoSSUxOkprcSVGLWk+T1tkVlxFJzhYITVUI3JGXGZRYGhlb20zcD81TV03OHJQRy8nTzVnMzU8NkJlQidBMF9tQHJBbUJpVzhiIkNPLXJGa0g3a1QxaGJVLE5WQFhYWUw6ODw6TGQjOmBob1I8O19OUUM3cEE4JmAtLl9fUmUrUElDPSRfRVdjWSM0XFwtUlRqMCJzX1E9MllTPmwlXVtXRy51cmNOdGFEUC5ARHA0ajwxRTtvQFUlI0E4aWZ+PmVuZHN0cmVhbQplbmRvYmoKMjUgMCBvYmoKPDwKL0ZpbHRlciBbIC9BU0NJSTg1RGVjb2RlIC9GbGF0ZURlY29kZSBdIC9MZW5ndGggMjc3Ngo+PgpzdHJlYW0KR2F1MERnTiklPCZxL0E1b05TW08pU3VDQ1ptQnU0MD1ONFsvKDxWKTxhTE5yT0ZSTEJCT0RzT0olcW1vIS9iYTZmVUdMVVo2V201ZSMwZlJUQy5oMzApZy5ZSGVvPD5ZTlZtVjRuPHUoRDkqKlVPQi9pNFpiI3BaaUZKbyxBM04iVlNBcCMwVDQtbVllODZqQlpUSDtSYSVyRnNkYTMnYDFlWGczWy8nNy84VU4xSzFOSzNIb24vJj9jXnNhdGsvJ10oTzUzXCJgMG02Q1BlK1RoXTQiIzg3NnVlPzBRVlZCZSwsJTg/LEdPSiw7cG5WNFlNWSNfJC5pP1MxbnFrTjFqWzQyZ1hdIkpXalw7NWNOcC1NNDxMZEwrW0MvcjkodTgwNkZnMmgpbnJFNSE3V0loOjghcXMiPGJZTGpvJFdLXXFJNkVqYFEwNmdxNUhoVkkmJHJ1OCgoZEhYNjFIXCtCJFMyY0w5cVpRYGJmbTJZVm5DI3JcX0MtXXBFWyZoJjRUay5TKnNbTTw1PkRYZSlzTmFgYE1qTmheLyU9YjMsK1RdYTxFInRdMGJMVF5mSEsyNEk6JTI+clg6a2pdK1U1biE1bzlEZVFcT20oXSFtKWBUSlBvIkBzZWg/YDJDVDNoXFgvWUlYbFFrOUtjLD4oKT1jK0dHRCZVYzNhVkNTbjpVU0osRGxNPGN0X2tDaFNJbTdENG1sNkFqM1VyJ3Ukcl9XaDFhZlJXLEdbKE1KTVN1RztvYSRVLjwqbjhHV0gsQSc2WCFDKjUncmRCN1wkaXBFc01jKl1aTlJgP1Y+NSspXHBjWCc5b0twP3FBMklXWWhiKWtMRU9eJjgyTElDSGpyXjpjYipTU3BdUSg/I2B1ZCVbTydxVWIxOV42T1kzNV40WjYmM2VdRmFpaF5wRUhITylHOzpWaFZEUTZ0YEwqUlFLSSF1KTMqbUFJQDdJOlw/IV5BV2cwdVlCVW1ZTiFsPyxtXiFtMHJCYE9BVDdIdT0pW1BNL2o6KVE/cDk2UCM7cDItJ1UsZUc+QlFGbkkkR19oJiRNLiM0K1c4bFpaanA0SnNNNmdyUD4+RjNVS1JcNG4jUTo0KFIpKF5LKTRcaj9yNlUzYGBpOmgpZEVuTUozZjc7ci88RW1nOWxAbSZPV11kR21QJl1fYXAyWWk3X2koQjBnKyFtVyNPWUc8XG0xPTRdcD1RbyR1ZGZqNlQ2cFM5QSo8S0NhR1UlJ2ddKCk3RmY5STpmT2BuPl1kOTtJR2EmYUsoYGJVRixYS0BobiQ/aSc/WXFHQldbIytXTXBLc1FAMl4hYmUzITNXPmYoLVgkUUg1MyZuOl5PZTsvMD0vcisxbD8jVWxJbWIhMShnO2plXEs4SG5McypAMz1TU2hMXHRDRjI8JjxTXW01aGNZLiMoUHQ3SmhfR1JrKSxYQl8qP09hdEZzalMzMjZAOj09JURubCMqckYnbSlASDg2SiFEPkBgamdFLCRbJ1tCQ0E/X1ZLViNDZDI6aCZtKz45NDxqSidgQSZYbGhCbGU/QEVxPDRyVmdyaDIuLVomY11TSEZ1SGs8J0lJPTdEKFcvXWg4Mi4rSkVyYFlDPiJYUmsjRiklPXQuJGxPMyJ1WEA0KVB0KzooSU1NNVE0QURvJipbMyo3WUhVb1xvKmUjNC5bPFJjczFwQDYqaWVsQlZga2xyaj5IOWJKTUA4WCk0MHRwLig4USxUbzkyMGtLbzAtZk5sTklVaCVEWzQpZUsyYUpSWHUicm1qPE9fLGlsLyUlPlptS0w2Q1tdJj9PZU4mZDpoJS8hRzteU1NPRGFlKEsxK1hcMGNzUixYXzFrUmdBSjouOkcrQWdhVHE0NFhQQCRnIzk3MFpXUVFWOkUhZjQwJ3VdaHVbJG5LPEArIjlmbz10bkBfbEYnTDVVSSJaRUtGVDdTOzhubVgxa2ZmTzddUnMmTG5CIV0xUENIYzlmWD9fTT8xJCUmRTxRMlAlMmBCaDptRFo2Zy1AUTZiN1pWdHBGUl03J08iJktIIV1UcFxkMT4nXmolbWZBRj41OmM8SHMnLkw9K04ySUZJUzRxRGZPLmZDUjhCOU4/WGBuLjNMWEM1PVExTG5HdCtxOVZGck1UJ1lvS1VhRG0yQFY0M2hjNHA9Om5INDpCMihhYjYicVBuOXVaRC1RNFFoaz4uIkFNRUBTLkc5L1hoV3AhYCZWXzIkP2s0TiZAJjQ2SVRJJ2tFXFdzMTJiOm9BZmo9SDFPa1Y3c1JJWkNoY1lbPEBwRkwra2E2aydUNydlLUBuJkhmbWFMWTNeZjRFL24+PkYvU2BAJzpJQzIzUkpOW1plPiJGU1BkUlQ0IW8/KmNEMU5mKU9pOmJgJXNBPEQmPVpYXC5jYTA/RChdS25VNyJUcCVmLDYmPFt0L15VPFAyYGxAV1Aray5VdFBaOmZEXzE7TXNja1ZPczpqV21Lb0JeQ25waT45Llw9KTckcEZ0aUpIcTF0VlImQD9KPXJea1lQT3VqczY9IiJfQFcwZWA1YkNdbUkuOzZGMkNXKDNqXFBZPEs2QHImcE5dayo4OXFvTUhPRigxQnFzYVwyT11OSjEhKmdBIy5WLi1QUmtCPUNqSGA6YiJPTG09a0EvOm5XQkNJI1E/Iy80PlFXamdKblpcP1dgb0lJXWk+bktiJTxJNkpaV0E0L0FcLyhAaSZhXXIvaVE/LixFYjBtT1Jxc2M1dVdGVlg1W1pLW2o1cjlpX0wtbD1aRFdMK1kjOD5FXiJWIls6MjVhZkpIKDlxYFJbL1cnMyddc0FRUjhUJWtDMUUsdF4xUCcyc3JaLFYmV0ZiUU9rNyI3RTBENTsoalJCNkphOnJdRzpNKyhjWkVgYTk1PjZualNKWTlPQnJFQTBOLzZwOSYkQlxaSGhWTVQhdW9JcEg1LCpvKloqakQmRSQkcjg4TWszWERoXkRscjZnOC05UjlxZCwhOU9GMDViM3EjWjdtYEZaSXEpSlFcT0g2WElXQ002NXJLcXVAckFIVnNRSVgqUyNqMzRQUyNidVhXJGQ9W2lXUGhJX2ApQTtuRWlwRzkhZ0xTPWN1QzJwamNsJC5tNytrciRSVyVsPG5TNUFNQio0M0hnbUw0cD9PdVJEQW45ZyY7VmlcLGMzPXVwPjRyJ3E2PzczajNLXmA2PjswXG8uTjYyO3IlYzEnaWNjcSRJUV02JSNNYkJPL2VMZEc4dDk1YXNaTldgXjUsMyNiLSFJP1w7ZURgYnIqJmhsSV5wLnUqbGNhOF5BTHBWJ2NkT2NSTkM1QVNSWFpwR0o4WjVvJVtxSSU9Y05wZEFGY3VSSyZMSVlHPkIvLWdlTUprcmhnZWspY0pSQEY+KmZ1TjJDIUs0Llg1MDJcbk5EKi1XWDFjQWliRjh1OnQ5O3JiXTBDNShDNDV1RyRhKkgmVkBjSiFqXlVULmtEK0ZccGI4Z0FPWyQuYjhndFomUzxoSW8tYTZGTDU1ZFtRM0YlQmkhcWE6Tyxtc0IraDs5ZyxocSkmWidLMmBLLWFgKSosSUxlXSFVVk0jNCtmYSZYOGBMVXIjIWVPTUBkTDkvQ21gUUZAbnJeKS4+M2AxQ15gQCRjK21JVEAvWGFCRTZtaXE/ImtvYDkhc1ddJFFyXFByKnImbkk6JC9pYmg3clIqKWQoXU9VIiJRcCR+PmVuZHN0cmVhbQplbmRvYmoKMjYgMCBvYmoKPDwKL0ZpbHRlciBbIC9BU0NJSTg1RGVjb2RlIC9GbGF0ZURlY29kZSBdIC9MZW5ndGggNTY2Cj4+CnN0cmVhbQpHYXJvPmgvOzQrJjtCVEUnXidBZVdwQUE2Q2xeNks2a05VK0Q1a3FeVyZKTiEsbyVbTCxUSDpJKkc1RSNQdWEjMG5rIUg9MmAiPG1yMkJVQmZgSlZgMmc1VSQsSFJPbk9XZENRJEhYbjRTbi4rREtYWUwiai1ZK2s7ODRHaFQ1RDRRZykxOkBQVF1PTTNsZ004JlBhaWQ0YlAhLFdJW2xxbGNkQSorRVgsalhLWiNYImQzJiZSNW8obDtXN2hmM0dUUXIsdEMhNGlUU0s0OVciJlxsbF9dTks/MFFuWlxaVS1sSV9lclc/Q1ktT0hSSVBpWl9TOFZYa28kZmhZOWhANUpwWHEudGBdaUhZLTVuaDotOls8OTpaZmQnNjRgY3JFWUoiKUlpNHNSXWA+WGROWG8kZSU/TDpvN11jZUFFQDBDZCpqUVBrQjVfQy5qUWEqWkJCYTw2M0ZqJSFGci5GNC9KWGslRz86WWVqaT5FJGEnYSYyYUo1RTgvKkIkb2kpY0BYKUdxUTNcbGomNy1RSC1Kc0xQXnRuKURWRzkpb3FLOXJDOWFjO2o4cl0zV2FrRjhRO0JDPkpOcyI8N3AuXU9UUGNdNmhaOkskblpDVjtGaz5kUVZQbSsvPFNhYV0wOkphZD9kVFY1cVlKXkFOMzZNXyxfS1FvMC9mOiVwPTIoaWVpRWI6XT0sZU1DXSlJWigjTDRQSDtRPDIoajNMQUdaaU5oblI2SSEkJ0tMIyZAVld+PmVuZHN0cmVhbQplbmRvYmoKMjcgMCBvYmoKPDwKL0ZpbHRlciBbIC9BU0NJSTg1RGVjb2RlIC9GbGF0ZURlY29kZSBdIC9MZW5ndGggMjc4Mgo+PgpzdHJlYW0KR2F1MEQ/I3BzcSZVYDM2UiY8S2NVNjVFUlcnIVhhamJjKG9sNj1WcS9wL2kqL2tFazU/MThXQVU3I0FcKmFoUiVbV0hbdS0iV0ZBPXRWTGdTdDtPKTY0MzM4Rj9jZ2xrW20sMXEtLUJ1NyNNZTZNK0Q8IjglNEQ3aF8lPCIiRT48QS4naytVRWRUM0YmNWczVmtoUEkxOUxZMkQpJjVea01QO1ojPTElaGw2S0QiMkFnTjtALiYmW0kmYy1xREolLSRubUJBWHI2cmxjZzg0PSlILXFKQW4uPytdZDVhXlQ8TClxcm9GPyt0KE5uP2FnS09MR3E2MylyTk0nTlRDTjFqWkczMVZgMUBTckE4OUxUZVM0PUlGKjkzNj8rczdRQmooVjYoaERYWGJGbipiMlpoPVY8MXMuOTc0OUQhImFqWzozWWtEVC4zNUxAPUBdOlxQMCs5InJsTzBuXEJqLjdCUzk5QnI8QFw0Yy01J249Ry5ELWk8SCcvcFdWJzZBZCwnPD0nTk5jOExyLEVBRSslWEZcPnVsYkBNXiQ8bT5TTGxhLEUmKG5Ea1xNTVIla1hQS2BVNGtPUzVDU3EhMUBDPSRQI0xeVj9XQEkhdShiazU1QzxrPSVkOUdgIW8+T0Y2Y3QzTU9fQk1DSFtiO0IuRWUnVihEJT4jKDFBKlBHSCdlUSVMTk1NQCtiW3NHSTFlXnQ6UEEnRXNGbDFxcEJPZzZnOE9oTiRsMD1WW3BhLW4zSVdUMjxVS2okblZVXi1tOjJZKFE4bCgpWV8xVS1JcD8zUVhbVlxGVEpcSVx1U282ZjkzVnNnInRmLzVmcFtncyMkXk5iPSU4SDJKLUlzXy1bYFcjaTU0Kzs0Z0hRTUJuXVFrcGInK3B0TzZpLV1LPWItNyxRQ3JWZlZCQFIzam1yITlCcFA/LnMsRG9ZYjxyIVo6YylhYEAmaV9GJy47M1ZOOk4sSTQxXV9sWFZ1O144RzZaXkMqdFtGRyJRISdlWSNsI1VIKjE2b3IpVURcK0o4KF81SmFZXEEsRFhecm5bTV80JzYvTzBZK1NyL1orSU0xJyxFO2VMZ2VWI15nSkYkUk9PJEY3a1Y1WiJPJ0dZTyswM05zUC1AXWpnTm0wNkdcSjAiQUdcWSVnaVw/JFMoPkJVak05QEoqVVo1MFpVN2x0UidlJzs0cmgqdVA+VWZYa100VFAhXE1DPz9LI1gqYy8sNChVK05NJFZJQVhTYUFtYWJvLWk1Iy4jKzMnRkEyJSQlWSo0MCJuQz0maGYwTWpwSTU5N2IyUk8jRXFCIWBRVjY5RmhGPkg8M3IlTzs9Q1VkdUk6R0lpK2VqZyUwKjs2JlMsVC9VKyQpNUs/cENOVF5LJDBbZVtNL1tlLWJSVVA7I1xwOnIrRCcxWjRpOlx1SWI+NEJDIUxbJmVZXXF1QihYaVYjOjVJN0QkZzZPXXJKRz5ib1UqVzM+OE03InJwTDFxPUA4RTlvQUVOVyZHKyFWSSZXN2gzSzNPSU5UJUktKjtPI0BsPz0+V1otJytPS0Y3TXArNVYoZl0mbS5AMHQsYWFLLThLKU91dGwuT1toRGs6WTBNViQ4TENFWXMtLFI9QCc6PSouW21HbzFmXEotIU5YaElydDZbU1xpYSkrM1tmZVZtJDs8JXQ8I2BNYTsiXj83PClXPVRZWlsmZUxSPGpYWjI5ZTRdQT1xOWdwV0Bea2oidCU6JCYvQSgtUE0ibkReLy9yQjtIYD9Aa2ZScWtUZCRaWlpNU2VxI05WKkMqQjtNRD40JzdMPk9nVjdfMzNLVmVmUHBVSSR1Rz0lalVeZEk0Y1FLRyRUYEAjO10iV0pONkEyT08pakJaV0JwcDJZT0E7Mi1VMWYyQjhkcy5rOyE3Lzo2dWUzWC4qPXBLI09lWUJKb2xXOUlWIS9Ec1U7KE04NChuZ0wxVy5uL3FZXkEtSFIpKUlmaGl1bkEtQjI2PW1tOCFrVCJONT1vVz4lb0RWV0g7blU4Xy09ZSJsZWNjWk0kP2xqZTo1Uy46P2VFOVVJS1VVKCZWKztJUVwmcm0rOyouZEg0K0M7Q0gqalckakZdNyRuI0REYywzNkElWGgyW2VGbjFiTTxII0E3OzAoTS1OPz41JjxDXjVbOHMqbmlUSCQkWHIyYGFNSVZJLV9EbSRwZjNIZkpFLmkkWFIoPD04JVRXRFEvNF00LEYnPF9iIXRScyRQazBbSiYoWkkmJkNaSkwpJVZzTjNhciFqKDdJRyU6amFBST11YkFxQDpCSCNvV2g2O1wxb2lBTkRHODxMRWVHVTpbO1VQZVtSYWlecltCXS0iOCheWDMsdEMpITlQNWttN2RKZGlrcHRhJSVdQmprR2tmUm8wViwoYlZYTG9dR0NXM05dMFVvOlgwKFZENDA8OWw0cEwlR1Q9MFdsSkdSWCpoNWVcIV1qQzhmUTBfVl8wXG8lSFJUayt0UXViL2Y7Rik6Vi9xLkE4bjIzMiolaS9ZXDgpa0lwV1IrS19kbF08SGFFQ01saCdickhfc2ZEZiRrVSxfKV9xO180TTReNGZpLTNMKlBPPFdBV1w2JSpCV01VIzZQNyM1Q1I8MytxbHRYPkFoRnJbOStxcWg8SWJIUi9rPzkpbz03V0ZSXyxiTlVpcFhmKl1jWD5EJzswQytwSF9RcDRFZGguS1lZPl9XbXBmMyV0S2NmcFpwOiFxO0EjWD91XG4tVlgsXTVAMVRATC9OOEMzWixpZVMvJ1tDQnRtLm03Q0ttalMhWl9tVmlHO005RSoyciVKWlw1YldYVD9rbyVFLEpHJnNiNlIsSWZvNWVJQWVYVXRIUjQjWDs1OnJhQXVnMUtSViIuV1VXKUZYYyJMazJAZSduPG00Lj5qOjlVL3AwWEM0Pko/UU5UXEltZk4uTGgkS0hjRnAkak1pTyoqJDxIKSckL18iLyhcOWwhdWBAVmlyITJnQ0VVKHJmT2YoKk5JNHAkXExsaS1KTjktWi4maHJHQjA5dWVRaCxKXDckc15WcSJlTVlVKXBzL1FuPztfRClwWyE1J048bEwxcC0rWSJvbE9VWi5cVWZWIlNLQ1pdXm9MViNYYEcpUS1OTSRXUEI3QEMjVU9Ia1VLQjxBYUJHRTxsQ0BscHVTNk1dSUxTU3R0ISQuPDBQREk7ZnRZQkk0bGRKOVRMRCxtXG0jVzJHQz5BNWdkQDBSXCdxMSouXEgkTUpQSjMsdDMtX0QtM2ZfR0FUTEsiVWk0LmYhNiVfQ20mbjZCZzQnZSJZcy5UOmJETD8xV3RcM0ZtL08oVlJsWUs1XWMzZkw8S2teN09ZSEsjVCpYREQ4cF5xQEtjNUJrRVFrZDA3aj05WEdYMmdrKWE6R3NVKzxoL0RuRFg2KGtxV19XXCImJ09YNW5cWnIqSFFYR0liPmRHK3RURllpUkcvIkUqTVE6YHAjZTRWRW5PLks0KUA8ImxQaFtsUmlwMC9WXDIsZ3IuTC8/VVgiXGFERCRoMi5rMSZUO2dfWCxnMFsuRS91U3QpSUlDP11zblxIY15vMjwva00hZlZLcTFsXz1fQEMoISoqJTFCb2RgZ1NsYTpoVGNqaS9tPT1HZmZjbUtcVXNXM0srUFReaWVRT2FLbDBacmxMJlMuZk9eVDo+SXJqMUxFIk1LRGZiNUpEaGNURzdpMjEvUz1TSEx+PmVuZHN0cmVhbQplbmRvYmoKMjggMCBvYmoKPDwKL0ZpbHRlciBbIC9BU0NJSTg1RGVjb2RlIC9GbGF0ZURlY29kZSBdIC9MZW5ndGggNTgyCj4+CnN0cmVhbQpHYXMyRT9aNFhQJ1pKdSQuRicwPWBpXFhISis/LFZNTkZLNytmTy9GUVUhbEckaDZdPCZEcXJnLjNMWmM7Xj1GYm5bW2lHSFIvZVpaPExCbGkkJCM6VVApVWZlclUxYWE8aGE5ZEkybGgtZlMqVjtXRV9BXUkwW1RmWTlqdGtMUVVaQVtSKF4sV1YyUGxxPUdLLC1qZ1VQQ2cvXy5iNWE8Pz11MFJhUGszWEQ5L00mUSNLJ1AmckZSOzNkLD50UiZhN3IqaERQM0o5K2RNZFlYND5FLlZLOyJJKiQpQDApPnNucEVlTkBXSkgtaU03U0gqI0k7JTJkKE42YmVATEBjQSZZa1tbN0xZKksxM1thJW8oXDw+YzFXYmY4PzJCblo6aXFJTUZQSW1XaTJmajJcNCtjZlBXOjM2KzxxLFI7TnEoODBvQS8iQCcxaGVEMG0tbjxyKFU9PiQ6JTBzImo1TWtUQFxYV1JiWyZnUWpzYyRuYWBCITNnLTwjNkZDPz9Wcm0/OE5VOltEOjVmXW9qPGhNKyVCcS9lLCxDNEVsO3FaT2ZePEdvW2Y0WyloUUpWWFhwYXBFSG8+bC47Xjh0KENiJWZiaW1YRnRbUyhJUzkwIU9uSDYkUEFyLXAyOCVyaG1wI1o2SCs8MC5hZUddM11EV0xUOD4hPmlnYTwlK1w+bl1DQyRzWyJOOFU9VW4nJilGUFI1QEZLWTVIW2YtdS0iNikucDBCbiNbVCw8IVhsI1JUVUNWZCVOWSktaUxUQUtffj5lbmRzdHJlYW0KZW5kb2JqCjI5IDAgb2JqCjw8Ci9GaWx0ZXIgWyAvQVNDSUk4NURlY29kZSAvRmxhdGVEZWNvZGUgXSAvTGVuZ3RoIDI3NjkKPj4Kc3RyZWFtCkdhdTBEZ04pJS4mcTBMVW9bQnNlYjMmOERSNV1LNFMnbU9iYmhDNStWPC5wbytWP0cjLWo0NlFJbTloMztBV1tlaEdlP2cuWi1WKkk7byUpcEhcbE9uTChQajAscFlPM1c4bXUhPGpYazx0clNaOV8ySyJSQGVtZm84Oz1hTU5HSXBjLW5BYUIzYjNURm1IQmJeNz5zcChNNjYyR29WJ1M/S0JVLT41YEYmQVJVW3IiYU5cMkxKXkJFaTphXi5HTlMib2BTM3VMVisiSmhQbCUtanFKZXQ2LHVLWz0mOChySDolcjlGXHI9SmVIWWQiJCM9NFkiSmUqZXBII19zayhkbDFLXzBFaURPMWAtSCwwQyNGYlBXP0wxaiIzRGwvLy0kcl40MCRxOUBhR3I2c0kyXXRcbDtwIyJHWClrdTYtMWFEa0toLyM6UG47Y3E/aFolbktGOG4xZkojPCNQKjs5X2E8LVcsSytTSEU8ckdTa2E1REdOJj81PW5LS28pLSE1b3MtUV5QPkpgbl0rTWJJaixvXkhZTW46QmMnYTZBNnRrZyZbS0wiSDRxU2c3MyNrTC9GWE5ZYUQhO1onVF9FJ1NjOmFfcTw8V0deSjQ1TzpTMWlOMCoySzVAbUlqOWpONlJgNWNGaSI7NCcsNS10R19zbXNAcSI6UGUudVVhcDBVOShtIjY4P181aVxKMlk9XnNoREsiKFhcOyE1OVorQjhoK21LOiFkQk0uT3FAS0xTLF46UCcyPUZYOClRSyYyRGg0V0toTj1uPSxJWm9EW2NIK25rVXBcWjNUY2ZeSiJjZisyWDdrM3NraFZVOnE/ZXJ1azBEKl9rPkE0JCRROUpYNGhxXDBSMjRvPHBFMWxfSGJqL3JLXmwrNStMUVcvMlFUbSFJZi5TJW9nOlxhNElELjpxUWFdY01tIS9DZGIsRUNZMW8yPS5iWXJEZVBlNk8/Pzt0SEQlJGJcb3IrQi82TUNOJSo6Y0c+PTJQIjEoWkZRV0ZWM1ZpRjRCVjwwVzlgOUg2N2RsIideXGY0WnBxTmZBSTQoPVxzJmtcMzsjO2NqVW0uZzpEM3RBQlo5UDllXz04bkNLWE91SGxZNm9YaCY8QFc3aisvWkJIP2NwTXJWQF5ZTWJkM2s9VUJrJjJSNW9LWlZcZjxlSE5Bb285cE1WaFddNmFOYF1ZN2hVYGhwPXInQGxJbFFXZy1jMVtLaCczRiEwOkk/Jj4iPExVM0NAJXM5PF9oRy1uQihUTmVObGBLTStuL1lEbls2ajVvVTIvMEAwOCQnc21UT0Y/YU9FMnVOWV8xN0o0bmMtSyVNYTNuTmk9U0J1MEZaVXRkKTNoYXRyJSldXFduLnJoYCsnInEjZjY9VD9QJztMV3A5RDskaD8nISRWX1QqUCpTYE4+S2ZZMDJYTjJiOzRlTlNaZ1RuZj1PSzlPcC9bSFBiOilPbDcvI0EvOHVLO3FSQFUnS1BdcFA8JiQ7WTxTN2BgWk8lUE8qc2JHXDFWNiRzKFN1VFBISFlUR0JXQkA/Sz8uOWFuSVpQVD8nXT9vX2wwW0RfcmkqMCJwUUstUl5dLlIjKS9ZOkN0UFlxYitXPUVwZnE1azAlNDpfNG8wV1pbZUhBQmByVFdrYDIjOlxTN25aSHRyTHAtOS1JQkosRiQnTFQnKTZbYEQ3WjosOlpZJi5xUmIxM3VOYnQ8Mm49S29UQkkkJDBdMkMkbkdJJyZYTStxO09pNkM8RSU5cyl0XWJNIUE6SzUpOGlNLnFEZV9sSVRGNDVpIWNRPT5rOC5Ya19rWnBmQ0EsPVFCQ1dzUmJGWidzMVJlYjIvT2Q4SUhNaVkiK0ReNVhPRCpUTjBZa0d0Ul88SiotZyNxTysoWDQqJkEhPi0kPShEcGFeZSMoUiw/P11qVzRbRzIrQD9KU0dfMW1YSTswIytyQD8nQDVqMzxrVkUwQk4qRUkxaDw0VyQjN290XDkmKUpgdDxJMS4xck5ScFBKUz4kOFYuT1lNS1VRZlRENiJcOiJfPFomTjhKbmQxSkFbc1xcW24uPFVQdUUxMCtcTkk5O0QrSnBFKHRrTERKTWJMMT8xITNFLy86XGVsTyErdD5KPXMvX2dqNEg6QyMyPHJQZkQxJDFdKGIybHBVN2k/WGRvaCtlZ2UtRFZgV1xwWDFRTihTTWMqP0FCJSc8X0BKREJ1RF4uPzY6WkM+STIpRl9SSDZKLUlmWShVbTVta1tNN2tmcGprOSRdXUhNXU9RcFwnM1tjaS8kVDdlLSRCN2htLUNFMWtjZUdYW2NAYFRVMTlkOU9XTU5TbnJHQUEpX2clc1U5Zk9sR2kqRzJlSEI7RGJxSG8pbW5CIWxeKkU0ckJcMW8+OkUqX2c6NilKZCkyU0U/Q2NpczJJTnUoI08waTVvLC4rUWhBQEhpdG5zJDIrRzBDLz07cT9LOTxkSTEtX0xlL18kVzU/YHFTLicuOGM6LStmRmAnYy5eVmFPJGdIQ2dbdDIsJ3BnIlo+LDgrLmYwX0M7L3BMI2hVKExgZVdRRF09OlE7InInbksxUGcxbl9ILC5zPiQtVV0rcmxiKy0xJW8zXS8laTNpPi9icy00dTdMbF9LSSVjUzpDVk5NK29kOVInYWovUyNodWBJKWB1VkFqQV9laT0lYiUlQTIzSENmPy9wUXRPXTEwakQjTi9Pa0FHPXJWPGEoZ0FYaWtdRDQrcStycjk1clNZQCgwYnFtOUgxaWpdUl9oM2ElNVkpTD8pRUQxIVwsWEdqXGMtQidBLUZzNyxZS1ZdVmArR0EpaTBbISNpIVdmdDhEaEpwY2Q0ZlYidGo5IUJkYVtLPl5tXllFPmFfMUNXSypbKHQmYW0rW0dpMGxGJyQkXSJyRWRCS1thK1g4MCVeSj5GQCZSU10pYyhnJSZmXCwhdFdBcDNXW2o6TmVXPVowV1xEPUZiZC1bIU9DMzQ3T1BLUUlzdCwnOFdebGE2aCxGVXI/XGInXWIhaUpkPSZzKEJZUSMnbWFxZz1sbWZFLGFeMk9ZRDBmVycoSFhPUWY9Y1tgZ1hiZGpqJnBYZzJmWF1GVUdyYnBsPUlBczRQWCVeO1tZbzkyaVlZdGo9QyJbP3MuUCExYFEpcXFEJ0liUEIyZllfOkVKLltLaHElRUVUOGJjWSo9dT1NKzs+YixLP1RqTzJtdTxXZC8kPmRccmdgYmVfVzcmLXQ0RzhhXW5AJC8iREc+YE5gcHNxTjIkY1RnNTFgP1YoTEFzakMrcFxRQCpXNilxI3RsP0Q+LlJHOElXLHAtQVRLPEFnLjdITSxKKDlMbTNwcTgvXVY0ZzdaPGttIWRKUGRnZT1CL0I9P2NIJFkuLEojM1MlLURLWmI0IjNlP3I2W1BUPDVhVS1vViRLKGElcDdQITxYPmlHVzgycHBYWWxsJTk4Mj1cWmk9XDE1PzFoXCg1cVZEOzRbb2M3dDg+KU1GTTszZCREZj08dXRfWjdcXzZMPkZkOSFxZ2FtZDEnKUA8Z3QoaFdjM2EqWj81IigtMjcxMVlpMFIoR0xRLyg2NixTWT4jTVlWWDouTksyMiUsdWhpc2M2ISgwdCRcL0toQ1lNVyNtNkNLU3FwVmlBOz9pM3AqXkRPYEFoMmEoWj8jQEVOTlFvcGFPVS06ayEtQHNKQSEnO1wvYlF+PmVuZHN0cmVhbQplbmRvYmoKMzAgMCBvYmoKPDwKL0ZpbHRlciBbIC9BU0NJSTg1RGVjb2RlIC9GbGF0ZURlY29kZSBdIC9MZW5ndGggNjc5Cj4+CnN0cmVhbQpHYXJvPj4+TyE9JjtCJD8vJ11BLmVfal9bMDdGPS01YGwqdF8sMmxGQUswND1YWTdaTSZFVmVuZWNaWzo8T1RRLz1qSytjY0UnOlJPLW1ZTig6WW84RT91X1FhcEs+aio5QGgpMTNsV25ZXEAtLzpuYiJXTD1hKC8tJi89blMjVEpeOC9lPTVGJFxAbSg1IywiU3JmKCRrbFJaXlEnaF0xPS5SbGE2NUZwTjxnbitSJE5aX2hQJWVnXDY9bEdqZl1HP0tpJycwTFIwW0hfZmd0M2soc05PPjFaa0BjVWhnZ29cM00kMC4rPSxrQDU6cklQIkA2YFpvRDltXlRDU3BaITxPYmVaPCNaay4kZ2JjW0lFX2tKMmAiIzVHYzVQYCs6M2dzOWxQL0VjYyI7I1dlLCpkcGkqWlwjUGFtIVY1IlQpMWJKLkEjKCNFYi1DLy4zWWRbbi9gaF8nbzolaW5LIVxOWFxOKkNbJDM3ck8vSGc2O2lKVSxhJmAsRUlWX1Q1NDxrVCMwITclQC9TXmBjTkhDQzZAaGlAJzRqSTciYG5mUTtqM2BvcmtSVmgxS1d0LkVcWjsyaSVMQUU1Sj0+QC1YcjcrTlpnR2ZLOz5vSzdOInBJb2pmPzUqSVFBJlwkWjZrQVw1O3A+ZGZqaEdZZ18/MGRxRE5MbEM/TlAjb2lnJF5PPS9OaCc7VzllJWlfO1w4dEFjNWpObEclIjckLWwzQE0zSThgUkFmLFwwOHAuJmRfXGIxPjc9YDxZMklmZFwicWVhJSJAZHNLWUN1YCswJXNac11fKSNYQUtgWVYkYG9YS0lJMi4tIj05TVVbMl49Y1s7JmdLPU5kXS1oWz40a2gqdFhwYDAoLGlTXzdScltkIUdPQmsuOmM8P2RaVVtKSH4+ZW5kc3RyZWFtCmVuZG9iagozMSAwIG9iago8PAovRmlsdGVyIFsgL0FTQ0lJODVEZWNvZGUgL0ZsYXRlRGVjb2RlIF0gL0xlbmd0aCAyNzY0Cj4+CnN0cmVhbQpHYXUwQ2dOIjdEJlVpODRvTV9SQVAqKjpebmc3dWVLajIiOk9tImMicSNxYWkqMzxjV29OWGZVbXJLRDdUaCk7cUcuKlFTUHNsL2BvS2k0M2guTS0rbkJcVEQoSCdWKyJvXDc4NTU+NDJmJlQ9RlU7XCg/L009YkJMY2s6RzQ8VGI2PVZAUCopcyhCa21IMS5KXUFsIWg1b00sODdEP2pLNEpQcylxU3J1KyMoRSonLGlVP19fTy0jRmNGTF4nJi9qbD40Ji8yLCNKIVd1KFBva2I7UTsvVTFNZj1EX20+NEEvazBxM0s/RmJXNmxjI09STlIxZU4iTG1wb2FtKFVAPXBmJDBecURral83OFJtdG9RO0UoRV0pRHIxTltyVl02NDFMSkFvRFxoZzFCQ3RvW3A/KDkoXSxCIm8rQSVEUmdzNmYuXTNCVGtIMkkkU20sODFRcig7a2gzVVJMTTBHZDpyLFBEYD9fbUFzVU81WFo0ODk4O25MZGdcLVI7XyY0JD8yKnEmY1kiT3IiJTplZzZjQ3A5Uy5mQzMjLFNkS2RcMElsYXEyczs5My9VYTpKWm46Yk5ELDsxYkRWLyVVJGNURGBuJXMuJHNAM3JSYStHbkVqMSs2MmxdKjcrVUphLS9KRitVJi9TJDNMS3NqV19qMTMkLzIiZGEyaUhHLlFBUnFeb000J2c8KTQzV005SklOQlVGaVgrTlxSZjRYQiwnRk4tZTFuQydaUF5NVWlIX1ttQFhNSihhMVw6WFpJNUE7MTNeJWQvP2dCYWNKMz9damk8TSlkcUNrYGVhLSxMbzddW1xCRDJxT2d0ZEwsJWhDVEAqUF5jJWMwY0E9YENLYjxddChcY0k9SDwiNDVgNzJGPDVBY01zdU9KJkBHOnVzLjheY2EvQ0dFT2kmIkJvVzFTaTUhRyJUajVbbjw4OW02Mi5SQXMzOG5GTUJyOWs3R2RQUiQ2Uy8rMnRSVCFTWWp0bDdWcU9PPFAxOFFuL1VKQkUuZV1VRk1UcltuPVpuJDhyO0oxX3JlUFUyMWopaHRPPFMtSipLZW03LFxnUTs/cUc+Pis1S2ZjKzNOTitDPEtIMVJIMytcVCk6c1gwZTRNVj4yWS9wbDIrbVY+QyhGR0EjUEVsWGxOLCQ8PGc5SV5ONEBeSGFqP0MrLGIjTiM5amEmZGl0LDRTIkAtLFdqO3A3Wm9WVXVJIT4wZT8tX0xLcTAtSTgwV3NVcjFFLDdnaWY/SHFKUFNWbTpCSiRpZiFMT1hiMlFGMVRqRWRxYz9DU3JYLkQnazw+JUVEVD1ZTFJELms5IlY3clJhT1YtMD5qNXBINGgrMDNmSkBccWFgJ0BhcCY8Vm9HRVVbKycxKCVJPkhKNVwqIU8xSGlALms/czY0cltrWlArTkdjbUY+OShaWSEvI1kyZl9zTkZUQGwxRCw9XFBRYHMvPF0pX0tYUEdYLE0tTTdATFRfQCNcMEEoSCZrKEQwU0cnZyFWVTo0Jil1UT9wU0hASlxsLjtVMikmaSI8Y24hWj1dW2lacEsmVU5aYmldSDk5PWBsWSMxbDtcPXNbN1dlbnMiSEg9b0xOLTBpZ0VgUmlabGpsLE9JTGoyS2FPZEgoSy9jIlcqaFtsIW1yJVJqY05Na28kQ21nZVhXTitKRzYlWjotTFVwTmVZbV86KzddRnIjJmJmUz85JlZzXmZwWj5KZzRIY1FlLkA+UHBSWi1tWkJAVjckKGx0WHJjInR0Oi5bVGhNWFtQUCpiXTNrM0wrSGJNa1E8SXFNU1JyZGI6PUw6IXVYZGdGWDQ3MmRQO04yKk8nYGZlKHJObUxlTF86RVloOTZmL2lATSRsQEVuJyw3LmJPSVlEUSMqRUAzYUs3WkM9QVBpTi0yS19icD1pZkI2bWFdU2NyYi4/REFfWkJKZCRGYUgramlGNl0wTk91USJQa1lMRDhmY2wjI2QkPkhnVlw6cUcnSVJebT5bOlI5bmY9LiNmMEI9cCVIQCs2WV1HdXMsRWFxa0JhPChtKlsnXzFwRDc4JmBDWSlSIyFxajBiXyt1ZFQ0UTFUJ1dENTteVjgtZDwlOjApVCI/QzA8IS04cmdKa05ub2llWVtmJGtHP2BAI2I0MVoxWGAnIVdGZGY6RSYjaiE9LCJCMSNfRSkjb0YyW1g2KHFYa1NzZFRQMVpVU0ovLUpAUDUxXitVSiprQlFLXUVFaT9QIVVCcmkybWU3c1BiIzwxYTomMkBPQWIjVEVWQTVyKDBBKG1FLG9bRV9dT3EsXCc0KVNGMFRyRilTalhOSHMqVE1CKE9rU0VeSDVmP2trT290aUM9cW9XQVBZPmMtZVFuSTZdSilOYkVmNTM6RUI9SWd0Y0tZQGNaQDA9M1I2LlFTcksuOkhAL1AlWVIwUG5oZiJqdERPamVtN0haYyhMZEVaUF5ccGMvTVk2X0YxNCJeRU5mMEcnczVmYmlIRDxJLUF1TC9LWWU7bTtoVnQmMWprOEtCYiJlVmVKUGlXbicpZUNgT1decE4ubVRZYk1MSzc8ZCs0SnFVWk5mXSV1XFJvM00vUVElY1NwZzM2RjZcOmYraDZrWk9vVXNQNENzaEIpInFJUEZbLFIsLEhCay80SFU/YUNBNjJ0bzBqNjRJWTxpP1xoWSI6YmgiTipBS2VrcHViYm86WUcmJiNmaDghQCEyLEhHQ1BZST1bWWY2Zz83ZVFxUkxmVzQxRHUybjEvNU0xMVhjUz9ObEEqdCRvaUFKZmcqOEhEWXNFLDFIZj9FTi4iV3VZLDFlLGJcdUtRTzY6RTBkJWJ1VidUN1Y5a1FJQ2tgOj8pN2JaNW5ZWCk3Ii1TOW1hZ2AoTTheXkdySmlpJ2dHJiltP0c0XFgqLCxJbHJiZiM1PWNlTmBeTGlrInFTJVFabydKIlNUOlRsZ0ZiNlpAbVdsPyVPQW0jOnA7RS0zZiFwckInRWZoMzgjWT9CWExnajk6W3Q0OUU7TF1bTzZRViZcJGZIRDc8UkJkZ3RAMDI4NV5cIVZyUGUyZjI4L3FKIzRnYDxTbi9iUG5tZz9UXE1OOy9ENV8vKCErOldcIzFwY1Q1Kl5DTTduRWpSLTsnMF0uKEg0YVo/T2opO2ZhY2ExXFouNycmIVh0VzU5XSNjM08iJ2lzPDI+aTdTWFBkaENaWG5LYFJTSUEqZzBzKk1eUUk3UUovci1fYzRlIWFSYmVPZmVMPWk8Y2ghPElGTkVuO0FmP2NeMSMiVjI8I0I/JmFARXFbJ1pXV1NYKWpBZ1dqJ2FCO0Nzc2QoTztJLiNKXWZpWVlRRVE1cj8tMWwsQU5TS1A+NTlcM3FNWmdXbWZrMDNPOTIrXSZvImJvWSNWZUxiKVFMJnNQQk5ESyY4cmh1PltoLmwmUWBYX0ZtUls7ImJcXiVWTS09TSZEYlEwXURrL00sZF1rUyQ+UWovXnFEQFFdXjokS1MrIj5KdVFVMyxtIVZzWHBXJiVzXVFbVnEwIio4LFxnZVFgRjkjZHU2cGA/YEBVVks9SVs8MFJTY0AkSjMrTl1IIVYiLC43SjN0JlxMJWIiZyU1L3BjUWpwc01hNjdJcVNsPyZjc01HLzRhbXNrJXJDOGpmZzheQjVsVmdCQHFjQEhBazdARUo3PHJAdGRlZ0ghZm0qaXEnISh1Yl9eQX4+ZW5kc3RyZWFtCmVuZG9iagozMiAwIG9iago8PAovRmlsdGVyIFsgL0FTQ0lJODVEZWNvZGUgL0ZsYXRlRGVjb2RlIF0gL0xlbmd0aCA3NTIKPj4Kc3RyZWFtCkdhdD1mOTVpUT0mOzlOTydtIkkhTEVTKkRVM15rXS1TWEhdWGVWTyJqTUtRVlYrKHVOUGNObSZHSCc7STtgJ2gtSjRMOi1SO1s5cF8hKUhLSFc6MD9FYTJpViNgM3AyJltOPk0hamQ6SDFoKW04OydzLGI2bWphZDI5cl5iZ1ElX3I+JU5UNTwkZm5yP3M3MV1jPTFpUUBdOiVrYWhYLmwxL19OPk8zWzwyYCYpZT88WEREU1IwZE9aUkgvQEYpQ2owNzVXNWZZJ2xITUhcaHE0ZT0jUXBiK2p1I2AzJi9FXEVRWkJTVE1eOCJGPTtGUUZJI0RDSyFVXFcmdWRUbGdqUWU9SWBHb2hjXiomWERFNVctb1A0NTRJUFYpb0FXZCslUWgsVFJGK3JCNXAjajxccCZqbFhhTm9KLCQkaGM/Nm5AZ2wrYilZJVREVEMhYSI1SktDL1FjNEtHRltIXWQrYUUmQ3FOWDA5ak1eMFtWRkRVZFFdMjVHXVReMHItKipaaFM8YTN0bVc2QE9hP0M+VUgsU1ckLT0pbjxmNUZQMEo/NF0+REc+VlIrT2lIQTs1IjBDOWdBTlU/OF9HL1wiZVhOUEouVHMyUDFsa287Zm9JMFlANDZtNltVUStmcltkPXQ7Q1s1JylnaVsyX1RcVWEzNUVvMSREImplZkcwLEMuM0cxST40OSx0SkkzdSdPNVFuMkwkTTJIODJOP0REb2diQ0wyX1E1TDJ0WXVKPC5BJzYlamx0bl1XSyZdbCFVLFZoW3MzTz5iYEBBSzU5NGYhbCkpKE9cam5STi8+KyNDb2pCVFRKP09pQ0Y/J19DJD1pVGlEIjAnNl9CInReYlQkYkFRPkcvS1MkK01maWJEOEYiXTN0ZjZZZCJLX2hsUydFKC8jVlhMP1JEc0QicW5bdFc9LWsib21sR25MJj9BQ1BPRWBGc0lMUj9KdXFlRCtmbTZJI2gyV1QyRjRbMDhvXmJQWnAjUVBrKn4+ZW5kc3RyZWFtCmVuZG9iagp4cmVmCjAgMzMKMDAwMDAwMDAwMCA2NTUzNSBmIAowMDAwMDAwMDYxIDAwMDAwIG4gCjAwMDAwMDAxNDIgMDAwMDAgbiAKMDAwMDAwMDI0OSAwMDAwMCBuIAowMDAwMDAwMzMyIDAwMDAwIG4gCjAwMDAwMDA0NDYgMDAwMDAgbiAKMDAwMDAwMDU1NiAwMDAwMCBuIAowMDAwMDAwNzYxIDAwMDAwIG4gCjAwMDAwMDA4NzYgMDAwMDAgbiAKMDAwMDAwMDk4NSAwMDAwMCBuIAowMDAwMDAxMTkwIDAwMDAwIG4gCjAwMDAwMDEzOTYgMDAwMDAgbiAKMDAwMDAwMTYwMiAwMDAwMCBuIAowMDAwMDAxODA4IDAwMDAwIG4gCjAwMDAwMDIwMTQgMDAwMDAgbiAKMDAwMDAwMjIyMCAwMDAwMCBuIAowMDAwMDAyNDI2IDAwMDAwIG4gCjAwMDAwMDI2MzIgMDAwMDAgbiAKMDAwMDAwMjgzOCAwMDAwMCBuIAowMDAwMDAzMDQ0IDAwMDAwIG4gCjAwMDAwMDMxMTQgMDAwMDAgbiAKMDAwMDAwMzM5NSAwMDAwMCBuIAowMDAwMDAzNTI4IDAwMDAwIG4gCjAwMDAwMDQzOTggMDAwMDAgbiAKMDAwMDAwNzA3NyAwMDAwMCBuIAowMDAwMDA4MTMwIDAwMDAwIG4gCjAwMDAwMTA5OTggMDAwMDAgbiAKMDAwMDAxMTY1NSAwMDAwMCBuIAowMDAwMDE0NTI5IDAwMDAwIG4gCjAwMDAwMTUyMDIgMDAwMDAgbiAKMDAwMDAxODA2MyAwMDAwMCBuIAowMDAwMDE4ODMzIDAwMDAwIG4gCjAwMDAwMjE2ODkgMDAwMDAgbiAKdHJhaWxlcgo8PAovSUQgCls8MTU2MzlmZjQ3NmY1NWRhODMyMDUwYjM4YWM3MDMwZWU+PDE1NjM5ZmY0NzZmNTVkYTgzMjA1MGIzOGFjNzAzMGVlPl0KJSBSZXBvcnRMYWIgZ2VuZXJhdGVkIFBERiBkb2N1bWVudCAtLSBkaWdlc3QgKG9wZW5zb3VyY2UpCgovSW5mbyAyMCAwIFIKL1Jvb3QgMTkgMCBSCi9TaXplIDMzCj4+CnN0YXJ0eHJlZgoyMjUzMgolJUVPRgo=";
+// ── History stack: each entry = { page, scrollY } ─────────────────
+let histStack = [{ page: 'home', scrollY: 0 }];
 
-// Set up download button with base64 PDF
-const btn = document.getElementById('downloadBtn');
-btn.addEventListener('click', function(e) {
-  e.preventDefault();
-  const byteChars = atob(PDF_B64);
-  const byteNums = new Array(byteChars.length);
-  for (let i = 0; i < byteChars.length; i++) byteNums[i] = byteChars.charCodeAt(i);
-  const byteArr = new Uint8Array(byteNums);
-  const blob = new Blob([byteArr], {type: 'application/pdf'});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = 'bhavya_malik_writing_samples.pdf';
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  setTimeout(() => URL.revokeObjectURL(url), 5000);
-});
+const SUB_PAGES = ['experiences', 'exp-detail', 'projects', 'skills', 'about'];
+const backBar   = document.getElementById('sticky-back-bar');
+const backBtnEl = document.getElementById('back-btn-el');
 
-// Scroll reveal
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((e, i) => {
-    if (e.isIntersecting) setTimeout(() => e.target.classList.add('vis'), i * 90);
-  });
-}, { threshold: 0.1 });
-document.querySelectorAll('.exp-item, .wcard, .skill-card, .edu-row').forEach(el => observer.observe(el));
-
-// Sparkle trail
-const sparkColors = ['#ffadd4','#cc99ff','#7ddeb5','#ffd966','#88ccff','#ffb380'];
-let lx=0, ly=0;
-document.addEventListener('mousemove', e => {
-  if (Math.hypot(e.clientX-lx, e.clientY-ly) < 28) return;
-  lx=e.clientX; ly=e.clientY;
-  const s = document.createElement('div');
-  const c = sparkColors[Math.floor(Math.random()*sparkColors.length)];
-  const sz = Math.random()*8+4;
-  s.style.cssText = `position:fixed;pointer-events:none;z-index:9998;
-    left:${e.clientX}px;top:${e.clientY}px;
-    width:${sz}px;height:${sz}px;
-    background:${c};border-radius:50%;opacity:0.9;
-    transition:all 1s ease;`;
-  document.body.appendChild(s);
-  requestAnimationFrame(() => {
-    s.style.opacity='0';
-    s.style.transform=`translate(${(Math.random()-.5)*50}px,${-Math.random()*60-10}px) scale(0)`;
-  });
-  setTimeout(()=>s.remove(), 1000);
-});
-
-// Floating sparkle stars
-for (let i=0; i<22; i++) {
-  const star = document.createElement('div');
-  const c = sparkColors[Math.floor(Math.random()*sparkColors.length)];
-  const sz = Math.random()*6+3;
-  star.style.cssText = `
-    position:fixed;pointer-events:none;z-index:0;
-    left:${Math.random()*100}vw;
-    width:${sz}px;height:${sz}px;
-    background:${c};border-radius:50%;opacity:0;
-    animation:float-star ${12+Math.random()*16}s linear ${Math.random()*20}s infinite;
-  `;
-  document.body.appendChild(star);
+function updateBackBar(pageId) {
+  if (SUB_PAGES.includes(pageId)) {
+    backBar.classList.add('visible');
+    const label = pageId === 'exp-detail' ? 'Back to Experiences' : 'Back';
+    backBtnEl.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>${label}`;
+  } else {
+    backBar.classList.remove('visible');
+  }
 }
 
-const style2 = document.createElement('style');
-style2.textContent=`@keyframes float-star{0%{transform:translateY(100vh) rotate(0);opacity:0}10%{opacity:0.5}90%{opacity:0.3}100%{transform:translateY(-120px) rotate(720deg);opacity:0}} @keyframes spin-star-slow{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}`;
-document.head.appendChild(style2);
+function showPage(id, restoreScrollY) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  const target = document.getElementById('page-' + id);
+  if (!target) return;
+  target.classList.add('active');
+
+  if (restoreScrollY != null) {
+    // Use requestAnimationFrame so the page renders before we scroll
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => { window.scrollTo({ top: restoreScrollY, behavior: 'instant' }); });
+    });
+  } else {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  updateBackBar(id);
+}
+
+function navTo(id) {
+  // Save current scroll position before leaving
+  histStack[histStack.length - 1].scrollY = window.scrollY;
+  histStack.push({ page: id, scrollY: 0 });
+  showPage(id);
+}
+
+function goBack() {
+  if (histStack.length <= 1) return;
+  histStack.pop();
+  const prev = histStack[histStack.length - 1];
+  showPage(prev.page, prev.scrollY);
+}
+
+// Exp detail data
+const expData = {
+  dfg: {
+    role: 'Student Product Designer',
+    co: 'Develop for Good',
+    period: 'Remote · May 2026 – Aug 2026',
+    body: `
+<p>Designing for emotionally complex and financially sensitive experiences through collaborative product work.</p>
+<p>Around 7 in 10 families in the U.S. reportedly lack savings for end-of-life costs, turning an already difficult experience into a financial burden for many. Through Develop for Good, I'm currently contributing to product design work supporting a nonprofit initiative exploring more accessible and dignified approaches to end-of-life planning.</p>
+<p>What makes this work different from classroom projects is the context itself. The people who may eventually use these experiences aren't browsing casually — they could be navigating grief, uncertainty, emotional stress, or financial pressure. That changes how I think about every design decision.</p>
+<p>I'm collaborating within an international cross-functional environment alongside student contributors across product, design, engineering, and related disciplines. My work currently involves exploring how research, information structure, usability, and interface decisions can reduce friction and make complex topics easier to understand.</p>
+<p>Areas I'm contributing to include:</p>
+<ul>
+  <li>User research and understanding context</li>
+  <li>Information architecture and structuring experiences</li>
+  <li>Wireframing and iterative design exploration</li>
+  <li>High-fidelity prototyping</li>
+  <li>Design refinement through feedback and collaboration</li>
+  <li>Communicating ideas across contributors and workflows</li>
+  <li>Preparing designs toward implementation and handoff processes</li>
+</ul>
+<p>Because the project is still ongoing, I'm learning to become more comfortable with ambiguity — contributing before all answers exist, iterating through uncertainty, and balancing user needs with broader product goals.</p>
+<p>One of the biggest shifts this experience has introduced is moving beyond:</p>
+<blockquote><p>"Does this interface look good?"</p></blockquote>
+<p>toward questions like:</p>
+<blockquote><p>"Is this understandable under stress?" "Does this reduce confusion?" "Would someone navigating a difficult situation trust this?"</p></blockquote>
+<p>Those questions make product decisions feel less about aesthetics and more about clarity, trust, accessibility, and impact. The work is still evolving, and so is my understanding of how thoughtful products are built within collaborative environments.</p>`,
+    stack: ['Figma','User Research','Information Architecture','Wireframing','Prototyping','Collaboration','Iteration','Design Communication']
+  }
+};
+
+function showExpDetail(id) {
+  const d = expData[id];
+  if (!d) return;
+  const pills = d.stack.map(s => `<span class="stack-pill">${s}</span>`).join('');
+  document.getElementById('exp-detail-content').innerHTML = `
+    <span class="co-tag">${d.role}</span>
+    <h1>${d.co}</h1>
+    <p class="meta">${d.period}</p>
+    <div class="exp-divider"></div>
+    ${d.body}
+    <div class="stack-pills">${pills}</div>
+  `;
+  navTo('exp-detail');
+}
 </script>
 </body>
 </html>
