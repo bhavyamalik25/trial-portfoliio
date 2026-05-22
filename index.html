@@ -75,23 +75,16 @@ nav {
   background-image: url('assets/hero_image.jpeg');
   background-size: cover;
   background-position: center;
-  filter: saturate(0.65) brightness(1.06) hue-rotate(6deg);
-  opacity: 0.55;
+  opacity: 1;
 }
-/* Separate veil div sits above image, below text */
+/* Veil: thin frosted layer only over the text centre, edges fully vivid */
 .hero-veil {
   position: absolute; inset: 0; pointer-events: none; z-index: 1;
   background:
-    radial-gradient(ellipse 68% 60% at 50% 50%,
-      rgba(250,248,246,0.80) 0%,
-      rgba(250,244,246,0.54) 38%,
-      rgba(250,238,240,0.24) 72%,
-      transparent 100%),
-    linear-gradient(to bottom,
-      rgba(250,238,240,0.52) 0%,
-      rgba(250,238,240,0.08) 22%,
-      rgba(250,238,240,0.08) 78%,
-      rgba(250,238,240,0.44) 100%);
+    radial-gradient(ellipse 54% 44% at 50% 50%,
+      rgba(250,248,246,0.68) 0%,
+      rgba(250,244,246,0.30) 55%,
+      transparent 100%);
 }
 .hero-content {
   position: relative; z-index: 2;
