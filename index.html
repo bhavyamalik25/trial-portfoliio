@@ -69,7 +69,6 @@ nav {
   display: flex; align-items: center; justify-content: center;
   padding-top: var(--nav-h);
 }
-/* Image background layer */
 .hero-bg {
   position: absolute; inset: 0; pointer-events: none;
   background-image: url('assets/hero_image.jpeg');
@@ -77,13 +76,13 @@ nav {
   background-position: center;
   opacity: 1;
 }
-/* Veil: thin frosted layer only over the text centre, edges fully vivid */
+/* ── ONLY CHANGE: centre opacity 0.68→0.82, mid-stop 0.30→0.48 ── */
 .hero-veil {
   position: absolute; inset: 0; pointer-events: none; z-index: 1;
   background:
     radial-gradient(ellipse 54% 44% at 50% 50%,
-      rgba(250,248,246,0.68) 0%,
-      rgba(250,244,246,0.30) 55%,
+      rgba(250,248,246,0.82) 0%,
+      rgba(250,244,246,0.48) 55%,
       transparent 100%);
 }
 .hero-content {
@@ -180,7 +179,7 @@ nav {
 .connect-title { font-family: 'Fraunces', serif; font-size: 52px; font-weight: 300; font-style: italic; color: var(--navy); margin-bottom: 22px; line-height: 1; }
 .connect-text { font-size: 14px; font-weight: 300; color: #6A6A6A; line-height: 1.75; }
 
-/* FOOTER — centered */
+/* FOOTER */
 footer {
   background: var(--blush-nav);
   padding: 44px 56px;
@@ -197,7 +196,7 @@ footer {
 .footer-icon:hover { opacity: 1; }
 .footer-icon svg { width: 24px; height: 24px; }
 
-/* STICKY BACK BAR — always visible on sub-pages */
+/* STICKY BACK BAR */
 .back-bar {
   position: fixed;
   top: var(--nav-h);
@@ -217,7 +216,6 @@ footer {
   transform: translateY(0);
   pointer-events: all;
 }
-/* Spacer so page content doesn't hide under both nav + back bar */
 .back-bar-spacer { height: calc(var(--nav-h) + 44px); }
 
 .back-btn {
@@ -348,7 +346,6 @@ footer {
   </ul>
 </nav>
 
-<!-- STICKY BACK BAR — lives outside pages, always in DOM -->
 <div class="back-bar" id="sticky-back-bar">
   <button class="back-btn" id="back-btn-el" onclick="goBack()">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
@@ -356,7 +353,7 @@ footer {
   </button>
 </div>
 
-<!-- ═══ HOME ═══ -->
+<!-- HOME -->
 <div class="page active" id="page-home">
   <section class="hero">
     <div class="hero-bg"></div>
@@ -395,7 +392,6 @@ footer {
     <h2 class="sec-title">Choose Your Formula</h2>
     <p class="sec-desc">Each jar holds a different dimension of my work, shaped through curiosity, collaboration, and building.</p>
     <div class="jars-grid">
-
       <div class="jar-item" onclick="navTo('experiences')">
         <div class="jar-svg-wrap">
           <svg width="78" height="94" viewBox="0 0 78 94" fill="none">
@@ -410,7 +406,6 @@ footer {
         </div>
         <div style="text-align:center"><span class="jar-en">Serum</span><span class="jar-label">Experiences</span></div>
       </div>
-
       <div class="jar-item" onclick="navTo('projects')">
         <div class="jar-svg-wrap">
           <svg width="78" height="94" viewBox="0 0 78 94" fill="none">
@@ -425,8 +420,6 @@ footer {
         </div>
         <div style="text-align:center"><span class="jar-en">Moisturiser</span><span class="jar-label">Projects</span></div>
       </div>
-
-      <!-- tall centre jar -->
       <div class="jar-item" onclick="navTo('skills')">
         <div class="jar-svg-wrap">
           <svg width="78" height="94" viewBox="0 0 98 116" fill="none">
@@ -444,7 +437,6 @@ footer {
         </div>
         <div style="text-align:center"><span class="jar-en">Toner</span><span class="jar-label">Skills</span></div>
       </div>
-
       <div class="jar-item" onclick="navTo('about')">
         <div class="jar-svg-wrap">
           <svg width="78" height="94" viewBox="0 0 78 94" fill="none">
@@ -458,7 +450,6 @@ footer {
         </div>
         <div style="text-align:center"><span class="jar-en">SPF</span><span class="jar-label">About</span></div>
       </div>
-
     </div>
   </section>
 
@@ -486,7 +477,7 @@ footer {
   </footer>
 </div>
 
-<!-- ═══ EXPERIENCES ═══ -->
+<!-- EXPERIENCES -->
 <div class="page" id="page-experiences">
   <div class="back-bar-spacer"></div>
   <div class="inner-header">
@@ -532,7 +523,7 @@ footer {
   </footer>
 </div>
 
-<!-- ═══ EXP DETAIL ═══ -->
+<!-- EXP DETAIL -->
 <div class="page" id="page-exp-detail">
   <div class="back-bar-spacer"></div>
   <div class="exp-read" id="exp-detail-content"></div>
@@ -546,7 +537,7 @@ footer {
   </footer>
 </div>
 
-<!-- ═══ PROJECTS ═══ -->
+<!-- PROJECTS -->
 <div class="page" id="page-projects">
   <div class="back-bar-spacer"></div>
   <div class="inner-header">
@@ -593,7 +584,7 @@ footer {
   </footer>
 </div>
 
-<!-- ═══ SKILLS ═══ -->
+<!-- SKILLS -->
 <div class="page" id="page-skills">
   <div class="back-bar-spacer"></div>
   <div class="inner-header"><span class="label">Toner · Skills</span><h1>Skills</h1><p class="tagline">Tools I have mastered.</p></div>
@@ -618,7 +609,7 @@ footer {
   </footer>
 </div>
 
-<!-- ═══ ABOUT ═══ -->
+<!-- ABOUT -->
 <div class="page" id="page-about">
   <div class="back-bar-spacer"></div>
   <div class="inner-header"><span class="label">SPF · About</span><h1>The full picture.</h1></div>
@@ -648,9 +639,7 @@ footer {
 </div>
 
 <script>
-// ── History stack: each entry = { page, scrollY } ─────────────────
 let histStack = [{ page: 'home', scrollY: 0 }];
-
 const SUB_PAGES = ['experiences', 'exp-detail', 'projects', 'skills', 'about'];
 const backBar   = document.getElementById('sticky-back-bar');
 const backBtnEl = document.getElementById('back-btn-el');
@@ -670,21 +659,17 @@ function showPage(id, restoreScrollY) {
   const target = document.getElementById('page-' + id);
   if (!target) return;
   target.classList.add('active');
-
   if (restoreScrollY != null) {
-    // Use requestAnimationFrame so the page renders before we scroll
     requestAnimationFrame(() => {
       requestAnimationFrame(() => { window.scrollTo({ top: restoreScrollY, behavior: 'instant' }); });
     });
   } else {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
-
   updateBackBar(id);
 }
 
 function navTo(id) {
-  // Save current scroll position before leaving
   histStack[histStack.length - 1].scrollY = window.scrollY;
   histStack.push({ page: id, scrollY: 0 });
   showPage(id);
@@ -697,7 +682,6 @@ function goBack() {
   showPage(prev.page, prev.scrollY);
 }
 
-// Exp detail data
 const expData = {
   dfg: {
     role: 'Product Designer',
