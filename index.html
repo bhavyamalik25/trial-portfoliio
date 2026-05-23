@@ -14,6 +14,62 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="css/styles.css" />
+
+  <style>
+    .contact-form input,
+    .contact-form textarea {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      padding: 13px 16px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--card-bg);
+      color: var(--text);
+      outline: none;
+      width: 100%;
+      transition: border-color 0.2s;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--rose);
+    }
+    .contact-form textarea {
+      resize: vertical;
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      text-align: left;
+    }
+    .contact-submit {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 14px 28px;
+      border-radius: 10px;
+      background: var(--navy);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+      align-self: flex-start;
+    }
+    .contact-submit:hover { background: var(--rose); }
+    .contact-submit:disabled { opacity: 0.6; cursor: default; }
+    .contact-success {
+      display: none;
+      padding: 20px;
+      background: var(--rose-light);
+      border-radius: var(--radius);
+      margin-bottom: 24px;
+      font-size: 14px;
+      color: var(--navy);
+    }
+  </style>
 </head>
 <body>
 
@@ -31,7 +87,7 @@
     </ul>
   </nav>
 
-  <!-- Sticky back bar (shown on sub-pages) -->
+  <!-- Sticky back bar -->
   <div class="back-bar" id="sticky-back-bar">
     <button class="back-btn" id="back-btn-el" onclick="goBack()">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
@@ -191,27 +247,31 @@
       </div>
     </section>
 
-    <!-- Connect -->
+    <!-- Contact -->
     <section class="connect-section">
       <div class="connect-inner">
-        <span class="connect-label">Get in touch</span>
-        <h2 class="connect-title">Let's connect.</h2>
-        <p class="connect-text">Open to conversations around product, technology, strategy, collaborations, and opportunities where curiosity is useful.</p>
+        <span class="connect-label">💌 Drop a Note</span>
+        <h2 class="connect-title" style="font-size:38px; margin-bottom:14px;">Let's talk.</h2>
+        <p class="connect-text" style="margin-bottom:40px;">Whether it's a project idea, collaboration, internship opportunity, or something interesting worth building — I'd love to hear from you.</p>
+        <div class="contact-success" id="fs-success-home">✓ &nbsp;Message sent! I'll get back to you soon.</div>
+        <form class="contact-form" id="form-home">
+          <input type="text"  name="name"    placeholder="Name"    required />
+          <input type="email" name="email"   placeholder="Email"   required />
+          <textarea           name="message" placeholder="Message" required rows="5"></textarea>
+          <button type="submit" class="contact-submit">Send Message →</button>
+        </form>
+        <p style="margin-top:22px; font-size:12px; color:var(--muted); font-weight:300;">
+          Or reach me directly at:
+          <a href="mailto:bhavyamalik252007@gmail.com" style="color:var(--navy); text-decoration:none; border-bottom:1px solid var(--rose); padding-bottom:1px;">bhavyamalik252007@gmail.com</a>
+        </p>
       </div>
     </section>
 
-    <!-- Footer -->
     <footer>
       <div class="footer-icons">
-        <a class="footer-icon" href="mailto:bhavyamalik252007@gmail.com" title="Email">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
-        </a>
-        <a class="footer-icon" href="https://www.linkedin.com/in/bhavya-malik-055bba376/" target="_blank" title="LinkedIn">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="7.5" cy="7.5" r="0.8" fill="currentColor" stroke="none"/><line x1="7.5" y1="10.5" x2="7.5" y2="17"/><line x1="11" y1="17" x2="11" y2="13.2"/><path d="M11 13.2a3 3 0 0 1 6 0V17"/></svg>
-        </a>
-        <a class="footer-icon" href="https://github.com/bhavyamalik25" target="_blank" title="GitHub">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-        </a>
+        <a class="footer-icon" href="mailto:bhavyamalik252007@gmail.com" title="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></a>
+        <a class="footer-icon" href="https://www.linkedin.com/in/bhavya-malik-055bba376/" target="_blank" title="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="7.5" cy="7.5" r="0.8" fill="currentColor" stroke="none"/><line x1="7.5" y1="10.5" x2="7.5" y2="17"/><line x1="11" y1="17" x2="11" y2="13.2"/><path d="M11 13.2a3 3 0 0 1 6 0V17"/></svg></a>
+        <a class="footer-icon" href="https://github.com/bhavyamalik25" target="_blank" title="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
       </div>
       <span class="footer-copy">Built and Designed by Bhavya Malik · 2026</span>
     </footer>
@@ -231,7 +291,6 @@
 
     <div class="cards-wrap">
       <div class="v-stack">
-
         <div class="r-card" onclick="showExpDetail('dfg')">
           <div class="r-card-inner">
             <div class="r-card-left">
@@ -242,7 +301,6 @@
             </div>
           </div>
         </div>
-
         <div class="r-card no-hover">
           <div class="r-card-inner">
             <div class="r-card-left">
@@ -253,15 +311,25 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
 
     <section class="connect-section" style="padding-top:40px">
       <div class="connect-inner">
-        <span class="connect-label">Get in touch</span>
-        <h2 class="connect-title">Let's connect.</h2>
-        <p class="connect-text">Open to conversations around product, technology, strategy, collaborations, and opportunities where curiosity is useful.</p>
+        <span class="connect-label">💌 Drop a Note</span>
+        <h2 class="connect-title" style="font-size:38px; margin-bottom:14px;">Let's talk.</h2>
+        <p class="connect-text" style="margin-bottom:40px;">Whether it's a project idea, collaboration, internship opportunity, or something interesting worth building — I'd love to hear from you.</p>
+        <div class="contact-success" id="fs-success-exp">✓ &nbsp;Message sent! I'll get back to you soon.</div>
+        <form class="contact-form" id="form-exp">
+          <input type="text"  name="name"    placeholder="Name"    required />
+          <input type="email" name="email"   placeholder="Email"   required />
+          <textarea           name="message" placeholder="Message" required rows="5"></textarea>
+          <button type="submit" class="contact-submit">Send Message →</button>
+        </form>
+        <p style="margin-top:22px; font-size:12px; color:var(--muted); font-weight:300;">
+          Or reach me directly at:
+          <a href="mailto:bhavyamalik252007@gmail.com" style="color:var(--navy); text-decoration:none; border-bottom:1px solid var(--rose); padding-bottom:1px;">bhavyamalik252007@gmail.com</a>
+        </p>
       </div>
     </section>
 
@@ -277,7 +345,7 @@
 
 
   <!-- ══════════════════════════════════════════════════════════
-       PAGE: EXPERIENCE DETAIL (dynamically populated)
+       PAGE: EXPERIENCE DETAIL
   ══════════════════════════════════════════════════════════ -->
   <div class="page" id="page-exp-detail">
     <div class="back-bar-spacer"></div>
@@ -353,9 +421,20 @@
 
     <section class="connect-section" style="padding-top:40px">
       <div class="connect-inner">
-        <span class="connect-label">Get in touch</span>
-        <h2 class="connect-title">Let's connect.</h2>
-        <p class="connect-text">Open to conversations around product, technology, strategy, collaborations, and opportunities where curiosity is useful.</p>
+        <span class="connect-label">💌 Drop a Note</span>
+        <h2 class="connect-title" style="font-size:38px; margin-bottom:14px;">Let's talk.</h2>
+        <p class="connect-text" style="margin-bottom:40px;">Whether it's a project idea, collaboration, internship opportunity, or something interesting worth building — I'd love to hear from you.</p>
+        <div class="contact-success" id="fs-success-proj">✓ &nbsp;Message sent! I'll get back to you soon.</div>
+        <form class="contact-form" id="form-proj">
+          <input type="text"  name="name"    placeholder="Name"    required />
+          <input type="email" name="email"   placeholder="Email"   required />
+          <textarea           name="message" placeholder="Message" required rows="5"></textarea>
+          <button type="submit" class="contact-submit">Send Message →</button>
+        </form>
+        <p style="margin-top:22px; font-size:12px; color:var(--muted); font-weight:300;">
+          Or reach me directly at:
+          <a href="mailto:bhavyamalik252007@gmail.com" style="color:var(--navy); text-decoration:none; border-bottom:1px solid var(--rose); padding-bottom:1px;">bhavyamalik252007@gmail.com</a>
+        </p>
       </div>
     </section>
 
@@ -412,9 +491,20 @@
 
     <section class="connect-section" style="padding-top:40px">
       <div class="connect-inner">
-        <span class="connect-label">Get in touch</span>
-        <h2 class="connect-title">Let's connect.</h2>
-        <p class="connect-text">Open to conversations around product, technology, strategy, collaborations, and opportunities where curiosity is useful.</p>
+        <span class="connect-label">💌 Drop a Note</span>
+        <h2 class="connect-title" style="font-size:38px; margin-bottom:14px;">Let's talk.</h2>
+        <p class="connect-text" style="margin-bottom:40px;">Whether it's a project idea, collaboration, internship opportunity, or something interesting worth building — I'd love to hear from you.</p>
+        <div class="contact-success" id="fs-success-skills">✓ &nbsp;Message sent! I'll get back to you soon.</div>
+        <form class="contact-form" id="form-skills">
+          <input type="text"  name="name"    placeholder="Name"    required />
+          <input type="email" name="email"   placeholder="Email"   required />
+          <textarea           name="message" placeholder="Message" required rows="5"></textarea>
+          <button type="submit" class="contact-submit">Send Message →</button>
+        </form>
+        <p style="margin-top:22px; font-size:12px; color:var(--muted); font-weight:300;">
+          Or reach me directly at:
+          <a href="mailto:bhavyamalik252007@gmail.com" style="color:var(--navy); text-decoration:none; border-bottom:1px solid var(--rose); padding-bottom:1px;">bhavyamalik252007@gmail.com</a>
+        </p>
       </div>
     </section>
 
@@ -458,9 +548,20 @@
 
     <section class="connect-section" style="padding-top:20px">
       <div class="connect-inner">
-        <span class="connect-label">Get in touch</span>
-        <h2 class="connect-title">Let's connect.</h2>
-        <p class="connect-text">Open to conversations around product, technology, strategy, collaborations, and opportunities where curiosity is useful.</p>
+        <span class="connect-label">💌 Drop a Note</span>
+        <h2 class="connect-title" style="font-size:38px; margin-bottom:14px;">Let's talk.</h2>
+        <p class="connect-text" style="margin-bottom:40px;">Whether it's a project idea, collaboration, internship opportunity, or something interesting worth building — I'd love to hear from you.</p>
+        <div class="contact-success" id="fs-success-about">✓ &nbsp;Message sent! I'll get back to you soon.</div>
+        <form class="contact-form" id="form-about">
+          <input type="text"  name="name"    placeholder="Name"    required />
+          <input type="email" name="email"   placeholder="Email"   required />
+          <textarea           name="message" placeholder="Message" required rows="5"></textarea>
+          <button type="submit" class="contact-submit">Send Message →</button>
+        </form>
+        <p style="margin-top:22px; font-size:12px; color:var(--muted); font-weight:300;">
+          Or reach me directly at:
+          <a href="mailto:bhavyamalik252007@gmail.com" style="color:var(--navy); text-decoration:none; border-bottom:1px solid var(--rose); padding-bottom:1px;">bhavyamalik252007@gmail.com</a>
+        </p>
       </div>
     </section>
 
@@ -476,10 +577,46 @@
 
 
   <!-- ══════════════════════════════════════════════════════════
-       SCRIPTS — data before navigation (navigation depends on EXP_DATA)
+       SCRIPTS
   ══════════════════════════════════════════════════════════ -->
   <script src="js/data.js"></script>
   <script src="js/navigation.js"></script>
+
+  <script>
+    // Formspree AJAX handler — works for all 4 forms
+    const FORMS = [
+      { formId: 'form-home',   successId: 'fs-success-home'   },
+      { formId: 'form-exp',    successId: 'fs-success-exp'    },
+      { formId: 'form-proj',   successId: 'fs-success-proj'   },
+      { formId: 'form-skills', successId: 'fs-success-skills' },
+      { formId: 'form-about',  successId: 'fs-success-about'  },
+    ];
+
+    FORMS.forEach(({ formId, successId }) => {
+      const form = document.getElementById(formId);
+      if (!form) return;
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const btn = form.querySelector('button[type="submit"]');
+        btn.textContent = 'Sending…';
+        btn.disabled = true;
+
+        const res = await fetch('https://formspree.io/f/mgoqzvee', {
+          method:  'POST',
+          headers: { 'Accept': 'application/json' },
+          body:    new FormData(form)
+        });
+
+        if (res.ok) {
+          form.style.display = 'none';
+          document.getElementById(successId).style.display = 'block';
+        } else {
+          btn.textContent = 'Something went wrong — try again.';
+          btn.disabled = false;
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
