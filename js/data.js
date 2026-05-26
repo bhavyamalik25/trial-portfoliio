@@ -15,15 +15,15 @@ const NAV_LINKS = [
 /* ─── EXPERIENCE DATA ───────────────────────────────────────── */
 const EXP_DATA = {
   dfg: {
-    role:   'Product Designer',
-    co:     'Develop for Good',
+    role:   'Develop for Good',
+    co:     'Product Designer',
     period: 'Remote · May 2026 – Aug 2026',
     body: `
 <p>Designing for emotionally complex and financially sensitive experiences through collaborative product work.</p>
 <p>Around 7 in 10 families in the U.S. reportedly lack savings for end-of-life costs, turning an already difficult experience into a financial burden for many. Through Develop for Good, I'm currently contributing to product design work supporting a nonprofit initiative exploring more accessible and dignified approaches to end-of-life planning.</p>
 <p>What makes this work different from classroom projects is the context itself. The people who may eventually use these experiences aren't browsing casually — they could be navigating grief, uncertainty, emotional stress, or financial pressure. That changes how I think about every design decision.</p>
 <p>I'm collaborating within an international cross-functional environment alongside student contributors across product, design, engineering, and related disciplines. My work currently involves exploring how research, information structure, usability, and interface decisions can reduce friction and make complex topics easier to understand.</p>
-<p>Areas I'm contributing to include:</p>
+<p><span class="exp-heading">Areas I'm contributing to include:</span></p>
 <ul>
   <li>User research and understanding context</li>
   <li>Information architecture and structuring experiences</li>
@@ -43,6 +43,62 @@ const EXP_DATA = {
       'Figma', 'User Research', 'Information Architecture',
       'Wireframing', 'Prototyping', 'Collaboration',
       'Iteration', 'Design Communication'
+    ]
+  },
+
+  itconsult: {
+    role:   'Freelance Client',
+    co:     'IT Consultant',
+    period: 'Remote · UK-Based Client · 1 Week Timeline',
+    caseStudyUrl: null, /* Replace null with 'path/to/case-study.pdf' when ready */
+    body: `
+<p>Supported a UK-based entrepreneur seeking assistance with project organization, workflow clarity, and structured planning while managing ongoing operational and execution challenges. Worked remotely to understand existing processes, identify workflow gaps, and organize findings into actionable documentation designed to support clearer execution and project coordination.</p>
+
+<p>The engagement involved conducting requirement gathering, analyzing current workflows, mapping priorities, and supporting project planning through structured frameworks and recommendations. Outputs focused on improving organization, documentation practices, task prioritization, communication processes, and overall workflow visibility.</p>
+
+<p>Deliverables included a requirement analysis summary, problem breakdown framework, priority mapping, timeline planning support, recommendations documentation, and a final summary report consolidating observations and suggested next steps.</p>
+
+<p><span class="exp-heading">Outcomes for the Client</span></p>
+<ul>
+  <li>Delivered a clearer overview of existing workflow challenges and project priorities</li>
+  <li>Provided structured documentation to support more organized planning and execution</li>
+  <li>Organized findings into actionable recommendations and suggested next steps</li>
+  <li>Improved visibility around task prioritization and workflow organization</li>
+  <li>Produced ready-to-reference materials intended to support future decision-making</li>
+</ul>
+
+<p><span class="exp-heading">What I Learned</span></p>
+<p>This engagement gave me practical exposure to working with ambiguous client requirements and transforming broad challenges into structured outputs. I strengthened my ability to:</p>
+<ul>
+  <li>Conduct requirement gathering and understand client needs through remote communication</li>
+  <li>Break down complex or unclear workflows into organized frameworks and priorities</li>
+  <li>Document findings and recommendations in a clear, actionable format</li>
+  <li>Deliver structured outputs within short timelines while managing expectations</li>
+  <li>Work independently with an international client and communicate professionally across a fully remote engagement</li>
+</ul>
+<p>Most importantly, I learned that effective consulting often begins with asking the right questions before attempting to provide solutions.</p>
+
+<p><span class="exp-heading">Key Areas</span></p>
+<p class="exp-tags-inline">Requirement Gathering · Workflow Analysis · Project Planning · Documentation · Prioritization · Process Organization · Client Communication · Remote Collaboration · IT Consulting Support</p>
+
+<p><span class="exp-heading">Deliverables</span></p>
+<ul>
+  <li>Requirement Summary</li>
+  <li>Workflow Analysis</li>
+  <li>Priority Framework</li>
+  <li>Recommendations Report</li>
+  <li>Timeline Planning</li>
+  <li>Final Summary Document</li>
+</ul>
+
+<p><span class="exp-heading">Skills Applied</span></p>
+<p class="exp-tags-inline">Project Management · Problem Solving · Strategic Thinking · Workflow Organization · Stakeholder Communication · Execution Planning · Documentation</p>
+
+<p class="exp-confidential">Client identity and sensitive details withheld for confidentiality.</p>`,
+    stack: [
+      'IT Consulting', 'Project Management', 'Requirement Gathering',
+      'Workflow Analysis', 'Documentation', 'Stakeholder Communication',
+      'Strategic Thinking', 'Remote Collaboration'
     ]
   }
 };
