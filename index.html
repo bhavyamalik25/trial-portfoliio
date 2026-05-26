@@ -291,16 +291,31 @@
 
     <div class="cards-wrap">
       <div class="v-stack">
+
+        <!-- Develop for Good — title is now the ROLE, tag is the company -->
         <div class="r-card" onclick="showExpDetail('dfg')">
           <div class="r-card-inner">
             <div class="r-card-left">
-              <span class="r-card-tag">Product Designer</span>
-              <h3 class="r-card-title">Develop for Good</h3>
+              <span class="r-card-tag">Develop for Good</span>
+              <h3 class="r-card-title">Product Designer</h3>
               <span class="r-card-period">Remote · May 2026 – Aug 2026</span>
               <p class="r-card-desc">Designing for emotionally complex and financially sensitive experiences through collaborative product work. Contributing to an initiative making end-of-life planning more accessible and dignified.</p>
             </div>
           </div>
         </div>
+
+        <!-- IT Consultant — freelance engagement -->
+        <div class="r-card" onclick="showExpDetail('itconsult')">
+          <div class="r-card-inner">
+            <div class="r-card-left">
+              <span class="r-card-tag blue">Freelance Client</span>
+              <h3 class="r-card-title">IT Consultant</h3>
+              <span class="r-card-period">Remote · UK-Based Client · 1 Week Timeline</span>
+              <p class="r-card-desc">Supported a UK-based entrepreneur with project organization, workflow clarity, and structured planning. Delivered requirement analysis, priority mapping, and documentation to improve workflow visibility and execution.</p>
+            </div>
+          </div>
+        </div>
+
         <div class="r-card no-hover">
           <div class="r-card-inner">
             <div class="r-card-left">
@@ -311,6 +326,7 @@
             </div>
           </div>
         </div>
+
       </div>
     </div>
 
@@ -583,7 +599,7 @@
   <script src="js/navigation.js"></script>
 
   <script>
-    // Formspree AJAX handler — works for all 4 forms
+    // Formspree AJAX handler — works for all forms
     const FORMS = [
       { formId: 'form-home',   successId: 'fs-success-home'   },
       { formId: 'form-exp',    successId: 'fs-success-exp'    },
