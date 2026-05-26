@@ -250,8 +250,7 @@
     <!-- Contact -->
     <section class="connect-section">
       <div class="connect-inner">
-        <span class="connect-label">💌 Drop a Note</span>
-        <h2 class="connect-title" style="font-size:38px; margin-bottom:14px;">Let's talk.</h2>
+        <h2 class="connect-title" style="font-size:38px; margin-bottom:14px;">Drop a Note.</h2>
         <p class="connect-text" style="margin-bottom:40px;">Whether it's a project idea, collaboration, internship opportunity, or something interesting worth building — I'd love to hear from you.</p>
         <div class="contact-success" id="fs-success-home">✓ &nbsp;Message sent! I'll get back to you soon.</div>
         <form class="contact-form" id="form-home">
@@ -262,14 +261,14 @@
         </form>
         <p style="margin-top:22px; font-size:12px; color:var(--muted); font-weight:300;">
           Or reach me directly at:
-          <a href="mailto:bhavyamalik252007@gmail.com" style="color:var(--navy); text-decoration:none; border-bottom:1px solid var(--rose); padding-bottom:1px;">bhavyamalik252007@gmail.com</a>
+          <a href="#" onclick="copyEmail(event)" style="color:var(--navy); text-decoration:none; border-bottom:1px solid var(--rose); padding-bottom:1px;">bhavyamalik252007@gmail.com</a>
         </p>
       </div>
     </section>
 
     <footer>
       <div class="footer-icons">
-        <a class="footer-icon" href="mailto:bhavyamalik252007@gmail.com" title="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></a>
+        <a class="footer-icon" href="#" onclick="copyEmail(event)" title="Copy email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></a>
         <a class="footer-icon" href="https://www.linkedin.com/in/bhavya-malik-055bba376/" target="_blank" title="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="7.5" cy="7.5" r="0.8" fill="currentColor" stroke="none"/><line x1="7.5" y1="10.5" x2="7.5" y2="17"/><line x1="11" y1="17" x2="11" y2="13.2"/><path d="M11 13.2a3 3 0 0 1 6 0V17"/></svg></a>
         <a class="footer-icon" href="https://github.com/bhavyamalik25" target="_blank" title="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
       </div>
@@ -289,11 +288,12 @@
       <p class="tagline">Work that pushed me beyond classrooms and into collaboration, ambiguity, and figuring things out in real time.</p>
     </div>
 
+    <!-- ── 2-column card grid ── -->
     <div class="cards-wrap">
-      <div class="v-stack">
+      <div class="exp-grid">
 
-        <!-- Develop for Good — title is now the ROLE, tag is the company -->
-        <div class="r-card" onclick="showExpDetail('dfg')">
+        <!-- DFG card: role is the big title now, company is the small tag -->
+        <div class="r-card exp-card" onclick="showExpDetail('dfg')">
           <div class="r-card-inner">
             <div class="r-card-left">
               <span class="r-card-tag">Develop for Good</span>
@@ -304,25 +304,14 @@
           </div>
         </div>
 
-        <!-- IT Consultant — freelance engagement -->
-        <div class="r-card" onclick="showExpDetail('itconsult')">
+        <!-- IT Consulting card: role is the big title, company is the small tag -->
+        <div class="r-card exp-card" onclick="showExpDetail('itconsulting')">
           <div class="r-card-inner">
             <div class="r-card-left">
-              <span class="r-card-tag blue">Freelance Client</span>
+              <span class="r-card-tag">Freelance Client</span>
               <h3 class="r-card-title">IT Consultant</h3>
               <span class="r-card-period">Remote · UK-Based Client · 1 Week Timeline</span>
-              <p class="r-card-desc">Supported a UK-based entrepreneur with project organization, workflow clarity, and structured planning. Delivered requirement analysis, priority mapping, and documentation to improve workflow visibility and execution.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="r-card no-hover">
-          <div class="r-card-inner">
-            <div class="r-card-left">
-              <span class="r-card-tag blue">Product Strategist Apprentice</span>
-              <h3 class="r-card-title">Coming Soon</h3>
-              <span class="r-card-period">Details to be added</span>
-              <p class="r-card-desc">This experience will be added once the details are ready to share.</p>
+              <p class="r-card-desc">Supported a UK-based entrepreneur with project organization, workflow clarity, and structured planning. Delivered requirement analysis, priority mapping, and actionable documentation across a fully remote engagement.</p>
             </div>
           </div>
         </div>
@@ -332,8 +321,7 @@
 
     <section class="connect-section" style="padding-top:40px">
       <div class="connect-inner">
-        <span class="connect-label">💌 Drop a Note</span>
-        <h2 class="connect-title" style="font-size:38px; margin-bottom:14px;">Let's talk.</h2>
+        <h2 class="connect-title" style="font-size:38px; margin-bottom:14px;">Drop a Note.</h2>
         <p class="connect-text" style="margin-bottom:40px;">Whether it's a project idea, collaboration, internship opportunity, or something interesting worth building — I'd love to hear from you.</p>
         <div class="contact-success" id="fs-success-exp">✓ &nbsp;Message sent! I'll get back to you soon.</div>
         <form class="contact-form" id="form-exp">
@@ -344,14 +332,14 @@
         </form>
         <p style="margin-top:22px; font-size:12px; color:var(--muted); font-weight:300;">
           Or reach me directly at:
-          <a href="mailto:bhavyamalik252007@gmail.com" style="color:var(--navy); text-decoration:none; border-bottom:1px solid var(--rose); padding-bottom:1px;">bhavyamalik252007@gmail.com</a>
+          <a href="#" onclick="copyEmail(event)" style="color:var(--navy); text-decoration:none; border-bottom:1px solid var(--rose); padding-bottom:1px;">bhavyamalik252007@gmail.com</a>
         </p>
       </div>
     </section>
 
     <footer>
       <div class="footer-icons">
-        <a class="footer-icon" href="mailto:bhavyamalik252007@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></a>
+        <a class="footer-icon" href="#" onclick="copyEmail(event)" title="Copy email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></a>
         <a class="footer-icon" href="https://www.linkedin.com/in/bhavya-malik-055bba376/" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="7.5" cy="7.5" r="0.8" fill="currentColor" stroke="none"/><line x1="7.5" y1="10.5" x2="7.5" y2="17"/><line x1="11" y1="17" x2="11" y2="13.2"/><path d="M11 13.2a3 3 0 0 1 6 0V17"/></svg></a>
         <a class="footer-icon" href="https://github.com/bhavyamalik25" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
       </div>
@@ -368,7 +356,7 @@
     <div class="exp-read" id="exp-detail-content"></div>
     <footer>
       <div class="footer-icons">
-        <a class="footer-icon" href="mailto:bhavyamalik252007@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></a>
+        <a class="footer-icon" href="#" onclick="copyEmail(event)" title="Copy email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></a>
         <a class="footer-icon" href="https://www.linkedin.com/in/bhavya-malik-055bba376/" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="7.5" cy="7.5" r="0.8" fill="currentColor" stroke="none"/><line x1="7.5" y1="10.5" x2="7.5" y2="17"/><line x1="11" y1="17" x2="11" y2="13.2"/><path d="M11 13.2a3 3 0 0 1 6 0V17"/></svg></a>
         <a class="footer-icon" href="https://github.com/bhavyamalik25" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
       </div>
@@ -388,8 +376,9 @@
       <p class="tagline">Ideas brought to life.</p>
     </div>
 
+    <!-- ── 2-column project grid ── -->
     <div class="cards-wrap">
-      <div class="v-stack">
+      <div class="proj-grid">
 
         <!-- Weatherly -->
         <div class="proj-card">
@@ -437,8 +426,7 @@
 
     <section class="connect-section" style="padding-top:40px">
       <div class="connect-inner">
-        <span class="connect-label">💌 Drop a Note</span>
-        <h2 class="connect-title" style="font-size:38px; margin-bottom:14px;">Let's talk.</h2>
+        <h2 class="connect-title" style="font-size:38px; margin-bottom:14px;">Drop a Note.</h2>
         <p class="connect-text" style="margin-bottom:40px;">Whether it's a project idea, collaboration, internship opportunity, or something interesting worth building — I'd love to hear from you.</p>
         <div class="contact-success" id="fs-success-proj">✓ &nbsp;Message sent! I'll get back to you soon.</div>
         <form class="contact-form" id="form-proj">
@@ -449,14 +437,14 @@
         </form>
         <p style="margin-top:22px; font-size:12px; color:var(--muted); font-weight:300;">
           Or reach me directly at:
-          <a href="mailto:bhavyamalik252007@gmail.com" style="color:var(--navy); text-decoration:none; border-bottom:1px solid var(--rose); padding-bottom:1px;">bhavyamalik252007@gmail.com</a>
+          <a href="#" onclick="copyEmail(event)" style="color:var(--navy); text-decoration:none; border-bottom:1px solid var(--rose); padding-bottom:1px;">bhavyamalik252007@gmail.com</a>
         </p>
       </div>
     </section>
 
     <footer>
       <div class="footer-icons">
-        <a class="footer-icon" href="mailto:bhavyamalik252007@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></a>
+        <a class="footer-icon" href="#" onclick="copyEmail(event)" title="Copy email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></a>
         <a class="footer-icon" href="https://www.linkedin.com/in/bhavya-malik-055bba376/" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="7.5" cy="7.5" r="0.8" fill="currentColor" stroke="none"/><line x1="7.5" y1="10.5" x2="7.5" y2="17"/><line x1="11" y1="17" x2="11" y2="13.2"/><path d="M11 13.2a3 3 0 0 1 6 0V17"/></svg></a>
         <a class="footer-icon" href="https://github.com/bhavyamalik25" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
       </div>
@@ -507,8 +495,7 @@
 
     <section class="connect-section" style="padding-top:40px">
       <div class="connect-inner">
-        <span class="connect-label">💌 Drop a Note</span>
-        <h2 class="connect-title" style="font-size:38px; margin-bottom:14px;">Let's talk.</h2>
+        <h2 class="connect-title" style="font-size:38px; margin-bottom:14px;">Drop a Note.</h2>
         <p class="connect-text" style="margin-bottom:40px;">Whether it's a project idea, collaboration, internship opportunity, or something interesting worth building — I'd love to hear from you.</p>
         <div class="contact-success" id="fs-success-skills">✓ &nbsp;Message sent! I'll get back to you soon.</div>
         <form class="contact-form" id="form-skills">
@@ -519,14 +506,14 @@
         </form>
         <p style="margin-top:22px; font-size:12px; color:var(--muted); font-weight:300;">
           Or reach me directly at:
-          <a href="mailto:bhavyamalik252007@gmail.com" style="color:var(--navy); text-decoration:none; border-bottom:1px solid var(--rose); padding-bottom:1px;">bhavyamalik252007@gmail.com</a>
+          <a href="#" onclick="copyEmail(event)" style="color:var(--navy); text-decoration:none; border-bottom:1px solid var(--rose); padding-bottom:1px;">bhavyamalik252007@gmail.com</a>
         </p>
       </div>
     </section>
 
     <footer>
       <div class="footer-icons">
-        <a class="footer-icon" href="mailto:bhavyamalik252007@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></a>
+        <a class="footer-icon" href="#" onclick="copyEmail(event)" title="Copy email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></a>
         <a class="footer-icon" href="https://www.linkedin.com/in/bhavya-malik-055bba376/" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="7.5" cy="7.5" r="0.8" fill="currentColor" stroke="none"/><line x1="7.5" y1="10.5" x2="7.5" y2="17"/><line x1="11" y1="17" x2="11" y2="13.2"/><path d="M11 13.2a3 3 0 0 1 6 0V17"/></svg></a>
         <a class="footer-icon" href="https://github.com/bhavyamalik25" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
       </div>
@@ -564,8 +551,7 @@
 
     <section class="connect-section" style="padding-top:20px">
       <div class="connect-inner">
-        <span class="connect-label">💌 Drop a Note</span>
-        <h2 class="connect-title" style="font-size:38px; margin-bottom:14px;">Let's talk.</h2>
+        <h2 class="connect-title" style="font-size:38px; margin-bottom:14px;">Drop a Note.</h2>
         <p class="connect-text" style="margin-bottom:40px;">Whether it's a project idea, collaboration, internship opportunity, or something interesting worth building — I'd love to hear from you.</p>
         <div class="contact-success" id="fs-success-about">✓ &nbsp;Message sent! I'll get back to you soon.</div>
         <form class="contact-form" id="form-about">
@@ -576,14 +562,14 @@
         </form>
         <p style="margin-top:22px; font-size:12px; color:var(--muted); font-weight:300;">
           Or reach me directly at:
-          <a href="mailto:bhavyamalik252007@gmail.com" style="color:var(--navy); text-decoration:none; border-bottom:1px solid var(--rose); padding-bottom:1px;">bhavyamalik252007@gmail.com</a>
+          <a href="#" onclick="copyEmail(event)" style="color:var(--navy); text-decoration:none; border-bottom:1px solid var(--rose); padding-bottom:1px;">bhavyamalik252007@gmail.com</a>
         </p>
       </div>
     </section>
 
     <footer>
       <div class="footer-icons">
-        <a class="footer-icon" href="mailto:bhavyamalik252007@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></a>
+        <a class="footer-icon" href="#" onclick="copyEmail(event)" title="Copy email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></a>
         <a class="footer-icon" href="https://www.linkedin.com/in/bhavya-malik-055bba376/" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="7.5" cy="7.5" r="0.8" fill="currentColor" stroke="none"/><line x1="7.5" y1="10.5" x2="7.5" y2="17"/><line x1="11" y1="17" x2="11" y2="13.2"/><path d="M11 13.2a3 3 0 0 1 6 0V17"/></svg></a>
         <a class="footer-icon" href="https://github.com/bhavyamalik25" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
       </div>
@@ -598,7 +584,42 @@
   <script src="js/data.js"></script>
   <script src="js/navigation.js"></script>
 
+  <!-- Email copy tooltip -->
+  <div id="email-tooltip" style="
+    position: fixed;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%) translateY(8px);
+    background: var(--navy);
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    padding: 10px 20px;
+    border-radius: 8px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 9999;
+  ">✓ &nbsp;Email copied to clipboard</div>
+
   <script>
+    // Copy email to clipboard
+    function copyEmail(e) {
+      e.preventDefault();
+      navigator.clipboard.writeText('bhavyamalik252007@gmail.com').then(() => {
+        const tip = document.getElementById('email-tooltip');
+        tip.style.opacity = '1';
+        tip.style.transform = 'translateX(-50%) translateY(0)';
+        clearTimeout(tip._timer);
+        tip._timer = setTimeout(() => {
+          tip.style.opacity = '0';
+          tip.style.transform = 'translateX(-50%) translateY(8px)';
+        }, 2200);
+      });
+    }
+
     // Formspree AJAX handler — works for all forms
     const FORMS = [
       { formId: 'form-home',   successId: 'fs-success-home'   },
