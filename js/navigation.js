@@ -5,6 +5,7 @@
 
 // ─── State ──────────────────────────────────────────────────
 let histStack = [{ page: 'home', scrollY: 0 }];
+
 const SUB_PAGES = ['experiences', 'exp-detail', 'projects', 'skills', 'about'];
 
 // ─── DOM refs (resolved after DOMContentLoaded) ──────────────
@@ -16,6 +17,7 @@ function showPage(id, restoreScrollY) {
   const target = document.getElementById('page-' + id);
   if (!target) return;
   target.classList.add('active');
+
   if (restoreScrollY != null) {
     requestAnimationFrame(() => {
       requestAnimationFrame(() => window.scrollTo({ top: restoreScrollY, behavior: 'instant' }));
@@ -23,6 +25,7 @@ function showPage(id, restoreScrollY) {
   } else {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
+
   updateBackBar(id);
 }
 
@@ -65,32 +68,29 @@ function showExpDetail(id) {
     .map(s => `<span class="stack-pill">${s}</span>`)
     .join('');
 
-  // Case study link — shows if caseStudyUrl is set, placeholder otherwise
-  let caseStudyHtml = '';
-  if (d.caseStudyUrl) {
-    caseStudyHtml = `
-      <a class="case-study-btn" href="${d.caseStudyUrl}" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-        View Full Case Study
-      </a>`;
-  } else if (d.caseStudyUrl === null && id === 'itconsult') {
-    // Placeholder — visible but disabled
-    caseStudyHtml = `
-      <span class="case-study-btn placeholder">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-        View Full Case Study <em style="font-style:normal;opacity:0.55;font-size:10px;">(coming soon)</em>
-      </span>`;
-  }
+  const caseStudyLink = d.caseStudy
+    ? `<a href="${d.caseStudy}" target="_blank" rel="noopener" style="
+        display:inline-flex; align-items:center; gap:7px; margin-top:32px;
+        font-size:11px; font-weight:400; letter-spacing:0.16em; text-transform:uppercase;
+        color:var(--navy); border:1px solid var(--border); border-radius:8px;
+        padding:11px 20px; text-decoration:none; transition:border-color 0.2s, color 0.2s;
+      " onmouseover="this.style.borderColor='var(--rose)';this.style.color='var(--rose)'"
+         onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--navy)'">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        View Case Study
+      </a>`
+    : '';
 
   document.getElementById('exp-detail-content').innerHTML = `
-    <span class="co-tag">${d.role}</span>
-    <h1>${d.co}</h1>
+    <span class="co-tag">${d.co}</span>
+    <h1>${d.role}</h1>
     <p class="meta">${d.period}</p>
     <div class="exp-divider"></div>
     ${d.body}
-    <div class="stack-pills">${pills}</div>
-    ${caseStudyHtml}
+    ${caseStudyLink}
+    <div class="stack-pills" style="margin-top:28px">${pills}</div>
   `;
+
   navTo('exp-detail');
 }
 
