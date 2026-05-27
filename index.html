@@ -73,7 +73,7 @@
     /* ── Experience cards grid ── */
     .exp-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(3, 1fr);
       gap: 16px;
     }
     .exp-grid .r-card-inner {
@@ -82,8 +82,40 @@
       text-align: left;
       padding: 28px 28px 32px;
     }
-    @media (max-width: 700px) {
+    @media (max-width: 900px) {
+      .exp-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
       .exp-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── Card thumbnail ── */
+    .r-card-thumb {
+      width: 100%;
+      height: 140px;
+      overflow: hidden;
+      border-radius: var(--radius) var(--radius) 0 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .r-card-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+    .r-card.has-thumb .r-card-inner {
+      border-radius: 0 0 var(--radius) var(--radius);
+    }
+
+    /* ── Dimmed coming soon card ── */
+    .r-card.coming-soon {
+      opacity: 0.55;
+      cursor: default;
+    }
+    .r-card.coming-soon:hover {
+      transform: none;
+      box-shadow: none;
     }
 
     /* ── Card hierarchy: role big, company small above ── */
@@ -329,6 +361,7 @@
     <div class="cards-wrap">
       <div class="exp-grid">
 
+        <!-- Develop for Good -->
         <div class="r-card" onclick="showExpDetail('dfg')">
           <div class="r-card-inner">
             <div class="r-card-left">
@@ -340,13 +373,29 @@
           </div>
         </div>
 
-        <div class="r-card" onclick="showExpDetail('itconsulting')">
+        <!-- IT Consulting — with case study thumbnail -->
+        <div class="r-card has-thumb" onclick="showExpDetail('itconsulting')">
+          <div class="r-card-thumb">
+            <img src="assets/casestudy_thumb.jpg" alt="IT Consulting Case Study" />
+          </div>
           <div class="r-card-inner">
             <div class="r-card-left">
               <span class="r-card-co">Freelance Client</span>
               <h3 class="r-card-title">IT Consultant</h3>
               <span class="r-card-period">Remote · UK-Based Client · 1 Week</span>
               <p class="r-card-desc">Supported a UK-based entrepreneur with project organization, workflow analysis, and structured planning. Delivered requirement analysis, priority mapping, and a final recommendations report within a one-week remote engagement.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Incoming: Product Strategist Apprentice -->
+        <div class="r-card coming-soon no-hover">
+          <div class="r-card-inner">
+            <div class="r-card-left">
+              <span class="r-card-co">Incoming</span>
+              <h3 class="r-card-title">Product Strategist Apprentice</h3>
+              <span class="r-card-period">Details coming soon</span>
+              <p class="r-card-desc">This experience is upcoming. Details will be shared once the engagement begins.</p>
             </div>
           </div>
         </div>
