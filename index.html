@@ -69,6 +69,44 @@
       font-size: 14px;
       color: var(--navy);
     }
+
+    /* ── Experience cards grid ── */
+    .exp-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .exp-grid .r-card-inner {
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+      padding: 28px 28px 32px;
+    }
+    @media (max-width: 700px) {
+      .exp-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── Card hierarchy: role big, company small above ── */
+    .r-card-co {
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 400;
+    }
+
+    /* ── Section headings inside exp detail ── */
+    .exp-section-heading {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin: 28px 0 10px;
+    }
   </style>
 </head>
 <body>
@@ -288,15 +326,13 @@
       <p class="tagline">Work that pushed me beyond classrooms and into collaboration, ambiguity, and figuring things out in real time.</p>
     </div>
 
-    <!-- ── 2-column card grid ── -->
     <div class="cards-wrap">
       <div class="exp-grid">
 
-        <!-- DFG card: role is the big title now, company is the small tag -->
-        <div class="r-card exp-card" onclick="showExpDetail('dfg')">
+        <div class="r-card" onclick="showExpDetail('dfg')">
           <div class="r-card-inner">
             <div class="r-card-left">
-              <span class="r-card-tag">Develop for Good</span>
+              <span class="r-card-co">Develop for Good</span>
               <h3 class="r-card-title">Product Designer</h3>
               <span class="r-card-period">Remote · May 2026 – Aug 2026</span>
               <p class="r-card-desc">Designing for emotionally complex and financially sensitive experiences through collaborative product work. Contributing to an initiative making end-of-life planning more accessible and dignified.</p>
@@ -304,14 +340,13 @@
           </div>
         </div>
 
-        <!-- IT Consulting card: role is the big title, company is the small tag -->
-        <div class="r-card exp-card" onclick="showExpDetail('itconsulting')">
+        <div class="r-card" onclick="showExpDetail('itconsulting')">
           <div class="r-card-inner">
             <div class="r-card-left">
-              <span class="r-card-tag">Freelance Client</span>
+              <span class="r-card-co">Freelance Client</span>
               <h3 class="r-card-title">IT Consultant</h3>
-              <span class="r-card-period">Remote · UK-Based Client · 1 Week Timeline</span>
-              <p class="r-card-desc">Supported a UK-based entrepreneur with project organization, workflow clarity, and structured planning. Delivered requirement analysis, priority mapping, and actionable documentation across a fully remote engagement.</p>
+              <span class="r-card-period">Remote · UK-Based Client · 1 Week</span>
+              <p class="r-card-desc">Supported a UK-based entrepreneur with project organization, workflow analysis, and structured planning. Delivered requirement analysis, priority mapping, and a final recommendations report within a one-week remote engagement.</p>
             </div>
           </div>
         </div>
@@ -376,9 +411,8 @@
       <p class="tagline">Ideas brought to life.</p>
     </div>
 
-    <!-- ── 2-column project grid ── -->
     <div class="cards-wrap">
-      <div class="proj-grid">
+      <div class="v-stack">
 
         <!-- Weatherly -->
         <div class="proj-card">
@@ -620,7 +654,7 @@
       });
     }
 
-    // Formspree AJAX handler — works for all forms
+    // Formspree AJAX handler — works for all 4 forms
     const FORMS = [
       { formId: 'form-home',   successId: 'fs-success-home'   },
       { formId: 'form-exp',    successId: 'fs-success-exp'    },
